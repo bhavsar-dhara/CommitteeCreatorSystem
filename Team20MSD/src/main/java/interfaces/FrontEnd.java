@@ -1,4 +1,4 @@
-package main.interfaces;
+package main.java.interfaces;
 
 public interface FrontEnd {
 	
