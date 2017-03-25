@@ -1,7 +1,12 @@
 package test.java;
 
-import junit.framework.*;
+import org.junit.Test;
 
-public class TestQueryEngine extends TestCase {
+public class TestQueryEngine {
+
+	@Test
+	public void testSearchAuthorQuery() {
+		
+	}
 
 }
