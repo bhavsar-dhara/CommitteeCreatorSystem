@@ -46,7 +46,7 @@ public class SearchQuery {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT * FROM tb_publication tp, tb_profile ta");
+			query.append("SELECT * FROM tb_publication tp, tb_authorprofile ta");
 			if(keywords != null && years != null && noOfPublication != 0) {
 				query.append("where ");
 				query.append("tp.journal = '" + isJournal + "'");
