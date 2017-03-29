@@ -30,12 +30,32 @@ public class SearchQuery {
 		}
 		return conn;
 	}
+	
+	// TODO: Query 1 Search for author
+	// input: 	1. from a particular conference/journal
+	//			2. keywords present in the title of the publication
+	//			3. selecting publication year(s)
+	//			4. minimum # of publications made
+	//			5. has been a previous committee member or not
+	//			6. saving the search criteria??
+	// output: list of authors
 
-	private void populateListOfAuthors(Connection conn, List listOfAuthors) {
-		listOfAuthors = new ArrayList<Author>();
+	private List<Author> populateListOfAuthors(Connection conn, boolean isJournal, String[] keywords, 
+			int[] years, int noOfPublication, boolean isPrevMembr) {
+		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = conn.createStatement();
-			ResultSet rs = st.executeQuery("SELECT * FROM tp_publication");
+			StringBuilder query = new StringBuilder();
+			query.append("SELECT * FROM tb_publication tp, tb_profile ta");
+			if(keywords != null && years != null && noOfPublication != 0) {
+				query.append("where ");
+				query.append("tp.journal = '" + isJournal + "'");
+				query.append("tp.title like '%" + keywords + "%'");
+				query.append("tp.years like '" + years + "'");
+				query.append("tp.noOfPublication = '" + noOfPublication + "'");
+				query.append("tp.isPrevMembr = '" + isPrevMembr + "'");
+			}
+			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
 				Author author = new Author();
 				author.setId(rs.getLong("id"));
@@ -49,16 +69,8 @@ public class SearchQuery {
 			System.err.println("Threw a SQLException creating the list of blogs.");
 			System.err.println(se.getMessage());
 		}
+		return listOfAuthors;
 	}
-	
-	// TODO: Query 1 Search for author
-	// input: 	1. from a particular conference/journal
-	//			2. keywords present in the title of the publication
-	//			3. selecting publication year(s)
-	//			4. minimum # of publications made
-	//			5. has been a previous committee member or not
-	//			6. saving the search criteria??
-	// output: list of authors
 	
 	// TODO: Query 2 Search for similar authors
 	// result based on:	1. were members of same committee
