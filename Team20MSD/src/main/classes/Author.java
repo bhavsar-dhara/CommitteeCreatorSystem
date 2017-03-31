@@ -11,12 +11,20 @@ public class Author implements Serializable {
 
 	public Author() { }
 	
+//	Constructor of Second part of UI
 	public Author(String name) {
 		super();
 		this.name = name;
 	}
 
-	// Constructor
+//	Constructor of First part of UI
+	public Author(String title, String name, String noOfPublication) {
+		this.name = name;
+		this.title = title;
+		this.noOfPublication = noOfPublication;
+	}
+	
+//	SearchQuery constructor
 	public Author(String title, String name, String noOfPublication, Publication publication) {
 		this.name = name;
 		this.title = title;
