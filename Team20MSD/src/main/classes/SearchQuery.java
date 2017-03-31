@@ -6,7 +6,7 @@ import java.util.*;
 import javafx.collections.FXCollections;
 import main.interfaces.QueryEngine;
 
-public class SearchQuery implements QueryEngine {
+public class SearchQuery {
 
 	static Connection conn;
 
@@ -115,8 +115,7 @@ public class SearchQuery implements QueryEngine {
 	// output: list of authors
 
 	//TODO : multiple conferences selected?
-	@Override
-	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
+	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
 		
 		
@@ -192,8 +191,7 @@ public class SearchQuery implements QueryEngine {
 	// 2. have papers published in similar conference or journal
 	// output: list of authors
 
-	@Override
-	public int getNumberofPBByAuthorName(Author author) {
+	public static int getNumberofPBByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_NOPB_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
@@ -210,8 +208,7 @@ public class SearchQuery implements QueryEngine {
 		return -1;
 	}
 
-	@Override
-	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+	public static List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_NOPB);
@@ -232,8 +229,7 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	@Override
-	public List<Publication> getPublicationByAuthorName(Author author) {
+	public static List<Publication> getPublicationByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_TITLE_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
@@ -255,8 +251,7 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	@Override
-	public List<Author> getSimilarAuthorBySamePublication(Author author) {
+	public static List<Author> getSimilarAuthorBySamePublication(Author author) {
 		List<Publication> listofpublication = getPublicationByAuthorName(author);
 		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
@@ -279,8 +274,7 @@ public class SearchQuery implements QueryEngine {
 		return listofAuthorBySamePB;
 	}
 
-	@Override
-	public List<Author> getSimilarAuthorList(Author author) {
+	public static List<Author> getSimilarAuthorList(Author author) {
         List<Author> similarAuthors = new ArrayList<Author>();
         List<Author> similarAuthorofSameNopb;
         List<Author> similarAuthorofSamePublication;
@@ -298,8 +292,7 @@ public class SearchQuery implements QueryEngine {
 	// input: author name
 	// output: list of author's publication list
 
-	@Override
-	public List<Author> fetchAuthorDetails(Author author) {
+	public static List<Author> fetchAuthorDetails(Author author) {
 		List<Author> authorList = new ArrayList<>();
 		try {
 			Statement st = conn.createStatement();
@@ -337,4 +330,45 @@ public class SearchQuery implements QueryEngine {
 		return authorList;
 	}
 
+	public static List<String> fetchJournalNames() {
+		List<String> journalList = new ArrayList<>();
+		try {
+			Statement st = conn.createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct journal from tb_publication ");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				journalList.add(rs.getString("journal"));
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(se.getMessage());
+		}
+		return journalList;
+	}
+
+	public static List<String> fetchYearsAvailable() {
+		List<String> journalList = new ArrayList<>();
+		try {
+			Statement st = conn.createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct pbyear from tb_publication order by pbyear desc; ");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				journalList.add(rs.getString("pbyear"));
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "querying publication year list.");
+			System.err.println(se.getMessage());
+		}
+		return journalList;
+	}
 }
