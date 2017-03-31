@@ -17,43 +17,42 @@ public class SearchQuery implements QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-	public static void main(String[] args) {
-		List<Author> listOfAuthors = new ArrayList<Author>();
-		Statement st = null;
-		try {
-			conn = connectToDatabaseOrDisconnect();
-			st = conn.createStatement();
-
-			String query = "SELECT distinct tp.*, tn.* "
-					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
-					+ "where tp.title = ta.title "
-					+ "and ta.authorname = tn.authorname " 
-					+ "and lower(tp.journal) = 'acta inf.' "
-					+ "and lower(tp.title) like '%parallel%' " 
-					+ "and tp.pbyear = 1996 " 
-					+ "and tn.numberofpb = 2";
-
-			ResultSet rs = null;
-
-			rs = st.executeQuery(query.toString());
-
-			while (rs.next()) {
-				Author author = new Author();
-				author.setName(rs.getString("authorname"));
-				author.setTitle(rs.getString("title"));
-				System.out.println(author.toString());
-				listOfAuthors.add(author);
-			}
-
-			rs.close();
-			st.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-
-	}
+//	public static void main(String[] args) {
+//		List<Author> listOfAuthors = new ArrayList<Author>();
+//		Statement st = null;
+//		try {
+//			conn = connectToDatabaseOrDisconnect();
+//			st = conn.createStatement();
+//
+//			String query = "SELECT distinct tp.*, tn.* "
+//					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
+//					+ "where tp.title = ta.title "
+//					+ "and ta.authorname = tn.authorname " 
+//					+ "and lower(tp.journal) = 'acta inf.' "
+//					+ "and lower(tp.title) like '%parallel%' " 
+//					+ "and tp.pbyear = 1996 " 
+//					+ "and tn.numberofpb = 2";
+//
+//			ResultSet rs = null;
+//
+//			rs = st.executeQuery(query.toString());
+//
+//			while (rs.next()) {
+//				Author author = new Author();
+//				author.setName(rs.getString("authorname"));
+//				author.setTitle(rs.getString("title"));
+//				System.out.println(author.toString());
+//				listOfAuthors.add(author);
+//			}
+//
+//			rs.close();
+//			st.close();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			System.err.println(e.getMessage());
+//		}
+//
+//	}
 
 	public SearchQuery() {
 		// connect to POSTGRESQL Database
@@ -92,7 +91,7 @@ public class SearchQuery implements QueryEngine {
 		return conn;
 	}
 
-	// TODO: Query 1 Search for author
+	// Query 1 Search for author list
 	// input: 1. from a particular conference/journal
 	// 2. keywords present in the title of the publication
 	// 3. selecting publication year(s)
@@ -101,7 +100,7 @@ public class SearchQuery implements QueryEngine {
 	// 6. saving the search criteria??
 	// output: list of authors
 
-	private List<Author> populateListOfAuthors(Connection conn, String confJournal, String keywords, int[] years,
+	public List<Author> populateListOfAuthors(Connection conn, String confJournal, String keywords, int[] years,
 			int noOfPublication, int prevMembrYears) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
@@ -109,10 +108,50 @@ public class SearchQuery implements QueryEngine {
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
+			
 			if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
 					&& years != null && noOfPublication < 0) {
 				query.append(allQueryParameters(confJournal, keywords, years, noOfPublication));
 			}
+			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
+					&& years != null) {
+				query.append(queryParameters3a(confJournal, keywords, years));
+			}
+			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
+					&& noOfPublication < 0) {
+				query.append(queryParameters3b(confJournal, keywords, noOfPublication));
+			}
+			else if (confJournal != null && confJournal.equals("") && years != null && noOfPublication < 0) {
+				query.append(queryParameters3c(confJournal, years, noOfPublication));
+			}
+			else if (keywords != null && keywords.equals("") && years != null && noOfPublication < 0) {
+				query.append(queryParameters3d(keywords, years, noOfPublication));
+			}
+			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")) {
+				query.append(queryParameters2a(confJournal, keywords));
+			}
+			else if (keywords != null && keywords.equals("") && years != null) {
+				query.append(queryParameters2b(keywords, years));
+			}
+			else if (years != null && noOfPublication < 0) {
+				query.append(queryParameters2c(years, noOfPublication));
+			}
+			else if (confJournal != null && confJournal.equals("") && noOfPublication < 0) {
+				query.append(queryParameters2d(confJournal, noOfPublication));
+			}
+			else if (confJournal != null && confJournal.equals("")) {
+				query.append(queryParameters1a(confJournal));
+			}
+			else if (keywords != null && keywords.equals("")) {
+				query.append(queryParameters1b(keywords));
+			}
+			else if (years != null) {
+				query.append(queryParameters1c(years));
+			}
+			else if (noOfPublication < 0) {
+				query.append(queryParameters1d(noOfPublication));
+			}
+			
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
 				Author author = new Author();
@@ -147,7 +186,97 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	// TODO: Query 2 Search for similar authors
+	private String queryParameters3a(String confJournal, String keywords, int[] years) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		return query.toString();
+	}
+
+	private String queryParameters3b(String confJournal, String keywords, int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	private String queryParameters3c(String confJournal, int[] years, int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	private String queryParameters3d(String keywords, int[] years, int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	private String queryParameters2a(String confJournal, String keywords) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		return query.toString();
+	}
+
+	private String queryParameters2b(String keywords, int[] years) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		return query.toString();
+	}
+
+	private String queryParameters2c(int[] years, int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	private String queryParameters2d(String confJournal, int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	private String queryParameters1a(String confJournal) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.journal) = '" + confJournal + "' ");
+		return query.toString();
+	}
+
+	private String queryParameters1b(String keywords) {
+		StringBuilder query = new StringBuilder();
+		query.append("and lower(tp.title) like '%" + keywords + "%' ");
+		return query.toString();
+	}
+
+	private String queryParameters1c(int[] years) {
+		StringBuilder query = new StringBuilder();
+		// TODO : handle multiple years
+		query.append("and tp.pbyear = " + years + " ");
+		return query.toString();
+	}
+
+	private String queryParameters1d(int noOfPublication) {
+		StringBuilder query = new StringBuilder();
+		query.append("and tp.numberofpb = " + noOfPublication + " ");
+		return query.toString();
+	}
+
+	// Query 2 Search for similar authors
 	// result based on: 1. were members of same committee
 	// 2. have papers published in similar conference or journal
 	// output: list of authors
@@ -225,4 +354,10 @@ public class SearchQuery implements QueryEngine {
 		}
 		return listofAuthorBySamePB;
 	}
+
+	// TODO: Query 3 Search authors details
+	// input: author name
+	// output: list of author's publication list
+	
+	
 }
