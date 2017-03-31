@@ -17,7 +17,7 @@ public class SearchQuery implements QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-//	Main method to test database queries from code
+//// //	Main method to test database queries from code
 //	public static void main(String[] args) {
 //		List<Author> listOfAuthors = new ArrayList<Author>();
 //		
@@ -26,11 +26,13 @@ public class SearchQuery implements QueryEngine {
 //			conn = connectToDatabaseOrDisconnect();
 ////			st = conn.createStatement();
 //			
-//			int[] intArray = new int[1];
-//			intArray[0] = 1996;
-//			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
+////			int[] intArray = new int[1];
+////			intArray[0] = 1996;
+////			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
 //			
 ////			fetchAuthorDetails("sanjeev");
+//			
+//			
 //			
 //			// QUERY for getting author list
 ////			String query = "SELECT distinct tp.*, tn.* "
@@ -300,10 +302,11 @@ public class SearchQuery implements QueryEngine {
 	// 2. have papers published in similar conference or journal
 	// output: list of authors
 
-	int getNumberofPBByAuthorName(String authorName) {
+	@Override
+	public int getNumberofPBByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_NOPB_BY_AUTHORNAME);
-			ps.setString(1, authorName);
+			ps.setString(1, author.getName());
 			ResultSet rs = ps.executeQuery();
 			int numberofPB = 0;
 			while (rs.next()) {
@@ -318,15 +321,18 @@ public class SearchQuery implements QueryEngine {
 	}
 
 	@Override
-	public List<String> getSimilarAuthorBySameNumberofPB(String authorName) {
-		int inputAuthorNumberofPB = getNumberofPBByAuthorName(authorName);
+	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_NOPB);
 			ps.setInt(1, inputAuthorNumberofPB);
 			ResultSet rs = ps.executeQuery();
-			List<String> authorsBySameNOPB = new ArrayList<String>();
+			List<Author> authorsBySameNOPB = new ArrayList<Author>();
 			while (rs.next()) {
-				authorsBySameNOPB.add(rs.getString(1));
+				Author authorRS = new Author();
+				authorRS.setName(rs.getString("authorname"));
+//				authorsBySameNOPB.add(rs.getString(1));
+				authorsBySameNOPB.add(authorRS);
 			}
 			return authorsBySameNOPB;
 		} catch (SQLException se) {
@@ -336,15 +342,18 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	List<String> getPublicationByAuthorName(String authorName) {
+	@Override
+	public List<Author> getPublicationByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_TITLE_BY_AUTHORNAME);
-			ps.setString(1, authorName);
+			ps.setString(1, author.getName());
 			ResultSet rs = ps.executeQuery();
-			List<String> listofpublicationbyauthorname = new ArrayList<String>();
+			List<Author> listofpublicationbyauthorname = new ArrayList<Author>();
 			while (rs.next()) {
-				String publication = rs.getString(1);
-				listofpublicationbyauthorname.add(publication);
+				Author authorRS = new Author();
+				authorRS.setTitle(rs.getString("title"));
+//				String publication = rs.getString(1);
+				listofpublicationbyauthorname.add(authorRS);
 			}
 			return listofpublicationbyauthorname;
 		} catch (SQLException se) {
@@ -355,18 +364,21 @@ public class SearchQuery implements QueryEngine {
 	}
 
 	@Override
-	public List<String> getSimilarAuthorBySamePublication(String authorName) {
-		List<String> listofpublication = getPublicationByAuthorName(authorName);
-		List<String> listofAuthorBySamePB = new ArrayList<String>();
+	public List<Author> getSimilarAuthorBySamePublication(Author author) {
+		List<Author> listofpublication = getPublicationByAuthorName(author);
+		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
-			String titleName = listofpublication.get(i);
+			Author titleName = listofpublication.get(i);
 			try {
 				PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_TITLE);
-				ps.setString(1, titleName);
+//				ps.setString(1, titleName);
+				ps.setString(1, titleName.getTitle());
 				ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
-					String authornameBySamePB = rs.getString(1);
-					listofAuthorBySamePB.add(authornameBySamePB);
+					Author authorRS = new Author();
+					authorRS.setName(rs.getString("authorname"));
+//					String authornameBySamePB = rs.getString(1);
+					listofAuthorBySamePB.add(authorRS);
 				}
 			} catch (SQLException se) {
 				System.err.println(SQLEXCEPTION + "querying similar author who have co-authored a paper.");
@@ -376,26 +388,41 @@ public class SearchQuery implements QueryEngine {
 		return listofAuthorBySamePB;
 	}
 
+	@Override
+	public List<Author> getSimilarAuthorList(Author author) {
+        List<Author> similarAuthors = new ArrayList<Author>();
+        List<Author> similarAuthorofSameNopb;
+        List<Author> similarAuthorofSamePublication;
+
+        similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
+        similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
+
+        similarAuthors.addAll(similarAuthorofSameNopb);
+        similarAuthors.addAll(similarAuthorofSamePublication);
+
+        return similarAuthors;
+    }
+	
 	// Query 3 Search authors details
 	// input: author name
 	// output: list of author's publication list
 
 	@Override
-	public List<Author> fetchAuthorDetails(String authorName) {
+	public List<Author> fetchAuthorDetails(Author author) {
 		List<Author> authorList = new ArrayList<>();
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
-			query.append("and lower(ta.authorname) like '%" + authorName + "%'");
+			query.append("and lower(ta.authorname) like '%" + author.getName() + "%'");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-				Author author = new Author();
-				author.setName(rs.getString("authorname"));
-				author.setTitle(rs.getString("title"));
-				author.setNoOfPublication(rs.getString("numberofpb"));
+				Author authorRS = new Author();
+				authorRS.setName(rs.getString("authorname"));
+				authorRS.setTitle(rs.getString("title"));
+				authorRS.setNoOfPublication(rs.getString("numberofpb"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setPbyear(rs.getInt("pbYear"));
@@ -405,9 +432,9 @@ public class SearchQuery implements QueryEngine {
 				publication.setUrl(rs.getString("url"));
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
-				author.setPublication(publication);
-				System.out.println(author.toString());
-				authorList.add(author);
+				authorRS.setPublication(publication);
+				System.out.println(authorRS.toString());
+				authorList.add(authorRS);
 			}
 
 			rs.close();
