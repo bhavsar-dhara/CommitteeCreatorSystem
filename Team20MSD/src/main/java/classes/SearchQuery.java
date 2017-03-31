@@ -298,7 +298,7 @@ public class SearchQuery implements QueryEngine {
 		return -1;
 	}
 
-	static List<String> getSimilarAuthorBySameNumberofPB(String authorName) {
+	public static List<String> getSimilarAuthorBySameNumberofPB(String authorName) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(authorName);
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_NOPB);
@@ -334,7 +334,7 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	static List<String> getSimilarAuthorBySamePublication(String authorName) {
+	public static List<String> getSimilarAuthorBySamePublication(String authorName) {
 		List<String> listofpublication = getPublicationByAuthorName(authorName);
 		List<String> listofAuthorBySamePB = new ArrayList<String>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
