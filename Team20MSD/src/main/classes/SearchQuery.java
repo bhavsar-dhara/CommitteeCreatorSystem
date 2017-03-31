@@ -351,8 +351,8 @@ public class SearchQuery {
 		return journalList;
 	}
 
-	public static List<String> fetchYearsAvailable() {
-		List<String> journalList = new ArrayList<>();
+	public static List<Integer> fetchYearsAvailable() {
+		List<Integer> yearList = new ArrayList<>();
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
@@ -360,7 +360,7 @@ public class SearchQuery {
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-				journalList.add(rs.getString("pbyear"));
+				yearList.add(rs.getInt("pbyear"));
 			}
 
 			rs.close();
@@ -369,6 +369,6 @@ public class SearchQuery {
 			System.err.println(SQLEXCEPTION + "querying publication year list.");
 			System.err.println(se.getMessage());
 		}
-		return journalList;
+		return yearList;
 	}
 }
