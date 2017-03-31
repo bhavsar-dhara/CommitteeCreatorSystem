@@ -75,18 +75,6 @@ public class SearchQuery implements QueryEngine {
 		conn = connectToDatabaseOrDisconnect();
 	}
 
-	@Override
-	public ArrayList<Author> answerQuery(SearchQuery query) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void sortSearchResult(SortCriterion c) {
-		// TODO Auto-generated method stub
-
-	}
-
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
 		Connection conn = null;
