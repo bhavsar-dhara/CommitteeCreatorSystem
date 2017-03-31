@@ -17,6 +17,7 @@ public class SearchQuery implements QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
+//	Main method to test database queries from code
 //	public static void main(String[] args) {
 //		List<Author> listOfAuthors = new ArrayList<Author>();
 //		
@@ -91,8 +92,13 @@ public class SearchQuery implements QueryEngine {
 		Connection conn = null;
 		try {
 			Class.forName("org.postgresql.Driver");
+//			Connection to local database
 			String url = "jdbc:postgresql://localhost:5432/msddblp";
 			conn = DriverManager.getConnection(url, "postgres", "1991715");
+//			Connection to AWS PostgreSQL Database
+//			String url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+//			url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+//			conn = DriverManager.getConnection(url, "luliuAWS", "1991715ll");
 			System.out.println("Connection made successfully...");
 		} catch (ClassNotFoundException e) {
 			System.err.println(CLASSNOTFOUNDEXECPTION);
