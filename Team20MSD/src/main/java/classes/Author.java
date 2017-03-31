@@ -95,6 +95,17 @@ public class Author implements Serializable {
 		this.publicationList = publicationList;
 	}
 
+	@Override
+	public String toString() {
+		String author = // "id = " + id.toString() + " \n " +
+				"title = " + title + " \n " +
+				"name = " + name + " \n " +
+				"noOfPublication = " + noOfPublication + " \n "; 
+//				+
+//				"publicationList.size() = " + publicationList.size();
+		return author;
+	}
+	
 	// titleAsc: -> void
 	// EFFECT: Sort this author's publications by title in ascending order
 	public void titleAsc() {
