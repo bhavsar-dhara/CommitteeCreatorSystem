@@ -8,7 +8,7 @@ import main.java.interfaces.QueryEngine;
 public class SearchQuery implements QueryEngine {
 
 	static Connection conn;
-	
+
 	static String SQLEXCEPTION = "Threw a SQLException while ";
 	static String CLASSNOTFOUNDEXECPTION = "Threw a ClassNotFoundException while connecting to the database.";
 
@@ -17,34 +17,41 @@ public class SearchQuery implements QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-//	public static void main(String[] args) {
-//		List<Author> listOfAuthors = new ArrayList<Author>();
+	public static void main(String[] args) {
+		List<Author> listOfAuthors = new ArrayList<Author>();
+		
 //		Statement st = null;
 //		try {
-//			conn = connectToDatabaseOrDisconnect();
+			conn = connectToDatabaseOrDisconnect();
 //			st = conn.createStatement();
-//
-//	QUERY for getting author list
+			
+			int[] intArray = new int[1];
+			intArray[0] = 1996;
+			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
+			
+//			fetchAuthorDetails("sanjeev");
+			
+			// QUERY for getting author list
 //			String query = "SELECT distinct tp.*, tn.* "
-//					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
-//					+ "where tp.title = ta.title "
-//					+ "and ta.authorname = tn.authorname " 
-//					+ "and lower(tp.journal) = 'acta inf.' "
-//					+ "and lower(tp.title) like '%parallel%' " 
-//					+ "and tp.pbyear = 1996 " 
-//					+ "and tn.numberofpb = 2";
+//					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + "where tp.title = ta.title "
+//					+ "and ta.authorname = tn.authorname " + "and lower(tp.journal) = 'acta inf.' "
+//					+ "and lower(tp.title) like '%parallel%' " + "and tp.pbyear = 1996 " + "and tn.numberofpb = 2";
 //
-//	QUERY for getting author details
-//	String query = "SELECT distinct tp.*, tn.* " 
-//					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
-//					+ " where tp.title = ta.title " 
-//					+ " and ta.authorname = tn.authorname"
-//					+ " and lower(ta.authorname) like '%sanjeev%'"; 
-//	
+//			System.out.println(query.toString());
+			
+			// QUERY for getting author details
+//			String query2 = "SELECT distinct tp.*, tn.* "
+//					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + " where tp.title = ta.title "
+//					+ " and ta.authorname = tn.authorname" + " and lower(ta.authorname) like '%sanjeev%'";
+//			
+//			System.out.println(query2.toString());
+
 //			ResultSet rs = null;
-//
+
 //			rs = st.executeQuery(query.toString());
-//
+//			rs = st.executeQuery(query2.toString());
+
+			
 //			while (rs.next()) {
 //				Author author = new Author();
 //				author.setName(rs.getString("authorname"));
@@ -52,15 +59,15 @@ public class SearchQuery implements QueryEngine {
 //				System.out.println(author.toString());
 //				listOfAuthors.add(author);
 //			}
-//
+
 //			rs.close();
 //			st.close();
 //		} catch (SQLException e) {
 //			e.printStackTrace();
 //			System.err.println(e.getMessage());
 //		}
-//
-//	}
+
+	}
 
 	public SearchQuery() {
 		// connect to POSTGRESQL Database
@@ -108,59 +115,48 @@ public class SearchQuery implements QueryEngine {
 	// 6. saving the search criteria??
 	// output: list of authors
 
-	public List<Author> populateListOfAuthors(Connection conn, String confJournal, String keywords, int[] years,
-			int noOfPublication, int prevMembrYears) {
+	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
+			int noOfPublication) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
-			
+
 			if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
 					&& years != null && noOfPublication < 0) {
 				query.append(allQueryParameters(confJournal, keywords, years, noOfPublication));
-			}
-			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
+			} else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
 					&& years != null) {
 				query.append(queryParameters3a(confJournal, keywords, years));
-			}
-			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
+			} else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")
 					&& noOfPublication < 0) {
 				query.append(queryParameters3b(confJournal, keywords, noOfPublication));
-			}
-			else if (confJournal != null && confJournal.equals("") && years != null && noOfPublication < 0) {
+			} else if (confJournal != null && confJournal.equals("") && years != null && noOfPublication < 0) {
 				query.append(queryParameters3c(confJournal, years, noOfPublication));
-			}
-			else if (keywords != null && keywords.equals("") && years != null && noOfPublication < 0) {
+			} else if (keywords != null && keywords.equals("") && years != null && noOfPublication < 0) {
 				query.append(queryParameters3d(keywords, years, noOfPublication));
-			}
-			else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")) {
+			} else if (confJournal != null && confJournal.equals("") && keywords != null && keywords.equals("")) {
 				query.append(queryParameters2a(confJournal, keywords));
-			}
-			else if (keywords != null && keywords.equals("") && years != null) {
+			} else if (keywords != null && keywords.equals("") && years != null) {
 				query.append(queryParameters2b(keywords, years));
-			}
-			else if (years != null && noOfPublication < 0) {
+			} else if (years != null && noOfPublication < 0) {
 				query.append(queryParameters2c(years, noOfPublication));
-			}
-			else if (confJournal != null && confJournal.equals("") && noOfPublication < 0) {
+			} else if (confJournal != null && confJournal.equals("") && noOfPublication < 0) {
 				query.append(queryParameters2d(confJournal, noOfPublication));
-			}
-			else if (confJournal != null && confJournal.equals("")) {
+			} else if (confJournal != null && confJournal.equals("")) {
 				query.append(queryParameters1a(confJournal));
-			}
-			else if (keywords != null && keywords.equals("")) {
+			} else if (keywords != null && keywords.equals("")) {
 				query.append(queryParameters1b(keywords));
-			}
-			else if (years != null) {
+			} else if (years != null) {
 				query.append(queryParameters1c(years));
-			}
-			else if (noOfPublication < 0) {
+			} else if (noOfPublication < 0) {
 				query.append(queryParameters1d(noOfPublication));
 			}
-			
+
 			ResultSet rs = st.executeQuery(query.toString());
+			// System.out.println(rs.getFetchSize() + "......");
 			while (rs.next()) {
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));
@@ -176,6 +172,7 @@ public class SearchQuery implements QueryEngine {
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
 				author.setPublication(publication);
+				System.out.println(author.toString());
 				listOfAuthors.add(author);
 			}
 			rs.close();
@@ -187,7 +184,7 @@ public class SearchQuery implements QueryEngine {
 		return listOfAuthors;
 	}
 
-	private String allQueryParameters(String confJournal, String keywords, int[] years, int noOfPublication) {
+	private static String allQueryParameters(String confJournal, String keywords, int[] years, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
@@ -197,7 +194,7 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters3a(String confJournal, String keywords, int[] years) {
+	private static String queryParameters3a(String confJournal, String keywords, int[] years) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
@@ -206,7 +203,7 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters3b(String confJournal, String keywords, int noOfPublication) {
+	private static String queryParameters3b(String confJournal, String keywords, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
@@ -214,7 +211,7 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters3c(String confJournal, int[] years, int noOfPublication) {
+	private static String queryParameters3c(String confJournal, int[] years, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		// TODO : handle multiple years
@@ -223,7 +220,7 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters3d(String keywords, int[] years, int noOfPublication) {
+	private static String queryParameters3d(String keywords, int[] years, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
 		// TODO : handle multiple years
@@ -232,14 +229,14 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters2a(String confJournal, String keywords) {
+	private static String queryParameters2a(String confJournal, String keywords) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
 		return query.toString();
 	}
 
-	private String queryParameters2b(String keywords, int[] years) {
+	private static String queryParameters2b(String keywords, int[] years) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
 		// TODO : handle multiple years
@@ -247,7 +244,7 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters2c(int[] years, int noOfPublication) {
+	private static String queryParameters2c(int[] years, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		// TODO : handle multiple years
 		query.append("and tp.pbyear = " + years + " ");
@@ -255,33 +252,33 @@ public class SearchQuery implements QueryEngine {
 		return query.toString();
 	}
 
-	private String queryParameters2d(String confJournal, int noOfPublication) {
+	private static String queryParameters2d(String confJournal, int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		query.append("and tp.numberofpb = " + noOfPublication + " ");
 		return query.toString();
 	}
 
-	private String queryParameters1a(String confJournal) {
+	private static String queryParameters1a(String confJournal) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.journal) = '" + confJournal + "' ");
 		return query.toString();
 	}
 
-	private String queryParameters1b(String keywords) {
+	private static String queryParameters1b(String keywords) {
 		StringBuilder query = new StringBuilder();
 		query.append("and lower(tp.title) like '%" + keywords + "%' ");
 		return query.toString();
 	}
 
-	private String queryParameters1c(int[] years) {
+	private static String queryParameters1c(int[] years) {
 		StringBuilder query = new StringBuilder();
 		// TODO : handle multiple years
 		query.append("and tp.pbyear = " + years + " ");
 		return query.toString();
 	}
 
-	private String queryParameters1d(int noOfPublication) {
+	private static String queryParameters1d(int noOfPublication) {
 		StringBuilder query = new StringBuilder();
 		query.append("and tp.numberofpb = " + noOfPublication + " ");
 		return query.toString();
@@ -369,7 +366,7 @@ public class SearchQuery implements QueryEngine {
 	// Query 3 Search authors details
 	// input: author name
 	// output: list of author's publication list
-	
+
 	public static List<Author> fetchAuthorDetails(String authorName) {
 		List<Author> authorList = new ArrayList<>();
 		try {
@@ -378,7 +375,7 @@ public class SearchQuery implements QueryEngine {
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 			query.append("and lower(ta.authorname) like '%" + authorName + "%'");
-		
+
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
 				Author author = new Author();
@@ -395,6 +392,7 @@ public class SearchQuery implements QueryEngine {
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
 				author.setPublication(publication);
+				System.out.println(author.toString());
 				authorList.add(author);
 			}
 
@@ -406,5 +404,5 @@ public class SearchQuery implements QueryEngine {
 		}
 		return authorList;
 	}
-	
+
 }
