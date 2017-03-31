@@ -1,5 +1,6 @@
 package test.java;
 
+<<<<<<< HEAD
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -24,6 +25,10 @@ public class TestQueryEngine {
 	}
 
 	@Test
+=======
+public class TestQueryEngine {
+	
+>>>>>>> master
 	public void testSearchAuthorQuery() {
 		
 	}
