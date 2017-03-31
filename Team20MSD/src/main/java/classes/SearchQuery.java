@@ -90,6 +90,7 @@ public class SearchQuery implements QueryEngine {
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
 		Connection conn = null;
+//		conn = connectToDatabaseOrDisconnect();
 		try {
 			Class.forName("org.postgresql.Driver");
 //			Connection to local database
@@ -128,6 +129,7 @@ public class SearchQuery implements QueryEngine {
 			int noOfPublication) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
+			conn = connectToDatabaseOrDisconnect();
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
