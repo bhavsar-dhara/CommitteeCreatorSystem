@@ -5,6 +5,7 @@ public class Publication {
 	private String title;
 	private String type;
 	private int pbyear;
+	private String pages;
 	private String journal;
 	private String ee;
 	private String url;
@@ -16,6 +17,10 @@ public class Publication {
 	private String editor;
 	private String school;
 	
+	public Publication() {
+		super();
+	}
+
 	public Publication(String title, String type, int pbyear, String journal, String ee, String url,
 			String volume, String number, String booktitle, String isbn, String publisher, String editor,
 			String school) {
@@ -65,6 +70,14 @@ public class Publication {
 
 	public void setPbyear(int pbyear) {
 		this.pbyear = pbyear;
+	}
+
+	public String getPages() {
+		return pages;
+	}
+
+	public void setPages(String pages) {
+		this.pages = pages;
 	}
 
 	public String getJournal() {
@@ -147,4 +160,9 @@ public class Publication {
 		this.school = school;
 	}
 	
+	@Override
+	public String toString() {
+		
+		return super.toString();
+	}
 }

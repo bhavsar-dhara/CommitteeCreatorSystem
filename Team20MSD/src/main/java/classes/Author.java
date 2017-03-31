@@ -12,6 +12,11 @@ import org.hibernate.annotations.Entity;
 
 public class Author implements Serializable {
 
+	/**
+	 * Default serial id
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Author() { }
 
 	// Constructor
@@ -27,7 +32,7 @@ public class Author implements Serializable {
 	private int checkYear;
 	private String role;
 	private boolean isCommittee;
-	private List<Publication> publicationList;
+	private Publication publication;
 	
 	public Long getId() {
 		return id;
@@ -87,23 +92,34 @@ public class Author implements Serializable {
 		this.isCommittee = isCommittee;
 	}
 
-	public List<Publication> getPublicationList() {
-		return publicationList;
+	public Publication getPublication() {
+		return publication;
 	}
 
-	public void setPublicationList(List<Publication> publicationList) {
-		this.publicationList = publicationList;
+	public void setPublication(Publication publication) {
+		this.publication = publication;
 	}
 
 	@Override
 	public String toString() {
-		String author = // "id = " + id.toString() + " \n " +
-				"title = " + title + " \n " +
-				"name = " + name + " \n " +
-				"noOfPublication = " + noOfPublication + " \n "; 
-//				+
-//				"publicationList.size() = " + publicationList.size();
-		return author;
+		StringBuilder author = new StringBuilder();
+		if(id != null)
+			author.append("id = " + id.toString() + " \n ");
+		if(title != null)
+			author.append("title = " + title + " \n ");
+		if(name != null)
+			author.append("name = " + name + " \n ");
+		if(noOfPublication != null)
+			author.append("noOfPublication = " + noOfPublication + " \n ");
+//		if(checkYear > 0)
+//			author.append("checkYear = " + checkYear + " \n ");
+		if(role != null)
+			author.append("role = " + role + " \n ");
+//		if(isCommittee == null)
+//			author.append("isCommittee = " + isCommittee + " \n ");
+		if(publication != null) 
+			author.append("publication = " + publication.toString());
+		return author.toString();
 	}
 	
 	// titleAsc: -> void
