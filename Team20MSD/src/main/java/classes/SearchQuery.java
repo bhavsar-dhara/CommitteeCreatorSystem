@@ -124,7 +124,8 @@ public class SearchQuery implements QueryEngine {
 	// output: list of authors
 
 	//TODO : multiple conferences selected?
-	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
+	@Override
+	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
@@ -305,7 +306,7 @@ public class SearchQuery implements QueryEngine {
 	// 2. have papers published in similar conference or journal
 	// output: list of authors
 
-	static int getNumberofPBByAuthorName(String authorName) {
+	int getNumberofPBByAuthorName(String authorName) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_NOPB_BY_AUTHORNAME);
 			ps.setString(1, authorName);
@@ -322,7 +323,8 @@ public class SearchQuery implements QueryEngine {
 		return -1;
 	}
 
-	public static List<String> getSimilarAuthorBySameNumberofPB(String authorName) {
+	@Override
+	public List<String> getSimilarAuthorBySameNumberofPB(String authorName) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(authorName);
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_NOPB);
@@ -340,7 +342,7 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	static List<String> getPublicationByAuthorName(String authorName) {
+	List<String> getPublicationByAuthorName(String authorName) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_TITLE_BY_AUTHORNAME);
 			ps.setString(1, authorName);
@@ -358,7 +360,8 @@ public class SearchQuery implements QueryEngine {
 		return null;
 	}
 
-	public static List<String> getSimilarAuthorBySamePublication(String authorName) {
+	@Override
+	public List<String> getSimilarAuthorBySamePublication(String authorName) {
 		List<String> listofpublication = getPublicationByAuthorName(authorName);
 		List<String> listofAuthorBySamePB = new ArrayList<String>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
@@ -383,7 +386,8 @@ public class SearchQuery implements QueryEngine {
 	// input: author name
 	// output: list of author's publication list
 
-	public static List<Author> fetchAuthorDetails(String authorName) {
+	@Override
+	public List<Author> fetchAuthorDetails(String authorName) {
 		List<Author> authorList = new ArrayList<>();
 		try {
 			Statement st = conn.createStatement();
