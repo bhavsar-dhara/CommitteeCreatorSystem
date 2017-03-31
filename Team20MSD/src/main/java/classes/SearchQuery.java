@@ -96,6 +96,8 @@ public class SearchQuery implements QueryEngine {
 			String url = "jdbc:postgresql://localhost:5432/msddblp";
 			conn = DriverManager.getConnection(url, "postgres", "1991715");
 //			Connection to AWS PostgreSQL Database
+//			ERROR ::: on trying to connect to remote
+//			Connection refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 //			String url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
 //			url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
 //			conn = DriverManager.getConnection(url, "luliuAWS", "1991715ll");
