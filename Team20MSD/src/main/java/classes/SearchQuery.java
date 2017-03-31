@@ -17,57 +17,57 @@ public class SearchQuery implements QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-	public static void main(String[] args) {
-		List<Author> listOfAuthors = new ArrayList<Author>();
-		
-//		Statement st = null;
-//		try {
-			conn = connectToDatabaseOrDisconnect();
-//			st = conn.createStatement();
-			
-			int[] intArray = new int[1];
-			intArray[0] = 1996;
-			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
-			
-//			fetchAuthorDetails("sanjeev");
-			
-			// QUERY for getting author list
-//			String query = "SELECT distinct tp.*, tn.* "
-//					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + "where tp.title = ta.title "
-//					+ "and ta.authorname = tn.authorname " + "and lower(tp.journal) = 'acta inf.' "
-//					+ "and lower(tp.title) like '%parallel%' " + "and tp.pbyear = 1996 " + "and tn.numberofpb = 2";
-//
-//			System.out.println(query.toString());
-			
-			// QUERY for getting author details
-//			String query2 = "SELECT distinct tp.*, tn.* "
-//					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + " where tp.title = ta.title "
-//					+ " and ta.authorname = tn.authorname" + " and lower(ta.authorname) like '%sanjeev%'";
+//	public static void main(String[] args) {
+//		List<Author> listOfAuthors = new ArrayList<Author>();
+//		
+////		Statement st = null;
+////		try {
+//			conn = connectToDatabaseOrDisconnect();
+////			st = conn.createStatement();
 //			
-//			System.out.println(query2.toString());
-
-//			ResultSet rs = null;
-
-//			rs = st.executeQuery(query.toString());
-//			rs = st.executeQuery(query2.toString());
-
-			
-//			while (rs.next()) {
-//				Author author = new Author();
-//				author.setName(rs.getString("authorname"));
-//				author.setTitle(rs.getString("title"));
-//				System.out.println(author.toString());
-//				listOfAuthors.add(author);
-//			}
-
-//			rs.close();
-//			st.close();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//			System.err.println(e.getMessage());
-//		}
-
-	}
+//			int[] intArray = new int[1];
+//			intArray[0] = 1996;
+//			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
+//			
+////			fetchAuthorDetails("sanjeev");
+//			
+//			// QUERY for getting author list
+////			String query = "SELECT distinct tp.*, tn.* "
+////					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + "where tp.title = ta.title "
+////					+ "and ta.authorname = tn.authorname " + "and lower(tp.journal) = 'acta inf.' "
+////					+ "and lower(tp.title) like '%parallel%' " + "and tp.pbyear = 1996 " + "and tn.numberofpb = 2";
+////
+////			System.out.println(query.toString());
+//			
+//			// QUERY for getting author details
+////			String query2 = "SELECT distinct tp.*, tn.* "
+////					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + " where tp.title = ta.title "
+////					+ " and ta.authorname = tn.authorname" + " and lower(ta.authorname) like '%sanjeev%'";
+////			
+////			System.out.println(query2.toString());
+//
+////			ResultSet rs = null;
+//
+////			rs = st.executeQuery(query.toString());
+////			rs = st.executeQuery(query2.toString());
+//
+//			
+////			while (rs.next()) {
+////				Author author = new Author();
+////				author.setName(rs.getString("authorname"));
+////				author.setTitle(rs.getString("title"));
+////				System.out.println(author.toString());
+////				listOfAuthors.add(author);
+////			}
+//
+////			rs.close();
+////			st.close();
+////		} catch (SQLException e) {
+////			e.printStackTrace();
+////			System.err.println(e.getMessage());
+////		}
+//
+//	}
 
 	public SearchQuery() {
 		// connect to POSTGRESQL Database
