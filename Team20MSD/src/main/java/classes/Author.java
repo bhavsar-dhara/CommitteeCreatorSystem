@@ -2,6 +2,7 @@ package main.java.classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +10,6 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.Entity;
 
-@Entity
 public class Author implements Serializable {
 
 	public Author() { }
@@ -20,8 +20,6 @@ public class Author implements Serializable {
 		this.title = title;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String name;
@@ -29,6 +27,7 @@ public class Author implements Serializable {
 	private int checkYear;
 	private String role;
 	private boolean isCommittee;
+	private List<Publication> publicationList;
 	
 	public Long getId() {
 		return id;
@@ -86,6 +85,14 @@ public class Author implements Serializable {
 
 	public void setCommittee(boolean isCommittee) {
 		this.isCommittee = isCommittee;
+	}
+
+	public List<Publication> getPublicationList() {
+		return publicationList;
+	}
+
+	public void setPublicationList(List<Publication> publicationList) {
+		this.publicationList = publicationList;
 	}
 
 	// titleAsc: -> void
