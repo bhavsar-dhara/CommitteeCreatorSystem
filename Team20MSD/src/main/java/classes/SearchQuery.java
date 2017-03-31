@@ -24,6 +24,7 @@ public class SearchQuery implements QueryEngine {
 //			conn = connectToDatabaseOrDisconnect();
 //			st = conn.createStatement();
 //
+//	QUERY for getting author list
 //			String query = "SELECT distinct tp.*, tn.* "
 //					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
 //					+ "where tp.title = ta.title "
@@ -33,6 +34,13 @@ public class SearchQuery implements QueryEngine {
 //					+ "and tp.pbyear = 1996 " 
 //					+ "and tn.numberofpb = 2";
 //
+//	QUERY for getting author details
+//	String query = "SELECT distinct tp.*, tn.* " 
+//					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " 
+//					+ " where tp.title = ta.title " 
+//					+ " and ta.authorname = tn.authorname"
+//					+ " and lower(ta.authorname) like '%sanjeev%'"; 
+//	
 //			ResultSet rs = null;
 //
 //			rs = st.executeQuery(query.toString());
@@ -164,13 +172,16 @@ public class SearchQuery implements QueryEngine {
 				publication.setPages(rs.getString("pages"));
 				publication.setJournal(rs.getString("journal"));
 				publication.setVolume(rs.getString("volume"));
+				publication.setUrl(rs.getString("url"));
+				publication.setEe(rs.getString("ee"));
+				publication.setNumber(rs.getString("number"));
 				author.setPublication(publication);
 				listOfAuthors.add(author);
 			}
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying author details.");
+			System.err.println(SQLEXCEPTION + "querying author list.");
 			System.err.println(se.getMessage());
 		}
 		return listOfAuthors;
@@ -355,9 +366,45 @@ public class SearchQuery implements QueryEngine {
 		return listofAuthorBySamePB;
 	}
 
-	// TODO: Query 3 Search authors details
+	// Query 3 Search authors details
 	// input: author name
 	// output: list of author's publication list
 	
+	public static List<Author> fetchAuthorDetails(String authorName) {
+		List<Author> authorList = new ArrayList<>();
+		try {
+			Statement st = conn.createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
+			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
+			query.append("and lower(ta.authorname) like '%" + authorName + "%'");
+		
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				Author author = new Author();
+				author.setName(rs.getString("authorname"));
+				author.setTitle(rs.getString("title"));
+				author.setNoOfPublication(rs.getString("numberofpb"));
+				Publication publication = new Publication();
+				publication.setTitle(rs.getString("title"));
+				publication.setPbyear(rs.getInt("pbYear"));
+				publication.setPages(rs.getString("pages"));
+				publication.setJournal(rs.getString("journal"));
+				publication.setVolume(rs.getString("volume"));
+				publication.setUrl(rs.getString("url"));
+				publication.setEe(rs.getString("ee"));
+				publication.setNumber(rs.getString("number"));
+				author.setPublication(publication);
+				authorList.add(author);
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "querying author details.");
+			System.err.println(se.getMessage());
+		}
+		return authorList;
+	}
 	
 }
