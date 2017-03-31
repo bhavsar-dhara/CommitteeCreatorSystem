@@ -60,7 +60,19 @@ public class SearchQuery implements QueryEngine {
 		conn = connectToDatabaseOrDisconnect();
 	}
 
-	// TODO: make a singleton connection class
+	@Override
+	public ArrayList<Author> answerQuery(SearchQuery query) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void sortSearchResult(SortCriterion c) {
+		// TODO Auto-generated method stub
+
+	}
+
+	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
 		Connection conn = null;
 		try {
@@ -133,18 +145,6 @@ public class SearchQuery implements QueryEngine {
 		query.append("and tp.pbyear = " + years + " ");
 		query.append("and tp.numberofpb = " + noOfPublication + " ");
 		return query.toString();
-	}
-
-	@Override
-	public ArrayList<Author> answerQuery(SearchQuery query) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void sortSearchResult(SortCriterion c) {
-		// TODO Auto-generated method stub
-
 	}
 
 	// TODO: Query 2 Search for similar authors
