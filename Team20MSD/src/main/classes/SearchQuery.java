@@ -353,7 +353,7 @@ public class SearchQuery implements QueryEngine {
 			while (rs.next()) {
 				Publication publicationRS = new Publication();
 				publicationRS.setTitle(rs.getString("title"));
-				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "");
+				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "...");
 				publicationRS.setPbyear(rs.getInt("pbyear"));
 //				String publication = rs.getString(1);
 				listofpublicationbyauthorname.add(publicationRS);
