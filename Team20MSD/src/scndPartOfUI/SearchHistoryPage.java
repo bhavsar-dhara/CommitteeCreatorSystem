@@ -1,7 +1,7 @@
 package scndPartOfUI;
 import main.classes.Author;
-import main.interfaces.UserInterface;
 import main.classes.SearchQuery;
+import main.classes.UserInterface;
 
 import java.util.ArrayList;
 
@@ -26,9 +26,8 @@ import javafx.scene.text.Font;
 
 public class SearchHistoryPage {
 	
-	public SearchHistoryPage(UserInterface ui){
-		this.ui = ui;
-		ui.addListenerToSearchHistory((ListChangeListener.Change<? extends SearchQuery> c) -> {
+	public SearchHistoryPage(){
+		UserInterface.addListenerToSearchHistory((ListChangeListener.Change<? extends SearchQuery> c) -> {
 			refreshPagination();
 		});
 		setPageHead();
@@ -37,7 +36,6 @@ public class SearchHistoryPage {
 		setCanvas();
 	}
 
-	private UserInterface ui;
 	private static int itemNbrPerPage = 15;
 	private Label pageHead = new Label("Search History");
 	private Button clearBut = new Button("Clear");
@@ -46,8 +44,8 @@ public class SearchHistoryPage {
 	private VBox canvas = new VBox(10,pageHead,buttonArea,searchHistoryPagination);
 	
 	private int getPageCount(){
-		int quotient = (int) ui.getSearchHistorySize()/itemNbrPerPage;
-		int remainder = ui.getSearchHistorySize() % itemNbrPerPage;
+		int quotient = (int) UserInterface.getSearchHistorySize()/itemNbrPerPage;
+		int remainder = UserInterface.getSearchHistorySize() % itemNbrPerPage;
 		return remainder == 0 ? quotient : quotient +1;
 	}
 	
@@ -58,7 +56,7 @@ public class SearchHistoryPage {
 	private void setClearBut(){
 		clearBut.setFont(new Font("Black",12));
 		clearBut.setOnAction((ActionEvent ae) -> {
-			ui.clearSearchHistory();
+			UserInterface.clearSearchHistory();
 		});
 	}
 	
@@ -70,8 +68,8 @@ public class SearchHistoryPage {
 	private VBox createPage(int pageIndex){
 		VBox pageContent = new VBox();
 		int itemIndex = pageIndex*itemNbrPerPage;
-		for (int i=itemIndex;i<itemIndex+itemNbrPerPage && i<ui.getSearchHistorySize();i++){
-			SearchQuery sq = ui.getSearchHistoryItem(i);
+		for (int i=itemIndex;i<itemIndex+itemNbrPerPage && i<UserInterface.getSearchHistorySize();i++){
+			SearchQuery sq = UserInterface.getSearchHistoryItem(i);
 			Hyperlink hyperLink = new Hyperlink(sq.toString());
 			setHyperLink(hyperLink,sq);
 			pageContent.getChildren().add(hyperLink);
@@ -100,7 +98,7 @@ public class SearchHistoryPage {
 	
 	private void setHyperLink(Hyperlink hl,SearchQuery sq){
 		hl.setOnAction((ActionEvent e) -> {
-			ui.showSearchResult(sq);
+			UserInterface.showSearchResult(sq);
 		});
 		hl.setFont(new Font("Arial",20));
 		

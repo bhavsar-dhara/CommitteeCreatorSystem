@@ -1,7 +1,7 @@
 package scndPartOfUI;
 import main.classes.Author;
 import main.classes.Publication;
-import main.interfaces.UserInterface;
+import main.classes.UserInterface;
 
 import java.util.ArrayList;
 
@@ -23,9 +23,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AuthorProfilePage {
 	
-	public AuthorProfilePage(Author a, UserInterface ui){
+	public AuthorProfilePage(Author a){
 		atr = a;
-		this.ui = ui;
 		setName();
 		setButtonArea();
 		setBlgrphyTable();
@@ -33,7 +32,6 @@ public class AuthorProfilePage {
 	}
 	
 	private Author atr;
-	private UserInterface ui;
 	private Label name;
 	private Button addBut;
 	private Button remBut;
@@ -52,7 +50,7 @@ public class AuthorProfilePage {
 		setAddBut();
 		setRemBut();
 		setSimAuthBut();
-		buttonArea = new HBox(buttonAreaSpacing,ui.hasCand(atr) ? remBut:addBut,simAuthBut);
+		buttonArea = new HBox(buttonAreaSpacing,UserInterface.hasCand(atr) ? remBut:addBut,simAuthBut);
 	}
 	
 	private int sizeOfAddRemBut = 200;
@@ -65,7 +63,7 @@ public class AuthorProfilePage {
 		fixElementWidth(addBut,sizeOfAddRemBut);
 		addBut.setFont(butTextFont);
 		addBut.setOnAction((ActionEvent ae) -> {
-			ui.addCand(atr);
+			UserInterface.addCand(atr);
 			buttonArea.getChildren().set(0,remBut);
 		});
 	}
@@ -81,7 +79,7 @@ public class AuthorProfilePage {
 		fixElementWidth(remBut,sizeOfAddRemBut);
 		remBut.setFont(butTextFont);
 		remBut.setOnAction((ActionEvent ae) -> {
-			ui.remCand(atr);
+			UserInterface.remCand(atr);
 			buttonArea.getChildren().set(0,addBut);
 		});
 	}
@@ -90,12 +88,12 @@ public class AuthorProfilePage {
 		simAuthBut = new Button("Find similar authors");
 		simAuthBut.setFont(butTextFont);
 		simAuthBut.setOnAction((ActionEvent ae) -> {
-			ui.showSearchResult(atr);
+			UserInterface.showSearchResult(atr);
 		});
 	}
 	
 	private void setBlgrphyTable(){
-		SortedList<Publication> origList = new SortedList<>(ui.getAuthorPubs(atr));
+		SortedList<Publication> origList = new SortedList<>(UserInterface.getAuthorPubs(atr));
 		blgrphyTable = new TableView<Publication>(origList);
 		origList.comparatorProperty().bind(blgrphyTable.comparatorProperty());
 		blgrphyTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);

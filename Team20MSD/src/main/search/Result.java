@@ -16,8 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.classes.Author;
 import main.classes.SearchQuery;
-import main.interfaces.UserInterface;
-import scndPartOfUI.UIForTest;
+import main.classes.UserInterface;
 
 public class Result extends Application {
 
@@ -97,8 +96,6 @@ public class Result extends Application {
 		ObservableList<Author> AuthorSelected;
 		AuthorSelected = table.getSelectionModel().getSelectedItems();
 		System.out.println(AuthorSelected.size());
-		ui.showAuthorProfile(AuthorSelected.get(0));
+		UserInterface.showAuthorProfile(AuthorSelected.get(0));
 	}
-	
-	private UserInterface ui = new UIForTest(searchQuery);
 }

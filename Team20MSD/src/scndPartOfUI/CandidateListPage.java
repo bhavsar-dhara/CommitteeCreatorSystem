@@ -1,5 +1,4 @@
 package scndPartOfUI;
-import main.interfaces.UserInterface;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -24,12 +23,12 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.MouseEvent;
 import main.classes.Author;
+import main.classes.UserInterface;
 
 public class CandidateListPage {
 	
-	public CandidateListPage(UserInterface ui){
-		this.ui = ui;
-		ui.addListenerToCandList((ListChangeListener.Change<? extends Author> c) -> {
+	public CandidateListPage(){
+		UserInterface.addListenerToCandList((ListChangeListener.Change<? extends Author> c) -> {
 			refreshPagination();
 		});
 		setPageHead();
@@ -38,7 +37,6 @@ public class CandidateListPage {
 		setCanvas();
 	}
 	
-	private UserInterface ui;
 	private static int itemNbrPerPage = 15;
 	private Label pageHead = new Label("Candidate List");
 	private Button remBut = new Button("Remove");
@@ -48,8 +46,8 @@ public class CandidateListPage {
 	private ArrayList<Author> selectedAuthors = new ArrayList<>();
 	
 	private int getPageCount(){
-		int quotient = (int) ui.getCandListSize()/itemNbrPerPage;
-		int remainder = ui.getCandListSize() % itemNbrPerPage;
+		int quotient = (int) UserInterface.getCandListSize()/itemNbrPerPage;
+		int remainder = UserInterface.getCandListSize() % itemNbrPerPage;
 		return remainder == 0 ? quotient : quotient +1;
 	}
 	
@@ -60,7 +58,7 @@ public class CandidateListPage {
 	private void setRemBut(){
 		remBut.setFont(new Font("Black",12));
 		remBut.setOnAction((ActionEvent ae) -> {
-			ui.remCand(selectedAuthors);
+			UserInterface.remCand(selectedAuthors);
 			selectedAuthors.clear();
 		});
 	}
@@ -74,8 +72,8 @@ public class CandidateListPage {
 		VBox pageContent = new VBox();
 		int itemIndex = pageIndex*itemNbrPerPage;
 		selectedAuthors.clear();
-		for (int i=itemIndex;i<itemIndex+itemNbrPerPage && i<ui.getCandListSize();i++){
-			Author atr = ui.getCand(i);
+		for (int i=itemIndex;i<itemIndex+itemNbrPerPage && i<UserInterface.getCandListSize();i++){
+			Author atr = UserInterface.getCand(i);
 			CheckBox checkBox = new CheckBox();
 			setCheckBox(checkBox,atr);
 			Hyperlink hyperLink = new Hyperlink(atr.getName());
@@ -133,7 +131,7 @@ public class CandidateListPage {
 	
 	private void setHyperLink(Hyperlink hl,Author a){
 		hl.setOnAction((ActionEvent e) -> {
-			ui.showAuthorProfile(a);
+			UserInterface.showAuthorProfile(a);
 		});
 		hl.setFont(new Font("Arial",20));
 		

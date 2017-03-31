@@ -8,7 +8,7 @@ import main.interfaces.QueryEngine;
 
 public class SearchQuery {
 
-	static Connection conn;
+	static Connection conn = connectToDatabaseOrDisconnect();
 
 	static String SQLEXCEPTION = "Threw a SQLException while ";
 	static String CLASSNOTFOUNDEXECPTION = "Threw a ClassNotFoundException while connecting to the database.";
@@ -18,89 +18,95 @@ public class SearchQuery {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-//// //	Main method to test database queries from code
-//	public static void main(String[] args) {
-//		List<Author> listOfAuthors = new ArrayList<Author>();
-//		
-////		Statement st = null;
-////		try {
-//			conn = connectToDatabaseOrDisconnect();
-////			st = conn.createStatement();
-//			
-////			int[] intArray = new int[1];
-////			intArray[0] = 1996;
-////			populateListOfAuthors("acta inf.", "parallel", intArray, 2);
-//			
-////			fetchAuthorDetails("sanjeev");
-//			
-//			
-//			
-//			// QUERY for getting author list
-////			String query = "SELECT distinct tp.*, tn.* "
-////					+ "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + "where tp.title = ta.title "
-////					+ "and ta.authorname = tn.authorname " + "and lower(tp.journal) = 'acta inf.' "
-////					+ "and lower(tp.title) like '%parallel%' " + "and tp.pbyear = 1996 " + "and tn.numberofpb = 2";
-////
-////			System.out.println(query.toString());
-//			
-//			// QUERY for getting author details
-////			String query2 = "SELECT distinct tp.*, tn.* "
-////					+ " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + " where tp.title = ta.title "
-////					+ " and ta.authorname = tn.authorname" + " and lower(ta.authorname) like '%sanjeev%'";
-////			
-////			System.out.println(query2.toString());
-//
-////			ResultSet rs = null;
-//
-////			rs = st.executeQuery(query.toString());
-////			rs = st.executeQuery(query2.toString());
-//
-//			
-////			while (rs.next()) {
-////				Author author = new Author();
-////				author.setName(rs.getString("authorname"));
-////				author.setTitle(rs.getString("title"));
-////				System.out.println(author.toString());
-////				listOfAuthors.add(author);
-////			}
-//
-////			rs.close();
-////			st.close();
-////		} catch (SQLException e) {
-////			e.printStackTrace();
-////			System.err.println(e.getMessage());
-////		}
-//
-//	}
-
-	public SearchQuery() {
-		// connect to POSTGRESQL Database
-		conn = connectToDatabaseOrDisconnect();
-	}
+	//// // Main method to test database queries from code
+	// public static void main(String[] args) {
+	// List<Author> listOfAuthors = new ArrayList<Author>();
+	//
+	//// Statement st = null;
+	//// try {
+	// conn = connectToDatabaseOrDisconnect();
+	//// st = conn.createStatement();
+	//
+	//// int[] intArray = new int[1];
+	//// intArray[0] = 1996;
+	//// populateListOfAuthors("acta inf.", "parallel", intArray, 2);
+	//
+	//// fetchAuthorDetails("sanjeev");
+	//
+	//
+	//
+	// // QUERY for getting author list
+	//// String query = "SELECT distinct tp.*, tn.* "
+	//// + "FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " +
+	//// "where tp.title = ta.title "
+	//// + "and ta.authorname = tn.authorname " + "and lower(tp.journal) = 'acta
+	//// inf.' "
+	//// + "and lower(tp.title) like '%parallel%' " + "and tp.pbyear = 1996 " +
+	//// "and tn.numberofpb = 2";
+	////
+	//// System.out.println(query.toString());
+	//
+	// // QUERY for getting author details
+	//// String query2 = "SELECT distinct tp.*, tn.* "
+	//// + " FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn " + "
+	//// where tp.title = ta.title "
+	//// + " and ta.authorname = tn.authorname" + " and lower(ta.authorname)
+	//// like '%sanjeev%'";
+	////
+	//// System.out.println(query2.toString());
+	//
+	//// ResultSet rs = null;
+	//
+	//// rs = st.executeQuery(query.toString());
+	//// rs = st.executeQuery(query2.toString());
+	//
+	//
+	//// while (rs.next()) {
+	//// Author author = new Author();
+	//// author.setName(rs.getString("authorname"));
+	//// author.setTitle(rs.getString("title"));
+	//// System.out.println(author.toString());
+	//// listOfAuthors.add(author);
+	//// }
+	//
+	//// rs.close();
+	//// st.close();
+	//// } catch (SQLException e) {
+	//// e.printStackTrace();
+	//// System.err.println(e.getMessage());
+	//// }
+	//
+	// }
 
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
-		Connection conn = null;
-		try {
-			Class.forName("org.postgresql.Driver");
-//			Connection to local database
-			String url = "jdbc:postgresql://localhost:5432/msddblp";
-			conn = DriverManager.getConnection(url, "postgres", "1991715");
-//			Connection to AWS PostgreSQL Database
-//			ERROR ::: on trying to connect to remote
-//			Connection refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-//			String url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-//			url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-//			conn = DriverManager.getConnection(url, "luliuAWS", "1991715ll");
-			System.out.println("Connection made successfully...");
-		} catch (ClassNotFoundException e) {
-			System.err.println(CLASSNOTFOUNDEXECPTION);
-			System.err.println(e.getMessage());
-			System.exit(1);
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "connecting to the database");
-			System.err.println(se.getMessage());
-			System.exit(2);
+		if (conn == null) {
+			try {
+				Class.forName("org.postgresql.Driver");
+				// Connection to local database
+				String url = "jdbc:postgresql://localhost:5432/msddblp";
+				conn = DriverManager.getConnection(url, "postgres", "1991715");
+				// Connection to AWS PostgreSQL Database
+				// ERROR ::: on trying to connect to remote
+				// Connection refused. Check that the hostname and port are
+				// correct and that the postmaster is accepting TCP/IP
+				// connections.
+				// String url =
+				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+				// url =
+				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+				// conn = DriverManager.getConnection(url, "luliuAWS",
+				// "1991715ll");
+				System.out.println("Connection made successfully...");
+			} catch (ClassNotFoundException e) {
+				System.err.println(CLASSNOTFOUNDEXECPTION);
+				System.err.println(e.getMessage());
+				System.exit(1);
+			} catch (SQLException se) {
+				System.err.println(SQLEXCEPTION + "connecting to the database");
+				System.err.println(se.getMessage());
+				System.exit(2);
+			}
 		}
 		return conn;
 	}
@@ -114,23 +120,22 @@ public class SearchQuery {
 	// 6. saving the search criteria??
 	// output: list of authors
 
-	//TODO : multiple conferences selected?
+	// TODO : multiple conferences selected?
 	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
-		
-		
+
 		System.err.println(confJournal);
 		System.err.println(keywords);
 		System.err.println(years[0]);
 		System.err.println(noOfPublication);
-		
+
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
-			
+
 			if (confJournal != null && !confJournal.equals("")) {
 				query.append("and lower(tp.journal) = lower('" + confJournal + "') ");
 			}
@@ -138,19 +143,19 @@ public class SearchQuery {
 			if (keywords != null && !keywords.equals("")) {
 				query.append("and lower(tp.title) like lower('%" + keywords + "%') ");
 			}
-			
+
 			if (years != null && years.length > 0) {
-				for(int year : years) {
+				for (int year : years) {
 					query.append("and tp.pbyear = " + year + " ");
 				}
 			}
-			
+
 			if (noOfPublication > 0) {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
-			
-//			System.out.println("............" + query.toString());
-			
+
+			// System.out.println("............" + query.toString());
+
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");
 			while (rs.next()) {
@@ -174,7 +179,7 @@ public class SearchQuery {
 				publication.setSchool(rs.getString("school"));
 				publication.setNumber(rs.getString("number"));
 				author.setPublication(publication);
-//				System.out.println(author.toString());
+				// System.out.println(author.toString());
 				listOfAuthors.add(author);
 			}
 			rs.close();
@@ -218,7 +223,7 @@ public class SearchQuery {
 			while (rs.next()) {
 				Author authorRS = new Author();
 				authorRS.setName(rs.getString("authorname"));
-//				authorsBySameNOPB.add(rs.getString(1));
+				// authorsBySameNOPB.add(rs.getString(1));
 				authorsBySameNOPB.add(authorRS);
 			}
 			return authorsBySameNOPB;
@@ -240,7 +245,7 @@ public class SearchQuery {
 				publicationRS.setTitle(rs.getString("title"));
 				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "");
 				publicationRS.setPbyear(rs.getInt("pbyear"));
-//				String publication = rs.getString(1);
+				// String publication = rs.getString(1);
 				listofpublicationbyauthorname.add(publicationRS);
 			}
 			return listofpublicationbyauthorname;
@@ -263,7 +268,7 @@ public class SearchQuery {
 				while (rs.next()) {
 					Author authorRS = new Author();
 					authorRS.setName(rs.getString("authorname"));
-//					String authornameBySamePB = rs.getString(1);
+					// String authornameBySamePB = rs.getString(1);
 					listofAuthorBySamePB.add(authorRS);
 				}
 			} catch (SQLException se) {
@@ -275,19 +280,19 @@ public class SearchQuery {
 	}
 
 	public static List<Author> getSimilarAuthorList(Author author) {
-        List<Author> similarAuthors = new ArrayList<Author>();
-        List<Author> similarAuthorofSameNopb;
-        List<Author> similarAuthorofSamePublication;
+		List<Author> similarAuthors = new ArrayList<Author>();
+		List<Author> similarAuthorofSameNopb;
+		List<Author> similarAuthorofSamePublication;
 
-        similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
-        similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
+		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
+		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
 
-        similarAuthors.addAll(similarAuthorofSameNopb);
-        similarAuthors.addAll(similarAuthorofSamePublication);
+		similarAuthors.addAll(similarAuthorofSameNopb);
+		similarAuthors.addAll(similarAuthorofSamePublication);
 
-        return similarAuthors;
-    }
-	
+		return similarAuthors;
+	}
+
 	// Query 3 Search authors details
 	// input: author name
 	// output: list of author's publication list
