@@ -17,8 +17,9 @@ public class SearchQuery {
 		Connection conn = null;
 		try {
 			Class.forName("org.postgresql.Driver");
-			String url = "jdbc:postgresql://THE_HOST/THE_DATABASE";
-			conn = DriverManager.getConnection(url, "THE_USER", "THE_PASSWORD");
+			String url = "jdbc:postgresql://localhost/5432";
+			conn = DriverManager.getConnection(url, "postgres", "1991715");
+			System.out.println("Connection made successfully...");
 		} catch (ClassNotFoundException e) {
 			System.err.println("Threw a SQLException while connecting to the database.");
 			System.err.println(e.getMessage());
@@ -40,21 +41,14 @@ public class SearchQuery {
 	//			6. saving the search criteria??
 	// output: list of authors
 
-	private List<Author> populateListOfAuthors(Connection conn, boolean isJournal, String[] keywords, 
-			int[] years, int noOfPublication, boolean isPrevMembr) {
+	private List<Author> populateListOfAuthors(Connection conn, String confJournal, String keywords, 
+			int[] years, int noOfPublication, int prevMembrYears) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT * FROM tb_publication tp, tb_authorprofile ta");
-			if(keywords != null && years != null && noOfPublication != 0) {
-				query.append("where ");
-				query.append("tp.journal = '" + isJournal + "'");
-				query.append("tp.title like '%" + keywords + "%'");
-				query.append("tp.years like '" + years + "'");
-				query.append("tp.noOfPublication = '" + noOfPublication + "'");
-				query.append("tp.isPrevMembr = '" + isPrevMembr + "'");
-			}
+			query.append(allQueryParameters(confJournal, keywords, years, noOfPublication, prevMembrYears));
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
 				Author author = new Author();
@@ -70,6 +64,24 @@ public class SearchQuery {
 			System.err.println(se.getMessage());
 		}
 		return listOfAuthors;
+	}
+	
+	private String allQueryParameters(String confJournal, String keywords, 
+			int[] years, int noOfPublication, int prevMembrYears) {
+		StringBuilder query = new StringBuilder();
+		if(confJournal != null && confJournal.equals("") &&
+				keywords != null && confJournal.equals("") &&
+				years != null && confJournal.equals("") &&
+				noOfPublication != 0 && confJournal.equals("")) {
+			query.append("where ");
+			query.append("tp.journal = '" + confJournal + "'");
+			query.append("&tp.title like '%" + keywords + "%'");
+			// TODO : handle multiple years 
+			query.append("&tp.pbyear like '" + years + "'");
+			query.append("&tp.noOfPublication = '" + noOfPublication + "'");
+			query.append("&tp.isPrevMembr = '" + prevMembrYears + "'");
+		}
+		return query.toString();
 	}
 	
 	// TODO: Query 2 Search for similar authors
