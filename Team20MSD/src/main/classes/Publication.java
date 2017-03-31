@@ -1,4 +1,4 @@
-package main.java.classes;
+package main.classes;
 
 public class Publication {
 	private Long id;

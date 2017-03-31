@@ -1,4 +1,4 @@
-package main.java.classes;
+package main.classes;
 
 import java.io.Serializable;
 
@@ -10,6 +10,11 @@ public class Author implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public Author() { }
+	
+	public Author(String name) {
+		super();
+		this.name = name;
+	}
 
 	// Constructor
 	public Author(String title, String name, String noOfPublication, Publication publication) {

@@ -1,8 +1,9 @@
-package main.java.interfaces;
+package main.interfaces;
 
 import java.util.List;
 
-import main.java.classes.Author;
+import main.classes.Author;
+import main.classes.Publication;
 
 public interface QueryEngine {
 	
@@ -15,7 +16,7 @@ public interface QueryEngine {
 	
 	public List<Author> getSimilarAuthorBySameNumberofPB(Author author);
 	
-	public List<Author> getPublicationByAuthorName(Author author);
+	public List<Publication> getPublicationByAuthorName(Author author);
 	
 	public List<Author> getSimilarAuthorBySamePublication(Author author);
 	

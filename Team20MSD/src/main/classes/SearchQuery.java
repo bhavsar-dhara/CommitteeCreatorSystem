@@ -1,9 +1,10 @@
-package main.java.classes;
+package main.classes;
 
 import java.sql.*;
 import java.util.*;
 
-import main.java.interfaces.QueryEngine;
+import javafx.collections.FXCollections;
+import main.interfaces.QueryEngine;
 
 public class SearchQuery implements QueryEngine {
 
@@ -14,7 +15,7 @@ public class SearchQuery implements QueryEngine {
 
 	static String GET_NOPB_BY_AUTHORNAME = "select distinct numberOfPb from tb_NumberOfPb where authorname=?";
 	static String GET_AUTHORNAME_BY_NOPB = "select distinct authorname from tb_NumberOfPb where numberOfPb=?";
-	static String GET_TITLE_BY_AUTHORNAME = "select distinct title from tb_authorProfile where authorname=?";
+	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
 //// //	Main method to test database queries from code
@@ -343,17 +344,19 @@ public class SearchQuery implements QueryEngine {
 	}
 
 	@Override
-	public List<Author> getPublicationByAuthorName(Author author) {
+	public List<Publication> getPublicationByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = conn.prepareStatement(GET_TITLE_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
 			ResultSet rs = ps.executeQuery();
-			List<Author> listofpublicationbyauthorname = new ArrayList<Author>();
+			List<Publication> listofpublicationbyauthorname = FXCollections.observableArrayList();
 			while (rs.next()) {
-				Author authorRS = new Author();
-				authorRS.setTitle(rs.getString("title"));
+				Publication publicationRS = new Publication();
+				publicationRS.setTitle(rs.getString("title"));
+				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "");
+				publicationRS.setPbyear(rs.getInt("pbyear"));
 //				String publication = rs.getString(1);
-				listofpublicationbyauthorname.add(authorRS);
+				listofpublicationbyauthorname.add(publicationRS);
 			}
 			return listofpublicationbyauthorname;
 		} catch (SQLException se) {
@@ -365,14 +368,13 @@ public class SearchQuery implements QueryEngine {
 
 	@Override
 	public List<Author> getSimilarAuthorBySamePublication(Author author) {
-		List<Author> listofpublication = getPublicationByAuthorName(author);
+		List<Publication> listofpublication = getPublicationByAuthorName(author);
 		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
-			Author titleName = listofpublication.get(i);
+			String titleName = listofpublication.get(i).getTitle();
 			try {
 				PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_TITLE);
-//				ps.setString(1, titleName);
-				ps.setString(1, titleName.getTitle());
+				ps.setString(1, titleName);
 				ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
 					Author authorRS = new Author();
