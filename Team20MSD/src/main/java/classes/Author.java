@@ -12,9 +12,11 @@ public class Author implements Serializable {
 	public Author() { }
 
 	// Constructor
-	public Author(String title, String name) {
+	public Author(String title, String name, String noOfPublication, Publication publication) {
 		this.name = name;
 		this.title = title;
+		this.noOfPublication = noOfPublication;
+		this.publication = publication;
 	}
 
 	private Long id;

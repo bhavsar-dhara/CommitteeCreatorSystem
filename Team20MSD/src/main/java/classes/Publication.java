@@ -21,12 +21,13 @@ public class Publication {
 		super();
 	}
 
-	public Publication(String title, String type, int pbyear, String journal, String ee, String url,
+	public Publication(String title, String type, int pbyear, String pages, String journal, String ee, String url,
 			String volume, String number, String booktitle, String isbn, String publisher, String editor,
 			String school) {
 		super();
 		this.title = title;
 		this.type = type;
+		this.pages = pages;
 		this.pbyear = pbyear;
 		this.journal = journal;
 		this.ee = ee;
