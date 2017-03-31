@@ -1,6 +1,7 @@
 package main.java.classes;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Author implements Serializable {
 
@@ -25,6 +26,7 @@ public class Author implements Serializable {
 	private String role;
 	private boolean isCommittee;
 	private Publication publication;
+	private List<Publication> publicationList;
 	
 	public Long getId() {
 		return id;
@@ -90,6 +92,14 @@ public class Author implements Serializable {
 
 	public void setPublication(Publication publication) {
 		this.publication = publication;
+	}
+
+	public List<Publication> getPublicationList() {
+		return publicationList;
+	}
+
+	public void setPublicationList(List<Publication> publicationList) {
+		this.publicationList = publicationList;
 	}
 
 	@Override
