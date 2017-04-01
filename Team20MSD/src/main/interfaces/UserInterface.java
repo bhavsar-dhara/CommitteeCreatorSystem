@@ -1,7 +1,7 @@
-package main.java.interfaces;
+package main.interfaces;
 
-import main.java.classes.Author;
-import main.java.classes.SearchQuery;
+import main.classes.Author;
+import main.classes.SearchQuery;
 
 public interface UserInterface {
 	

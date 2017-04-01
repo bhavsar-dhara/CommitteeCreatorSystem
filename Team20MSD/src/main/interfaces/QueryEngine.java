@@ -1,10 +1,10 @@
-package main.java.interfaces;
+package main.interfaces;
 
 import java.util.ArrayList;
 
-import main.java.classes.Author;
-import main.java.classes.SearchQuery;
-import main.java.classes.SortCriterion;
+import main.classes.Author;
+import main.classes.SearchQuery;
+import main.classes.SortCriterion;
 
 public interface QueryEngine {
 	
