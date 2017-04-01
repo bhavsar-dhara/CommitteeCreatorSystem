@@ -27,21 +27,25 @@ public class SearchQuery {
 	private static Connection connectToDatabaseOrDisconnect() {
 		if (conn == null) {
 			try {
+				
+//				Class.forName("org.postgresql.Driver");
+//		        conn = DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll");
+//		        System.out.println("\nSuccessful connect with database! Now pushing...");
+		        
 				Class.forName("org.postgresql.Driver");
-				// Connection to local database
+//				Connection to local database
 				String url = "jdbc:postgresql://localhost:5432/msddblp";
 				conn = DriverManager.getConnection(url, "postgres", "1991715");
+		        
 				// Connection to AWS PostgreSQL Database
 				// ERROR ::: on trying to connect to remote
 				// Connection refused. Check that the hostname and port are
 				// correct and that the postmaster is accepting TCP/IP
 				// connections.
-				// String url =
-				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-				// url =
-				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-				// conn = DriverManager.getConnection(url, "luliuAWS",
-				// "1991715ll");
+//				 String url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+////				 url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+//				 conn = DriverManager.getConnection(url, "luliuAWS", "1991715ll");
+				
 				System.out.println("Connection made successfully...");
 			} catch (ClassNotFoundException e) {
 				System.err.println(CLASSNOTFOUNDEXECPTION);
