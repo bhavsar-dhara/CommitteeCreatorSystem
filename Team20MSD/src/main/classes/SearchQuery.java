@@ -70,7 +70,7 @@ public class SearchQuery {
 	// output: list of authors
 
 	// TODO : multiple conferences selected?
-	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
+	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
 
 		System.err.println(confJournal);
