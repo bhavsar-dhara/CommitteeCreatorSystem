@@ -51,21 +51,9 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <ChoiceBox fx:id="conferencename" prefHeight="27.0" prefWidth="308.0" value="IEEE Trans. Knowl. Data Eng." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ChoiceBox fx:id="conferencename" prefHeight="27.0" prefWidth="308.0" value="" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                       <String fx:value="IEEE Trans. Knowl. Data Eng." />
-                           <String fx:value="ACM Trans. Spatial Algorithms and Systems" />
-                           <String fx:value="Future Generation Comp. Syst." />
-                             <String fx:value="Acta Inf." />
-                           <String fx:value="Object Oriented Systems" />
-                           <String fx:value="Game Studies" />
-                             <String fx:value="International Journal of Internet and Enterprise Management" />
-                           <String fx:value="IJTM" />
-                           <String fx:value="IJKDB" />
-                             <String fx:value="Telematics and Informatics" />
-                           <String fx:value="IJEA" />
-                           <String fx:value="Computers in Industry" />
                         </FXCollections>
                      </items>
                   </ChoiceBox>
@@ -75,45 +63,9 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <ChoiceBox fx:id="pubdate" prefHeight="27.0" prefWidth="307.0" value="1971" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ChoiceBox fx:id="pubdate" prefHeight="27.0" prefWidth="307.0" value="" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="1971" />
-                           <String fx:value="1972" />
-                           <String fx:value="1973" />
-                             <String fx:value="1974" />
-                           <String fx:value="1975" />
-                           <String fx:value="1976" />
-                             <String fx:value="1977" />
-                           <String fx:value="1978" />
-                           <String fx:value="1979" />
-                             <String fx:value="1980" />
-                           <String fx:value="1981" />
-                           <String fx:value="1982" />
-                                <String fx:value="1983" />
-                           <String fx:value="1984" />
-                           <String fx:value="1985" />
-                             <String fx:value="1986" />
-                           <String fx:value="1987" />
-                           <String fx:value="1988" />
-                             <String fx:value="1989" />
-                           <String fx:value="1990" />
-                           <String fx:value="1991" />
-                             <String fx:value="1992" />
-                           <String fx:value="1993" />
-                           <String fx:value="1994" />
-                                <String fx:value="1995" />
-                           <String fx:value="1996" />
-                           <String fx:value="1997" />
-                             <String fx:value="1998" />
-                           <String fx:value="1999" />
-                           <String fx:value="2000" />
-                             <String fx:value="2001" />
-                           <String fx:value="2002" />
-                           <String fx:value="2003" />
-                             <String fx:value="2004" />
-                           <String fx:value="2005" />
-                           <String fx:value="2006" />
                         </FXCollections>
                      </items>
                   </ChoiceBox>
@@ -146,7 +98,7 @@
                </font>
             </Text>
             <Separator layoutX="13.0" layoutY="520.0" prefHeight="4.0" prefWidth="200.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" />
-      <Button fx:id="myfavouriteauthor" layoutX="277.0" layoutY="513.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="175.0" style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="My Favourite Author" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="222.0" />
+      <Button fx:id="myfavouriteauthor" layoutX="277.0" layoutY="513.0" mnemonicParsing="false" onAction="#candidateson" prefHeight="27.0" prefWidth="175.0" style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="My Favourite Author" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="222.0" />
             <Button fx:id="adminClearButtonClick" layoutX="561.0" layoutY="512.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FF5151; -fx-text-fill: white;" text="clear" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="39.0" />
             <Button fx:id="searchforresult" layoutX="470.0" layoutY="527.0" mnemonicParsing="false" onAction="#setSearch" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="search" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="130.0" />
             <Text layoutX="33.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This system help the chair editor to search candidate " wrappingWidth="459.2099609375" AnchorPane.bottomAnchor="190.046875" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="187.7900390625">
