@@ -45,22 +45,21 @@ public class searchcontroller implements Initializable {
 		// get the criteria parameters from the search page
 		
 		String conferencename1 = null;
-		
-		if ( conferencename.getSelectionModel().isEmpty() ) {
+		if ( !conferencename.getSelectionModel().isEmpty() ) {
 			conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "" : conferencename.getSelectionModel().getSelectedItem().toString();
+					? "" : conferencename.getSelectionModel().getSelectedItem().toString().trim();
 		}
 		
 		String pubdate1 = null;
-		if ( pubdate.getSelectionModel().isEmpty() ) {
+		if ( !pubdate.getSelectionModel().isEmpty() ) {
 			pubdate1 =  pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : pubdate.getSelectionModel().getSelectedItem().toString();
+					? "0" : pubdate.getSelectionModel().getSelectedItem().toString().trim();
 		}
 		
 		String numofcom1 = null;
-		if ( numofcom.getSelectionModel().isEmpty() ) {
+		if ( !numofcom.getSelectionModel().isEmpty() ) {
 			numofcom1 =  numofcom.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : numofcom.getSelectionModel().getSelectedItem().toString();
+					? "0" : numofcom.getSelectionModel().getSelectedItem().toString().trim();
 		}
 		
 		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();

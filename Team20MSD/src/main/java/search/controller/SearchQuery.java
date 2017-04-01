@@ -25,6 +25,10 @@ public class SearchQuery {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
+	public SearchQuery() {
+		super();
+	}
+	
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
 		if (conn == null) {
@@ -74,12 +78,6 @@ public class SearchQuery {
 	// TODO : multiple conferences selected?
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
-
-		System.err.println(confJournal);
-		System.err.println(keywords);
-		System.err.println(years[0]);
-		System.err.println(noOfPublication);
-
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = conn.createStatement();

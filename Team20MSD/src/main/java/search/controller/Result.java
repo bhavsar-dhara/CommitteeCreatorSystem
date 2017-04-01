@@ -22,20 +22,23 @@ public class Result extends Application {
 	Stage window;
 
 	SearchQuery searchQuery = new SearchQuery();
-    ObservableList<Author> products = FXCollections.observableArrayList();
+	ObservableList<Author> products = FXCollections.observableArrayList();
 
 	public void setCurrentInfo(String key, String conf, String date, String numofpub, String commit) {
-		
-		// TODO : if multiple year selection enabled - change code
-		 int[] intArray = new int[1];
-		 intArray[0] = Integer.parseInt(date);
-		 
-		 List<Author> authorList = searchQuery.populateListOfAuthors(conf.trim(), key.trim(), intArray, Integer.parseInt(numofpub));
-		 
-		 for (Author a : authorList) {
-			 products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
-		 }
-		 
+
+		int[] intArray = null;
+		if (date != null) {
+			// TODO : if multiple year selection enabled - change code
+			intArray = new int[1];
+			intArray[0] = Integer.parseInt(date);
+		}
+
+		List<Author> authorList = searchQuery.populateListOfAuthors(conf, key, intArray, Integer.parseInt(numofpub));
+
+		for (Author a : authorList) {
+			products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
+		}
+
 		start(new Stage());
 	}
 
@@ -80,14 +83,14 @@ public class Result extends Application {
 		window.show();
 	}
 
-//	public ObservableList<Author> getProduct() {
-//		ObservableList<Author> products = FXCollections.observableArrayList();
-//		products.add(new Author("Laptop", "Laptop", "Laptop"));
-//		products.add(new Author("Laptop1", "Laptop1", "Laptop1"));
-//		products.add(new Author("Laptop2", "Sanjeev Saxena", "Laptop2"));
-//		products.add(new Author("Laptop3", "Laptop3", "Laptop3"));
-//		return products;
-//	}
+	// public ObservableList<Author> getProduct() {
+	// ObservableList<Author> products = FXCollections.observableArrayList();
+	// products.add(new Author("Laptop", "Laptop", "Laptop"));
+	// products.add(new Author("Laptop1", "Laptop1", "Laptop1"));
+	// products.add(new Author("Laptop2", "Sanjeev Saxena", "Laptop2"));
+	// products.add(new Author("Laptop3", "Laptop3", "Laptop3"));
+	// return products;
+	// }
 
 	// Delete button clicked
 	public void ButtonClicked() {
