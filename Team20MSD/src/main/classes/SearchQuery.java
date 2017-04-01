@@ -28,14 +28,14 @@ public class SearchQuery {
 		if (conn == null) {
 			try {
 				
-//				Class.forName("org.postgresql.Driver");
-//		        conn = DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll");
-//		        System.out.println("\nSuccessful connect with database! Now pushing...");
-		        
 				Class.forName("org.postgresql.Driver");
-//				Connection to local database
-				String url = "jdbc:postgresql://localhost:5432/msddblp";
-				conn = DriverManager.getConnection(url, "postgres", "1991715");
+		        conn = DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll");
+		        System.out.println("\nSuccessful connect with database! ");
+		        
+//				Class.forName("org.postgresql.Driver");
+////				Connection to local database
+//				String url = "jdbc:postgresql://localhost:5432/msddblp";
+//				conn = DriverManager.getConnection(url, "postgres", "1991715");
 		        
 				// Connection to AWS PostgreSQL Database
 				// ERROR ::: on trying to connect to remote
