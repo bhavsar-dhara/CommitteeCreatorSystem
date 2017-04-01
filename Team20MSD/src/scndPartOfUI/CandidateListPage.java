@@ -48,7 +48,12 @@ public class CandidateListPage {
 	private int getPageCount(){
 		int quotient = (int) UserInterface.getCandListSize()/itemNbrPerPage;
 		int remainder = UserInterface.getCandListSize() % itemNbrPerPage;
-		return remainder == 0 ? quotient : quotient +1;
+		if (UserInterface.getCandListSize() == 0){
+			return 1;
+		}
+		else {
+			return remainder == 0? quotient : quotient+1;
+		}
 	}
 	
 	private void setPageHead() {

@@ -46,7 +46,12 @@ public class SearchHistoryPage {
 	private int getPageCount(){
 		int quotient = (int) UserInterface.getSearchHistorySize()/itemNbrPerPage;
 		int remainder = UserInterface.getSearchHistorySize() % itemNbrPerPage;
-		return remainder == 0 ? quotient : quotient +1;
+		if (UserInterface.getSearchHistorySize() == 0) {
+			return 1;
+		}
+		else{
+			return remainder == 0 ? quotient : quotient +1;
+		}
 	}
 	
 	private void setPageHead() {

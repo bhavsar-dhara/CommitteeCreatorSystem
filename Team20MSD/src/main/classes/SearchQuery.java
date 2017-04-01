@@ -144,7 +144,7 @@ public class SearchQuery {
 				query.append("and lower(tp.title) like lower('%" + keywords + "%') ");
 			}
 
-			if (years != null && years.length > 0) {
+			if (years != null && years.length > 0 && years[0] != 0) {
 				for (int year : years) {
 					query.append("and tp.pbyear = " + year + " ");
 				}
@@ -154,7 +154,7 @@ public class SearchQuery {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
-			// System.out.println("............" + query.toString());
+			 System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");

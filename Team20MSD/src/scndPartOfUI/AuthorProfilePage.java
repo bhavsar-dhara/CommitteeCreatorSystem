@@ -103,7 +103,7 @@ public class AuthorProfilePage {
 	private void setTableColumns(){
 		addStringColumnToTable("Title","title");
 		addStringColumnToTable("Publisher","publisher");
-		addIntegerColumnToTable("Year","year");
+		addIntegerColumnToTable("Year","pbyear");
 	}
 	
 	private void addStringColumnToTable(String header,String propertyName){

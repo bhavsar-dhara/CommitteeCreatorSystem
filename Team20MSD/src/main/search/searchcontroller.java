@@ -16,6 +16,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.classes.SearchQuery;
+import main.classes.UserInterface;
 
 public class searchcontroller implements Initializable {
 
@@ -44,8 +45,10 @@ public class searchcontroller implements Initializable {
 	@FXML
 	private void setSearch(Event event) throws Exception {
 		// get the criteria parameters from the search page
-		String conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString();
-		String pubdate1 = pubdate.getSelectionModel().getSelectedItem().toString();
+		String conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
+				? "" : conferencename.getSelectionModel().getSelectedItem().toString();
+		String pubdate1 = pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
+				? "0" : pubdate.getSelectionModel().getSelectedItem().toString();
 		String numofcom1 = numofcom.getSelectionModel().getSelectedItem().toString();
 		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
 		String numofpub1 = numofpub.getText().equals("") ? "0" : numofpub.getText();
@@ -66,7 +69,7 @@ public class searchcontroller implements Initializable {
 	@FXML
 	private void candidateson(Event event) throws Exception {
 		// UserInterface.showCandidateListPage();
-
+		UserInterface.showCandidateList();
 	}
 
 	@Override
@@ -78,11 +81,9 @@ public class searchcontroller implements Initializable {
 
 		conferencename.getItems().clear();
 		conferencename.setItems(confList);
-		conferencename.setValue(list.get(0));
 
 		pubdate.getItems().clear();
 		pubdate.setItems(pubdateList);
-		pubdate.setValue(plist.get(0));
 
 		System.out.println("Dynamic Loading successful..");
 	}
