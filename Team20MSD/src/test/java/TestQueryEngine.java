@@ -45,7 +45,7 @@ SearchQuery searchQuery = new SearchQuery();
 		authorListQuery1.add(author1);
 		
 		// TODO : resolve Assertion Error as publication objects are different!!!
-		//assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ SearchQuery searchQuery = new SearchQuery();
 		authorListQuery2.add(author3);
 		
 		Author testAuthor = new Author("sanjeev");
-		//assertNotSame("Populate Author List", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
+		assertNotSame("Populate Author List", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
 	}
 
 	@Test
