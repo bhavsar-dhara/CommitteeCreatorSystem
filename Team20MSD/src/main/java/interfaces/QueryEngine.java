@@ -1,9 +1,9 @@
-package main.interfaces;
+package main.java.interfaces;
 
 import java.util.List;
 
-import main.classes.Author;
-import main.classes.Publication;
+import main.java.search.model.Author;
+import main.java.search.model.Publication;
 
 public interface QueryEngine {
 	

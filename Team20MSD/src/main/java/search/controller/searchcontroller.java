@@ -1,4 +1,4 @@
-package main.search;
+package main.java.search.controller;
 
 import java.net.URL;
 import java.util.List;
@@ -15,8 +15,6 @@ import javafx.scene.control.ChoiceBox;
 //import main.java.classes.SearchQuery;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import main.classes.SearchQuery;
-import main.classes.UserInterface;
 
 public class searchcontroller implements Initializable {
 

@@ -1,4 +1,4 @@
-package main.classes;
+package main.java.search.controller;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,9 +7,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
-import scndPartOfUI.AuthorProfilePage;
-import scndPartOfUI.CandidateListPage;
-import scndPartOfUI.SearchHistoryPage;
+import main.java.search.model.Author;
+import main.java.search.model.Publication;
+import main.java.search.ui.AuthorProfilePage;
+import main.java.search.ui.CandidateListPage;
+import main.java.search.ui.SearchHistoryPage;
 
 public abstract class UserInterface {
 

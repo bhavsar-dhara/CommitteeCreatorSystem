@@ -1,4 +1,4 @@
-package main.search;
+package main.java.search.ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ public class Candidate extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 //        Parent root = FXMLLoader.load(getClass().getResource("/search/Search.fxml"));
-    	Parent root = FXMLLoader.load(getClass().getResource("/main/search/Search.fxml"));
+    	Parent root = FXMLLoader.load(getClass().getResource("/main/java/search/ui/Search.fxml"));
         primaryStage.setScene(new Scene(root, 600, 650));
         primaryStage.show();
     }

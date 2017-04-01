@@ -1,4 +1,4 @@
-package main.classes;
+package main.java.search.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
+import main.java.search.model.Author;
+import main.java.search.model.Publication;
 
 public class SearchQuery {
 
@@ -311,11 +313,11 @@ public class SearchQuery {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select distinct journal from tb_publication ");
+			query.append("Select distinct journal from tb_publication");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-				journalList.add(rs.getString("journal"));
+				journalList.add(rs.getString("journal").trim());
 			}
 
 			rs.close();
@@ -336,10 +338,11 @@ public class SearchQuery {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select distinct pbyear from tb_publication order by pbyear desc; ");
+			query.append("Select distinct pbyear from tb_publication order by pbyear desc");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
+				System.out.println(rs.getInt("pbyear"));
 				yearList.add(rs.getInt("pbyear"));
 			}
 
@@ -362,7 +365,7 @@ public class SearchQuery {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select distinct authorname from tb_candidate ");
+			query.append("Select distinct authorname from tb_candidate");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {

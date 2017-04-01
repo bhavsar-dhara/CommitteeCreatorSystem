@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package main.java.search.ui;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -22,8 +22,8 @@ import javafx.scene.effect.Bloom;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.MouseEvent;
-import main.classes.Author;
-import main.classes.UserInterface;
+import main.java.search.controller.UserInterface;
+import main.java.search.model.Author;
 
 public class CandidateListPage {
 	

@@ -7,9 +7,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import main.classes.Author;
-import main.classes.Publication;
-import main.classes.SearchQuery;
+import main.java.search.controller.SearchQuery;
+import main.java.search.model.Author;
+import main.java.search.model.Publication;
 
 public class TestQueryEngine {
 	

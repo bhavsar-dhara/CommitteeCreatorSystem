@@ -1,7 +1,7 @@
-package scndPartOfUI;
-import main.classes.Author;
-import main.classes.Publication;
-import main.classes.UserInterface;
+package main.java.search.ui;
+import main.java.search.controller.UserInterface;
+import main.java.search.model.Author;
+import main.java.search.model.Publication;
 
 import java.util.ArrayList;
 

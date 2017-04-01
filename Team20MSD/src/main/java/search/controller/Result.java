@@ -1,4 +1,4 @@
-package main.search;
+package main.java.search.controller;
 
 import java.util.List;
 
@@ -14,9 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.classes.Author;
-import main.classes.SearchQuery;
-import main.classes.UserInterface;
+import main.java.search.model.Author;
 
 public class Result extends Application {
 

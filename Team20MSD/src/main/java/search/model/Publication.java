@@ -1,4 +1,4 @@
-package main.classes;
+package main.java.search.model;
 
 public class Publication {
 	private Long id;
