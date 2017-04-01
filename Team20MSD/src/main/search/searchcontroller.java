@@ -45,11 +45,15 @@ public class searchcontroller implements Initializable {
 	@FXML
 	private void setSearch(Event event) throws Exception {
 		// get the criteria parameters from the search page
-		String conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
+		String conferencename1 = conferencename.getSelectionModel().isEmpty() 
+				&& conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
 				? "" : conferencename.getSelectionModel().getSelectedItem().toString();
-		String pubdate1 = pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
+		String pubdate1 =  pubdate.getSelectionModel().isEmpty() 
+				&& pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
 				? "0" : pubdate.getSelectionModel().getSelectedItem().toString();
-		String numofcom1 = numofcom.getSelectionModel().getSelectedItem().toString();
+		String numofcom1 = numofcom.getSelectionModel().isEmpty() 
+				&& numofcom.getSelectionModel().getSelectedItem().toString().equals("")
+				? "0" : numofcom.getSelectionModel().getSelectedItem().toString();
 		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
 		String numofpub1 = numofpub.getText().equals("") ? "0" : numofpub.getText();
 
@@ -64,6 +68,20 @@ public class searchcontroller implements Initializable {
 
 		// pass the criteria variables to query engine
 		tableViewSample.setCurrentInfo(keyword1, conferencename1, pubdate1, numofpub1, numofcom1);
+	}
+	
+	@FXML
+	private void setAllclear(){
+		keyword.clear();
+		numofpub.clear();
+		conferencename.getSelectionModel().clearSelection();
+		numofcom.getSelectionModel().selectFirst();
+		pubdate.getSelectionModel().clearSelection();
+	}
+	
+	@FXML
+	private void searchclear(Event event) throws Exception {
+	   setAllclear();
 	}
 
 	@FXML

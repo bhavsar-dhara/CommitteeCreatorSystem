@@ -1,0 +1,17 @@
+main\classes\SortCriterion.class
+main\classes\Author.class
+main\classes\SearchQuery.class
+test\java\TestUserInterface.class
+scndPartOfUI\CandidateListPage.class
+test\java\TestFrontEnd.class
+main\classes\UIPageGenerator.class
+main\search\Candidate.class
+main\classes\UserInterface.class
+scndPartOfUI\AuthorProfilePage.class
+main\interfaces\UserInterface.class
+scndPartOfUI\SearchHistoryPage.class
+main\interfaces\QueryEngine.class
+main\classes\Publication.class
+main\search\Result.class
+main\search\searchcontroller.class
+test\java\TestQueryEngine.class
