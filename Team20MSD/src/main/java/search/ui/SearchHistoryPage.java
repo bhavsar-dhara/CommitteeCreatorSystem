@@ -1,18 +1,12 @@
 package main.java.search.ui;
 import main.java.search.controller.SearchQuery;
 import main.java.search.controller.UserInterface;
-import main.java.search.model.Author;
-
-import java.util.ArrayList;
-
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
@@ -44,7 +38,7 @@ public class SearchHistoryPage {
 	private VBox canvas = new VBox(10,pageHead,buttonArea,searchHistoryPagination);
 	
 	private int getPageCount(){
-		int quotient = (int) UserInterface.getSearchHistorySize()/itemNbrPerPage;
+		int quotient = UserInterface.getSearchHistorySize()/itemNbrPerPage;
 		int remainder = UserInterface.getSearchHistorySize() % itemNbrPerPage;
 		if (UserInterface.getSearchHistorySize() == 0) {
 			return 1;

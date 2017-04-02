@@ -25,10 +25,6 @@ public class SearchQuery {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-	public SearchQuery() {
-		super();
-	}
-	
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
 		if (conn == null) {
@@ -36,7 +32,6 @@ public class SearchQuery {
 				
 				Class.forName("org.postgresql.Driver");
 		        conn = DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll");
-		        System.out.println("\nSuccessful connect with database! ");
 		        
 //				Class.forName("org.postgresql.Driver");
 ////				Connection to local database
@@ -76,7 +71,7 @@ public class SearchQuery {
 	// output: list of authors
 
 	// TODO : multiple conferences selected?
-	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
+	public static List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
@@ -103,7 +98,7 @@ public class SearchQuery {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
-			System.out.println("............" + query.toString());
+//			System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");
@@ -289,7 +284,7 @@ public class SearchQuery {
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
 				authorRS.setPublication(publication);
-				System.out.println(authorRS.toString());
+//				System.out.println(authorRS.toString());
 				authorList.add(authorRS);
 			}
 
@@ -340,7 +335,7 @@ public class SearchQuery {
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-				System.out.println(rs.getInt("pbyear"));
+//				System.out.println(rs.getInt("pbyear"));
 				yearList.add(rs.getInt("pbyear"));
 			}
 
@@ -420,7 +415,7 @@ public class SearchQuery {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
+//				System.out.println("numberOfRows= " + numberOfRows);
 			} else {
 				System.err.println("error: could not get the record counts");
 			}
@@ -500,7 +495,7 @@ public class SearchQuery {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
+//				System.out.println("numberOfRows= " + numberOfRows);
 			} else {
 				System.err.println("error: could not get the record counts");
 			}
@@ -511,5 +506,32 @@ public class SearchQuery {
 			System.err.println(se.getMessage());
 		}
 		return numberOfRows;
+	}
+	
+	/*
+	 * 
+	 * Query 15 : to find a particular author in Favorite Author List
+	 * 
+	 */
+	public static Author isFavCandidate(Author author) {
+		Author resultAuthor = new Author();
+		try {
+			Statement st = conn.createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct authorname from tb_candidate "
+					+ "where lower(authorname) = lower('" + author.getName() + "') ");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				resultAuthor.setName(rs.getString("authorname"));
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "deleting fav candidate.");
+			System.err.println(se.getMessage());
+		}
+		return resultAuthor;
 	}
 }

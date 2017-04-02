@@ -96,7 +96,7 @@ public class Result extends Application {
 	public void ButtonClicked() {
 		ObservableList<Author> AuthorSelected;
 		AuthorSelected = table.getSelectionModel().getSelectedItems();
-		System.out.println(AuthorSelected.size());
+		// System.out.println(AuthorSelected.size());
 		UserInterface.showAuthorProfile(AuthorSelected.get(0));
 	}
 }

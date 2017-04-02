@@ -3,11 +3,8 @@ import main.java.search.controller.UserInterface;
 import main.java.search.model.Author;
 import main.java.search.model.Publication;
 
-import java.util.ArrayList;
-
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

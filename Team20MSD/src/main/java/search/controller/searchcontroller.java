@@ -43,27 +43,27 @@ public class searchcontroller implements Initializable {
 	@FXML
 	private void setSearch(Event event) throws Exception {
 		// get the criteria parameters from the search page
-		
+
 		String conferencename1 = null;
-		if ( !conferencename.getSelectionModel().isEmpty() ) {
-			conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "" : conferencename.getSelectionModel().getSelectedItem().toString().trim();
+		if (!conferencename.getSelectionModel().isEmpty()) {
+			conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") ? ""
+					: conferencename.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String pubdate1 = null;
-		if ( !pubdate.getSelectionModel().isEmpty() ) {
-			pubdate1 =  pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : pubdate.getSelectionModel().getSelectedItem().toString().trim();
+		if (!pubdate.getSelectionModel().isEmpty()) {
+			pubdate1 = pubdate.getSelectionModel().getSelectedItem().toString().equals("") ? "0"
+					: pubdate.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String numofcom1 = null;
-		if ( !numofcom.getSelectionModel().isEmpty() ) {
-			numofcom1 =  numofcom.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : numofcom.getSelectionModel().getSelectedItem().toString().trim();
+		if (!numofcom.getSelectionModel().isEmpty()) {
+			numofcom1 = numofcom.getSelectionModel().getSelectedItem().toString().equals("") ? "0"
+					: numofcom.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
-		
+
 		String numofpub1 = numofpub.getText().equals("") ? "0" : numofpub.getText();
 
 		// int[] intArray = new int[1];
@@ -78,19 +78,19 @@ public class searchcontroller implements Initializable {
 		// pass the criteria variables to query engine
 		tableViewSample.setCurrentInfo(keyword1, conferencename1, pubdate1, numofpub1, numofcom1);
 	}
-	
+
 	@FXML
-	private void setAllclear(){
+	private void setAllclear() {
 		keyword.clear();
 		numofpub.clear();
 		conferencename.getSelectionModel().clearSelection();
 		numofcom.getSelectionModel().selectFirst();
 		pubdate.getSelectionModel().clearSelection();
 	}
-	
+
 	@FXML
 	private void searchclear(Event event) throws Exception {
-	   setAllclear();
+		setAllclear();
 	}
 
 	@FXML
@@ -103,8 +103,8 @@ public class searchcontroller implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		List<String> list = SearchQuery.fetchJournalNames();
 		List<Integer> plist = SearchQuery.fetchYearsAvailable();
-		ObservableList confList = (ObservableList) FXCollections.observableList(list);
-		ObservableList pubdateList = (ObservableList) FXCollections.observableList(plist);
+		ObservableList confList = FXCollections.observableList(list);
+		ObservableList pubdateList = FXCollections.observableList(plist);
 
 		conferencename.getItems().clear();
 		conferencename.setItems(confList);
@@ -112,7 +112,7 @@ public class searchcontroller implements Initializable {
 		pubdate.getItems().clear();
 		pubdate.setItems(pubdateList);
 
-		System.out.println("Dynamic Loading successful..");
+		// System.out.println("Dynamic Loading successful..");
 	}
 
 }

@@ -18,9 +18,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
-import javafx.scene.effect.Bloom;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.MouseEvent;
 import main.java.search.controller.UserInterface;
 import main.java.search.model.Author;
@@ -46,7 +44,7 @@ public class CandidateListPage {
 	private ArrayList<Author> selectedAuthors = new ArrayList<>();
 	
 	private int getPageCount(){
-		int quotient = (int) UserInterface.getCandListSize()/itemNbrPerPage;
+		int quotient = UserInterface.getCandListSize()/itemNbrPerPage;
 		int remainder = UserInterface.getCandListSize() % itemNbrPerPage;
 		if (UserInterface.getCandListSize() == 0){
 			return 1;

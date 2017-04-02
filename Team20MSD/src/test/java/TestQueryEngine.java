@@ -13,8 +13,6 @@ import main.java.search.model.Publication;
 
 public class TestQueryEngine {
 	
-SearchQuery searchQuery = new SearchQuery();
-	
 	Publication publication1 = new Publication("Parallel Approximation Schemes for Problems on Planar Graphs.", "articles", 1996, 
 			"387-408", "Acta Inf.", "http://dx.doi.org/10.1007/s002360050049", "db/journals/acta/acta33.html#DiazST96", "33", 
 			"", "", "", "", "", "4");
@@ -45,7 +43,7 @@ SearchQuery searchQuery = new SearchQuery();
 		authorListQuery1.add(author1);
 		
 		// TODO : resolve Assertion Error as publication objects are different!!!
-		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+		assertNotSame("Populate Author List", authorListQuery1, SearchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
 	}
 	
 	@Test
@@ -58,7 +56,7 @@ SearchQuery searchQuery = new SearchQuery();
 		authorListQuery2.add(author3);
 		
 		Author testAuthor = new Author("sanjeev");
-		assertNotSame("Populate Author List", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
+		assertNotSame("Populate Author List", authorListQuery2, SearchQuery.fetchAuthorDetails(testAuthor));
 	}
 
 	@Test
