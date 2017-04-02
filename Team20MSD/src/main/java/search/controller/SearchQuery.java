@@ -513,8 +513,9 @@ public class SearchQuery {
 	 * Query 15 : to find a particular author in Favorite Author List
 	 * 
 	 */
-	public static Author isFavCandidate(Author author) {
+	public static boolean isFavCandidate(Author author) {
 		Author resultAuthor = new Author();
+		boolean isPresent = false;
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
@@ -525,6 +526,10 @@ public class SearchQuery {
 			while (rs.next()) {
 				resultAuthor.setName(rs.getString("authorname"));
 			}
+			
+			if (resultAuthor.getName() != null) {
+				isPresent = true;
+			}
 
 			rs.close();
 			st.close();
@@ -532,6 +537,7 @@ public class SearchQuery {
 			System.err.println(SQLEXCEPTION + "deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
-		return resultAuthor;
+//		return resultAuthor;
+		return isPresent;
 	}
 }
