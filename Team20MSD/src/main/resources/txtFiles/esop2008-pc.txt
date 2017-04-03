@@ -1,0 +1,25 @@
+P:Sophia Drossopoulou
+Davide Ancona 
+Manuel M. T. Chakravarty 
+Dave Clarke
+Adriana B. Compagnoni
+Manuel F&#228;hndrich
+Sabine Glesner
+Robert Harper
+Shriram Krishnamurthi
+Doug Lea
+Peter Mueller
+Alan Mycroft
+David A. Naumann
+Catuscia Palamidessi 
+Matthew J. Parkinson
+Germ&#225;n Puebla
+Andrei Sabelfeld
+Vijay A. Saraswat
+Konstantinos F. Sagonas
+Eijiro Sumii
+Walid Taha
+Frank Tip
+Philip Wadler
+
+
