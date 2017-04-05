@@ -28,14 +28,14 @@ public class QueryEngine {
 		if (getConn() == null) {
 			try {
 				
-				Class.forName("org.postgresql.Driver");
-		        setConn(DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll"));
-		        System.out.println("\nSuccessful connect with database! ");
-		        
 //				Class.forName("org.postgresql.Driver");
-////				Connection to local database
-//				String url = "jdbc:postgresql://localhost:5432/msddblp";
-//				conn = DriverManager.getConnection(url, "postgres", "1991715");
+//		        setConn(DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll"));
+//		        System.out.println("\nSuccessful connect with database! ");
+		        
+				Class.forName("org.postgresql.Driver");
+//				Connection to local database
+				String url = "jdbc:postgresql://localhost:5432/msddblp";
+				conn = DriverManager.getConnection(url, "postgres", "1991715");
 		        
 				// Connection to AWS PostgreSQL Database
 				// ERROR ::: on trying to connect to remote
@@ -103,10 +103,10 @@ public class QueryEngine {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
-//			System.out.println("............" + query.toString());
+			System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
-			// System.out.println(rs.getFetchSize() + "......");
+			 System.out.println(rs.getFetchSize() + "......");
 			while (rs.next()) {
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));

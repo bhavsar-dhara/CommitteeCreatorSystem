@@ -28,6 +28,7 @@ public class TestQueryEngine {
 			"584-594", "Future Generation Comp. Syst.", "http://dx.doi.org/10.1007/s002360050049", "db/journals/acta/acta33.html#DiazST96", "7", 
 			"", "", "", "", "", "2");
 	List<Author> authorListQuery2 = new ArrayList<Author>();
+	
 	Author author2 = new Author("Parallel Integer Sorting and Simulation Amongst CRCW Models.", "Sanjeev Saxena", "2", publication2);
 	Author author3 = new Author("Effective and efficient similarity search in scientific workflow repositories.", "Sanjeev Saxena", "2", publication3);
 	
