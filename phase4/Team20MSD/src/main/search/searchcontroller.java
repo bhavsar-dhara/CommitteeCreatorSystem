@@ -49,20 +49,20 @@ public class searchcontroller implements Initializable {
 		// get the criteria parameters from the search page
 		
 		String conferencename1 = null;
-		System.out.println("isNotSelected0... " + !conferencename.getSelectionModel().isSelected(0));
-		System.out.println("isNotEmpty... " + !conferencename.getSelectionModel().isEmpty());
+//		System.out.println("isNotSelected0... " + !conferencename.getSelectionModel().isSelected(0));
+//		System.out.println("isNotEmpty... " + !conferencename.getSelectionModel().isEmpty());
 		if (!conferencename.getSelectionModel().isSelected(0) && !conferencename.getSelectionModel().isSelected(-1)) {
-			System.out.println("index... " + conferencename.getSelectionModel().getSelectedIndex());
+//			System.out.println("index... " + conferencename.getSelectionModel().getSelectedIndex());
 			conferencename1 = (conferencename.getSelectionModel().getSelectedItem().toString().equals("") || 
 					conferencename.getSelectionModel().getSelectedItem().toString().equals(" ")) ? ""
 					: conferencename.getSelectionModel().getSelectedItem().toString().trim();
 		}
 
 		String pubdate1 = null;
-		System.out.println("..isNotEmpty... " + !pubdate.getSelectionModel().isEmpty());
+//		System.out.println("..isNotEmpty... " + !pubdate.getSelectionModel().isEmpty());
 		if (!pubdate.getSelectionModel().isEmpty()) {
 			pubdate1 = (pubdate.getSelectionModel().getSelectedItem().toString().equals("") || 
-					conferencename.getSelectionModel().getSelectedItem().toString().equals(" ")) ? ""
+					pubdate.getSelectionModel().getSelectedItem().toString().equals(" ")) ? ""
 					: pubdate.getSelectionModel().getSelectedItem().toString().trim();
 		}
 
