@@ -35,7 +35,7 @@ public class _userInterface implements UserInterface {
 		qe.addFavCandidate(a);
 		CandListListeners.forEach((CandidateListListener l) -> {
 			l.refresh();
-		});
+		}); 
 	}
 	public boolean hasCand(Author a){
 		return qe.isFavCandidate(a);

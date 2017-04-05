@@ -128,6 +128,7 @@ public class AuthorProfilePage implements CandidateListListener {
 		canvas = new VBox(20,name,buttonArea,blgrphyTable);
 		canvas.setAlignment(Pos.CENTER);
 		canvas.setPadding(new Insets(20,40,20,40));
+		canvas.setPrefSize(600, VBox.USE_COMPUTED_SIZE);
 	}
 	public Scene getScene(){
 		return new Scene(canvas);
