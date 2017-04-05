@@ -51,7 +51,7 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <ChoiceBox fx:id="conferencename" prefHeight="27.0" prefWidth="308.0" value="" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ChoiceBox fx:id="conferencename" prefHeight="27.0" prefWidth="308.0" value=" " GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                         </FXCollections>
@@ -63,7 +63,7 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <ChoiceBox fx:id="pubdate" prefHeight="27.0" prefWidth="307.0" value="" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ChoiceBox fx:id="pubdate" prefHeight="27.0" prefWidth="307.0" value=" " GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                         </FXCollections>

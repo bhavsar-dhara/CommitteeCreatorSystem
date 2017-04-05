@@ -26,15 +26,18 @@ public class Result {
 
 	public void setCurrentInfo(String key, String conf, String date, String numofpub, String commit,UserInterface ui,QueryEngine qe) {
 		
-		// TODO : if multiple year selection enabled - change code
-		 int[] intArray = new int[1];
-		 intArray[0] = Integer.parseInt(date);
-		 
-		 List<Author> authorList = qe.populateListOfAuthors(conf.trim(), key.trim(), intArray, Integer.parseInt(numofpub));
-		 
-		 for (Author a : authorList) {
-			 products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
-		 }
+		int[] intArray = null;
+		if (date != null) {
+			// TODO : if multiple year selection enabled - change code
+			intArray = new int[1];
+			intArray[0] = Integer.parseInt(date);
+		}
+
+		List<Author> authorList = qe.populateListOfAuthors(conf, key, intArray, Integer.parseInt(numofpub));
+
+		for (Author a : authorList) {
+			products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
+		}
 		 
 		 this.ui = ui;
 		 this.qe = qe;

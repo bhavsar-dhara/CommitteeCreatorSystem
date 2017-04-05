@@ -49,26 +49,31 @@ public class searchcontroller implements Initializable {
 		// get the criteria parameters from the search page
 		
 		String conferencename1 = null;
-		
-		if ( conferencename.getSelectionModel().isEmpty() ) {
-			conferencename1 = conferencename.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "" : conferencename.getSelectionModel().getSelectedItem().toString();
+		System.out.println("isNotSelected0... " + !conferencename.getSelectionModel().isSelected(0));
+		System.out.println("isNotEmpty... " + !conferencename.getSelectionModel().isEmpty());
+		if (!conferencename.getSelectionModel().isSelected(0) && !conferencename.getSelectionModel().isSelected(-1)) {
+			System.out.println("index... " + conferencename.getSelectionModel().getSelectedIndex());
+			conferencename1 = (conferencename.getSelectionModel().getSelectedItem().toString().equals("") || 
+					conferencename.getSelectionModel().getSelectedItem().toString().equals(" ")) ? ""
+					: conferencename.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String pubdate1 = null;
-		if ( pubdate.getSelectionModel().isEmpty() ) {
-			pubdate1 =  pubdate.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : pubdate.getSelectionModel().getSelectedItem().toString();
+		System.out.println("..isNotEmpty... " + !pubdate.getSelectionModel().isEmpty());
+		if (!pubdate.getSelectionModel().isEmpty()) {
+			pubdate1 = (pubdate.getSelectionModel().getSelectedItem().toString().equals("") || 
+					conferencename.getSelectionModel().getSelectedItem().toString().equals(" ")) ? ""
+					: pubdate.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String numofcom1 = null;
-		if ( numofcom.getSelectionModel().isEmpty() ) {
-			numofcom1 =  numofcom.getSelectionModel().getSelectedItem().toString().equals("") 
-					? "0" : numofcom.getSelectionModel().getSelectedItem().toString();
+		if (!numofcom.getSelectionModel().isEmpty()) {
+			numofcom1 = numofcom.getSelectionModel().getSelectedItem().toString().equals("") ? "0"
+					: numofcom.getSelectionModel().getSelectedItem().toString().trim();
 		}
-		
+
 		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
-		
+
 		String numofpub1 = numofpub.getText().equals("") ? "0" : numofpub.getText();
 
 		// int[] intArray = new int[1];

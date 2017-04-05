@@ -73,10 +73,10 @@ public class QueryEngine {
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication) {
 
-		System.err.println(confJournal);
-		System.err.println(keywords);
-		System.err.println(years[0]);
-		System.err.println(noOfPublication);
+//		System.err.println(confJournal);
+//		System.err.println(keywords);
+//		System.err.println(years[0]);
+//		System.err.println(noOfPublication);
 
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
