@@ -13,7 +13,7 @@ import main.classes.QueryEngine;
 
 public class TestQueryEngine {
 	
-QueryEngine searchQuery = new QueryEngine();
+	QueryEngine searchQuery = new QueryEngine();
 	
 	Publication publication1 = new Publication("Parallel Approximation Schemes for Problems on Planar Graphs.", "articles", 1996, 
 			"387-408", "Acta Inf.", "http://dx.doi.org/10.1007/s002360050049", "db/journals/acta/acta33.html#DiazST96", "33", 
@@ -34,6 +34,11 @@ QueryEngine searchQuery = new QueryEngine();
 	List<Author> authorListQuery3 = new ArrayList<Author>();
 	
 	List<Author> authorListQuery4 = new ArrayList<Author>();
+	
+	@Test
+	public void connectionTest() {
+		assertNotNull(QueryEngine.getConn());
+	}
 	
 	@Test
 	public void testPopulateListOfAuthorsQuery() {
@@ -58,7 +63,7 @@ QueryEngine searchQuery = new QueryEngine();
 		authorListQuery2.add(author3);
 		
 		Author testAuthor = new Author("sanjeev");
-		assertNotSame("Populate Author List", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
+		assertNotSame("Populate Author Details", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
 	}
 
 	@Test
@@ -69,7 +74,7 @@ QueryEngine searchQuery = new QueryEngine();
 		
 		authorListQuery3.add(author1);
 		
-		//assertNotSame("Populate Author List", authorListQuery3, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
 	}
 	
 	@Test
@@ -80,6 +85,6 @@ QueryEngine searchQuery = new QueryEngine();
 		
 		authorListQuery4.add(author1);
 		
-		//assertNotSame("Populate Author List", authorListQuery4, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
 	}
 }
