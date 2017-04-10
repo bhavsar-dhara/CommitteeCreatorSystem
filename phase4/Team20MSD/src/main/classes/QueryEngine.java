@@ -8,7 +8,7 @@ import java.util.List;
 
 public class QueryEngine {
 
-	static Connection conn = connectToDatabaseOrDisconnect();
+	private static Connection conn = connectToDatabaseOrDisconnect();
 
 	static String SQLEXCEPTION = "Threw a SQLException while ";
 	static String CLASSNOTFOUNDEXECPTION = "Threw a ClassNotFoundException while connecting to the database.";
@@ -20,11 +20,11 @@ public class QueryEngine {
 
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
-		if (conn == null) {
+		if (getConn() == null) {
 			try {
 				
 				Class.forName("org.postgresql.Driver");
-		        conn = DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll");
+		        setConn(DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll"));
 		        System.out.println("\nSuccessful connect with database! ");
 		        
 //				Class.forName("org.postgresql.Driver");
@@ -52,7 +52,7 @@ public class QueryEngine {
 				System.exit(2);
 			}
 		}
-		return conn;
+		return getConn();
 	}
 
 	// Query 1 Search for author list
@@ -68,14 +68,14 @@ public class QueryEngine {
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
 			int noOfPublication, boolean isServedAsCommittee) {
 
-		System.err.println(confJournal);
-		System.err.println(keywords);
-		System.err.println(years[0]);
-		System.err.println(noOfPublication);
+		// System.err.println(confJournal);
+		// System.err.println(keywords);
+		// System.err.println(years[0]);
+		// System.err.println(noOfPublication);
 
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * " +
 					"FROM tb_publication tp, " +
@@ -106,7 +106,7 @@ public class QueryEngine {
 				query.append("and tc.authorname = ta.authorname" + " ");
 			}
 
-			System.out.println("............" + query.toString());
+//			System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");
@@ -171,7 +171,7 @@ public class QueryEngine {
 	 */
 	public  int getNumberofPBByAuthorName(Author author) {
 		try {
-			PreparedStatement ps = conn.prepareStatement(GET_NOPB_BY_AUTHORNAME);
+			PreparedStatement ps = getConn().prepareStatement(GET_NOPB_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
 			ResultSet rs = ps.executeQuery();
 			int numberofPB = 0;
@@ -194,7 +194,7 @@ public class QueryEngine {
 	public  List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
 		try {
-			PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_NOPB);
+			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
 			ps.setInt(1, inputAuthorNumberofPB);
 			ResultSet rs = ps.executeQuery();
 			List<Author> authorsBySameNOPB = new ArrayList<Author>();
@@ -219,7 +219,7 @@ public class QueryEngine {
 	 */
 	public  List<Publication> getPublicationByAuthorName(Author author) {
 		try {
-			PreparedStatement ps = conn.prepareStatement(GET_TITLE_BY_AUTHORNAME);
+			PreparedStatement ps = getConn().prepareStatement(GET_TITLE_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
 			ResultSet rs = ps.executeQuery();
 			List<Publication> listofpublicationbyauthorname = FXCollections.observableArrayList();
@@ -250,7 +250,7 @@ public class QueryEngine {
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
 			String titleName = listofpublication.get(i).getTitle();
 			try {
-				PreparedStatement ps = conn.prepareStatement(GET_AUTHORNAME_BY_TITLE);
+				PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_TITLE);
 				ps.setString(1, titleName);
 				ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
@@ -273,7 +273,7 @@ public class QueryEngine {
 	public  List<Author> fetchAuthorDetails(Author author) {
 		List<Author> authorList = new ArrayList<>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
@@ -295,7 +295,7 @@ public class QueryEngine {
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
 				authorRS.setPublication(publication);
-				System.out.println(authorRS.toString());
+//				System.out.println(authorRS.toString());
 				authorList.add(authorRS);
 			}
 
@@ -315,7 +315,7 @@ public class QueryEngine {
 	public  List<String> fetchJournalNames() {
 		List<String> journalList = new ArrayList<>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct journal from tb_publication ");
 
@@ -340,7 +340,7 @@ public class QueryEngine {
 	public  List<Integer> fetchYearsAvailable() {
 		List<Integer> yearList = new ArrayList<>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct pbyear from tb_publication order by pbyear desc; ");
 
@@ -366,7 +366,7 @@ public class QueryEngine {
 	public  Author fetchFavCandidate(int i) {
 		List<Author> candidatesList = new ArrayList<>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct authorname from tb_candidate ");
 
@@ -387,7 +387,7 @@ public class QueryEngine {
 	public  int addFavCandidate(Author author) {
 		int affectedRows = 0;
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ")");
 
@@ -404,7 +404,7 @@ public class QueryEngine {
 	public  int deleteFavCandidate(Author author) {
 		int affectedRows = 0;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement("DELETE from tb_candidate where authorname=?");
+			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_candidate where authorname=?");
 			pstmt.setString(1, author.getName());
 
 			affectedRows = pstmt.executeUpdate();
@@ -420,7 +420,7 @@ public class QueryEngine {
 	public  int countFavCandidates() {
 		int numberOfRows = 0;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement("SELECT COUNT(*) from tb_candidate");
+			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_candidate");
 
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -446,7 +446,7 @@ public class QueryEngine {
 	public  List<String> fetchSavedQueries() {
 		List<String> queryList = new ArrayList<>();
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct query from tb_savedqueries ");
 
@@ -467,7 +467,7 @@ public class QueryEngine {
 	public  int addSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
 
@@ -484,7 +484,7 @@ public class QueryEngine {
 	public  int deleteSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement("DELETE from tb_savedqueries where query=?");
+			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
 			pstmt.setString(1, saveQuery);
 
 			affectedRows = pstmt.executeUpdate();
@@ -500,7 +500,7 @@ public class QueryEngine {
 	public  int countSavedQueries() {
 		int numberOfRows = 0;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement("SELECT COUNT(*) from tb_savedqueries");
+			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
 
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -527,7 +527,7 @@ public class QueryEngine {
 		Author resultAuthor = new Author();
 		boolean isPresent = false;
 		try {
-			Statement st = conn.createStatement();
+			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct authorname from tb_candidate "
 					+ "where lower(authorname) = lower('" + author.getName() + "') ");
@@ -549,5 +549,13 @@ public class QueryEngine {
 		}
 //		return resultAuthor;
 		return isPresent;
+	}
+
+	public static Connection getConn() {
+		return conn;
+	}
+
+	public static void setConn(Connection conn) {
+		QueryEngine.conn = conn;
 	}
 }
