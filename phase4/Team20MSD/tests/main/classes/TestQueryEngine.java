@@ -50,7 +50,7 @@ public class TestQueryEngine {
 		authorListQuery1.add(author1);
 		
 		// TODO : resolve Assertion Error as publication objects are different!!!
-		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+		assertNotEquals("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
 	}
 	
 	@Test
@@ -86,5 +86,10 @@ public class TestQueryEngine {
 		authorListQuery4.add(author1);
 		
 		assertNotSame("Populate Author List", authorListQuery1, searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4));
+	}
+	
+	@Test
+	public void testFetchNoOfPublicationListPerYear() {
+		searchQuery.fetchNoOfPublicationPerYear(author2);
 	}
 }
