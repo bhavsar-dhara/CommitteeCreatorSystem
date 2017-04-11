@@ -1,0 +1,26 @@
+P:Mooly Sagiv
+Mart&#0237;n Abadi 
+Alex Aiken 
+Bruno Blanchet 
+Luca Cardelli 
+Patrick Cousot 
+Oege de Moor 
+Manuel F&#228;hndrich 
+John Field 
+Maurizio Gabbrielli 
+Chris Hankin 
+Manuel V. Hermenegildo 
+Xavier Leroy 
+Anders M&#0248;ller 
+Greg Morrisett 
+David A. Naumann 
+Hanne Riis Nielson 
+Peter W. O'Hearn 
+Catuscia Palamidessi 
+Thomas W. Reps 
+Martin C. Rinard 
+Andrei Sabelfeld 
+Mooly Sagiv 
+Davide Sangiorgi 
+David Schmidt 
+Scott D. Stoller 
