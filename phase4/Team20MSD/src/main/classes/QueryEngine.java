@@ -558,4 +558,86 @@ public class QueryEngine {
 	public static void setConn(Connection conn) {
 		QueryEngine.conn = conn;
 	}
+	
+	/*
+	 * 
+	 * Query 16 : to fetch distinct committee name list
+	 * 
+	 */
+	public List<String> fetchCommitteeNameList() {
+		List<String> committeeList = new ArrayList<>();
+		try {
+			Statement st = getConn().createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct committee from tb_committeecheck");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				committeeList.add(rs.getString("committee"));
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(se.getMessage());
+		}
+		return committeeList;
+	}
+	
+	/*
+	 * 
+	 * Query 17 : to fetch author list based on the committee and no of years served as a member
+	 * 
+	 */
+	public List<Author> fetchAuthorList(String committeeName, int noOfYears) {
+		return null;
+	}
+	
+
+	/*
+	 * 
+	 * Query 18 : to fetch no of publication year list based on author name
+	 * Return type: HashMap<Year, No of publications>
+	 * 
+	 */
+	public void fetchNoOfPublicationList(Author author) {
+		
+	}	
+
+	/*
+	 * 
+	 * Query 19 : to fetch university based on author name
+	 * 
+	 */
+	public String getAuthorDetails(Author author) {
+		String committeeList = "";
+		try {
+			Statement st = getConn().createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select university from tb_university "
+					+ "where lower(authorname) = lower('" + author.getName() + "') ");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				committeeList = rs.getString("committee");
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(se.getMessage());
+		}
+		return committeeList;
+	}
+
+	/*
+	 * 
+	 * Query 20 : to fetch author list based on the committee and no of years served as a member
+	 * 
+	 */
+	public void convertXYToList() {
+		
+	}
 }
