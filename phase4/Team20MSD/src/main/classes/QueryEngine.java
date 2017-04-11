@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javafx.collections.FXCollections;
 
@@ -48,11 +50,11 @@ public class QueryEngine {
 				
 				System.out.println("Connection made successfully...");
 			} catch (ClassNotFoundException e) {
-				System.err.println(CLASSNOTFOUNDEXECPTION);
+				System.err.println(CLASSNOTFOUNDEXECPTION + " class not found exception");
 				System.err.println(e.getMessage());
 				System.exit(1);
 			} catch (SQLException se) {
-				System.err.println(SQLEXCEPTION + "connecting to the database");
+				System.err.println(SQLEXCEPTION + " connecting to the database");
 				System.err.println(se.getMessage());
 				System.exit(2);
 			}
@@ -134,7 +136,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying author list.");
+			System.err.println(SQLEXCEPTION + " querying author list.");
 			System.err.println(se.getMessage());
 		}
 		return listOfAuthors;
@@ -174,7 +176,7 @@ public class QueryEngine {
 			}
 			return numberofPB;
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying number of publication based on authors.");
+			System.err.println(SQLEXCEPTION + " querying number of publication based on authors.");
 			System.err.println(se.getMessage());
 		}
 		return -1;
@@ -200,7 +202,7 @@ public class QueryEngine {
 			}
 			return authorsBySameNOPB;
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying similar author by same number of publications.");
+			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
 			System.err.println(se.getMessage());
 		}
 		return null;
@@ -227,7 +229,7 @@ public class QueryEngine {
 			}
 			return listofpublicationbyauthorname;
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying publications based on authors.");
+			System.err.println(SQLEXCEPTION + " querying publications based on authors.");
 			System.err.println(se.getMessage());
 		}
 		return null;
@@ -254,7 +256,7 @@ public class QueryEngine {
 					listofAuthorBySamePB.add(authorRS);
 				}
 			} catch (SQLException se) {
-				System.err.println(SQLEXCEPTION + "querying similar author who have co-authored a paper.");
+				System.err.println(SQLEXCEPTION + " querying similar author who have co-authored a paper.");
 				System.err.println(se.getMessage());
 			}
 		}
@@ -296,7 +298,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying author details.");
+			System.err.println(SQLEXCEPTION + " querying author details.");
 			System.err.println(se.getMessage());
 		}
 		return authorList;
@@ -321,7 +323,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(SQLEXCEPTION + " querying journal list.");
 			System.err.println(se.getMessage());
 		}
 		return journalList;
@@ -346,7 +348,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying publication year list.");
+			System.err.println(SQLEXCEPTION + " querying publication year list.");
 			System.err.println(se.getMessage());
 		}
 		return yearList;
@@ -357,7 +359,7 @@ public class QueryEngine {
 	 * candidates
 	 * 
 	 */
-	public  Author fetchFavCandidate(int i) {
+	public Author fetchFavCandidate(int i) {
 		List<Author> candidatesList = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -372,10 +374,10 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying fav candidate list.");
+			System.err.println(SQLEXCEPTION + " querying fav candidate list.");
 			System.err.println(se.getMessage());
 		}
-		return candidatesList.get(i);
+		return candidatesList.get(0);
 	}
 
 	public  int addFavCandidate(Author author) {
@@ -389,7 +391,7 @@ public class QueryEngine {
 
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "adding fav candidate.");
+			System.err.println(SQLEXCEPTION + " adding fav candidate.");
 			System.err.println(se.getMessage());
 		}
 		return affectedRows;
@@ -405,7 +407,7 @@ public class QueryEngine {
 
 			pstmt.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "deleting fav candidate.");
+			System.err.println(SQLEXCEPTION + " deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
 		return affectedRows;
@@ -426,7 +428,7 @@ public class QueryEngine {
 
 			pstmt.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "counting fav candidate.");
+			System.err.println(SQLEXCEPTION + " counting fav candidate.");
 			System.err.println(se.getMessage());
 		}
 		return numberOfRows;
@@ -452,7 +454,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying saved queries list.");
+			System.err.println(SQLEXCEPTION + " querying saved queries list.");
 			System.err.println(se.getMessage());
 		}
 		return queryList;
@@ -469,7 +471,7 @@ public class QueryEngine {
 
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "adding saved queries.");
+			System.err.println(SQLEXCEPTION + " adding saved queries.");
 			System.err.println(se.getMessage());
 		}
 		return affectedRows;
@@ -485,7 +487,7 @@ public class QueryEngine {
 
 			pstmt.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "deleting saved queries.");
+			System.err.println(SQLEXCEPTION + " deleting saved queries.");
 			System.err.println(se.getMessage());
 		}
 		return affectedRows;
@@ -506,7 +508,7 @@ public class QueryEngine {
 
 			pstmt.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "counting saved queries.");
+			System.err.println(SQLEXCEPTION + " counting saved queries.");
 			System.err.println(se.getMessage());
 		}
 		return numberOfRows;
@@ -538,7 +540,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "deleting fav candidate.");
+			System.err.println(SQLEXCEPTION + " deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
 //		return resultAuthor;
@@ -573,7 +575,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(SQLEXCEPTION + " querying committee name list.");
 			System.err.println(se.getMessage());
 		}
 		return committeeList;
@@ -585,7 +587,25 @@ public class QueryEngine {
 	 * 
 	 */
 	public List<Author> fetchAuthorList(String committeeName, int noOfYears) {
-		return null;
+		List<Author> authorList = new ArrayList<>();
+		try {
+			Statement st = getConn().createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select university from tb_university "
+					+ "where lower(authorname) = lower('" + committeeName + "') and  = " + noOfYears);
+
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+//				authorList = rs.getString("committee");
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + " querying author university detail.");
+			System.err.println(se.getMessage());
+		}
+		return authorList;
 	}
 	
 
@@ -595,8 +615,28 @@ public class QueryEngine {
 	 * Return type: HashMap<Year, No of publications>
 	 * 
 	 */
-	public void fetchNoOfPublicationList(Author author) {
-		
+	public Map<Integer, Integer> fetchNoOfPublicationPerYear(Author author) {
+		Map<Integer, Integer> listPerYear = new HashMap<>();
+		try {
+			Statement st = getConn().createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct p.pbyear, count(*) from tb_publication p, tb_authorprofile a "
+					+ "where lower(a.authorname) = lower('" + author.getName() + "') and a.title = p.title group by p.pbyear");
+
+			ResultSet rs = st.executeQuery(query.toString());
+			System.out.println("### " + rs.getFetchSize());
+			while (rs.next()) {
+				listPerYear.put(rs.getInt(0), rs.getInt(1));
+				System.out.println(".... " + rs.getInt(0) + " .... " + rs.getInt(1));
+			}
+
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + " querying NoOfPublication Per Year.");
+			System.err.println(se.getMessage());
+		}
+		return listPerYear;
 	}	
 
 	/*
@@ -604,7 +644,7 @@ public class QueryEngine {
 	 * Query 19 : to fetch university based on author name
 	 * 
 	 */
-	public String getAuthorDetails(Author author) {
+	public String getAuthorUnivDetails(Author author) {
 		String committeeList = "";
 		try {
 			Statement st = getConn().createStatement();
@@ -620,7 +660,7 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying journal list.");
+			System.err.println(SQLEXCEPTION + " querying author university detail.");
 			System.err.println(se.getMessage());
 		}
 		return committeeList;
@@ -629,6 +669,7 @@ public class QueryEngine {
 	/*
 	 * 
 	 * Query 20 : to fetch author list based on the committee and no of years served as a member
+	 * Return type: List<list, list>
 	 * 
 	 */
 	public void convertXYToList() {
