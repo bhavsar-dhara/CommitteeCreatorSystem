@@ -24,25 +24,31 @@ public class QueryEngine {
 	private static Connection connectToDatabaseOrDisconnect() {
 		if (getConn() == null) {
 			try {
-				
+
 				Class.forName("org.postgresql.Driver");
-		        setConn(DriverManager.getConnection("jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp","luliuAWS", "1991715ll"));
-		        System.out.println("\nSuccessful connect with database! ");
-		        
-//				Class.forName("org.postgresql.Driver");
-////				Connection to local database
-//				String url = "jdbc:postgresql://localhost:5432/msddblp";
-//				conn = DriverManager.getConnection(url, "postgres", "1991715");
-		        
+				setConn(DriverManager.getConnection(
+						"jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp",
+						"luliuAWS", "1991715ll"));
+				System.out.println("\nSuccessful connect with database! ");
+
+				// Class.forName("org.postgresql.Driver");
+				//// Connection to local database
+				// String url = "jdbc:postgresql://localhost:5432/msddblp";
+				// conn = DriverManager.getConnection(url, "postgres",
+				// "1991715");
+
 				// Connection to AWS PostgreSQL Database
 				// ERROR ::: on trying to connect to remote
 				// Connection refused. Check that the hostname and port are
 				// correct and that the postmaster is accepting TCP/IP
 				// connections.
-//				 String url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-////				 url = "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-//				 conn = DriverManager.getConnection(url, "luliuAWS", "1991715ll");
-				
+				// String url =
+				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+				//// url =
+				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
+				// conn = DriverManager.getConnection(url, "luliuAWS",
+				// "1991715ll");
+
 				System.out.println("Connection made successfully...");
 			} catch (ClassNotFoundException e) {
 				System.err.println(CLASSNOTFOUNDEXECPTION + " class not found exception");
@@ -112,6 +118,7 @@ public class QueryEngine {
 
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");
+
 			while (rs.next()) {
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));
@@ -152,7 +159,7 @@ public class QueryEngine {
 	// result based on: 1. were members of same committee
 	// 2. have papers published in similar conference or journal
 	// output: list of authors
-	public  List<Author> getSimilarAuthorList(Author author) {
+	public List<Author> getSimilarAuthorList(Author author) {
 		List<Author> similarAuthors = new ArrayList<Author>();
 		List<Author> similarAuthorofSameNopb;
 		List<Author> similarAuthorofSamePublication;
@@ -167,11 +174,10 @@ public class QueryEngine {
 	}
 
 	/*
-	 * Sub-Query 3a 
-	 * Method to fetch number of publication based on author name
+	 * Sub-Query 3a Method to fetch number of publication based on author name
 	 * 
 	 */
-	public  int getNumberofPBByAuthorName(Author author) {
+	public int getNumberofPBByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = getConn().prepareStatement(GET_NOPB_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
@@ -189,11 +195,11 @@ public class QueryEngine {
 	}
 
 	/*
-	 * Sub-Query 3b 
-	 * Method to fetch similar authors having same number on published data
+	 * Sub-Query 3b Method to fetch similar authors having same number on
+	 * published data
 	 * 
 	 */
-	public  List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
 		try {
 			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
@@ -215,11 +221,10 @@ public class QueryEngine {
 	}
 
 	/*
-	 * Sub-Query 3c 
-	 * Method to fetch published papers based on author name
+	 * Sub-Query 3c Method to fetch published papers based on author name
 	 * 
 	 */
-	public  List<Publication> getPublicationByAuthorName(Author author) {
+	public List<Publication> getPublicationByAuthorName(Author author) {
 		try {
 			PreparedStatement ps = getConn().prepareStatement(GET_TITLE_BY_AUTHORNAME);
 			ps.setString(1, author.getName());
@@ -242,11 +247,10 @@ public class QueryEngine {
 	}
 
 	/*
-	 * Sub-Query 3d 
-	 * Method to fetch similar authors having co-authored paper
+	 * Sub-Query 3d Method to fetch similar authors having co-authored paper
 	 * 
 	 */
-	public  List<Author> getSimilarAuthorBySamePublication(Author author) {
+	public List<Author> getSimilarAuthorBySamePublication(Author author) {
 		List<Publication> listofpublication = getPublicationByAuthorName(author);
 		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
@@ -272,7 +276,7 @@ public class QueryEngine {
 	// Query 4 Search authors details
 	// input: author name
 	// output: list of author's publication list
-	public  List<Author> fetchAuthorDetails(Author author) {
+	public List<Author> fetchAuthorDetails(Author author) {
 		List<Author> authorList = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -297,7 +301,7 @@ public class QueryEngine {
 				publication.setEe(rs.getString("ee"));
 				publication.setNumber(rs.getString("number"));
 				authorRS.setPublication(publication);
-//				System.out.println(authorRS.toString());
+				// System.out.println(authorRS.toString());
 				authorList.add(authorRS);
 			}
 
@@ -314,7 +318,7 @@ public class QueryEngine {
 	 * Query 5 Method to fetch distinct Journal names present in the Database
 	 * 
 	 */
-	public  List<String> fetchJournalNames() {
+	public List<String> fetchJournalNames() {
 		List<String> journalList = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -339,7 +343,7 @@ public class QueryEngine {
 	 * Query 6 Method to fetch distinct Journal names present in the Database
 	 * 
 	 */
-	public  List<Integer> fetchYearsAvailable() {
+	public List<Integer> fetchYearsAvailable() {
 		List<Integer> yearList = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -386,24 +390,26 @@ public class QueryEngine {
 		return candidatesList.get(0);
 	}
 
-	public  int addFavCandidate(Author author) {
+	public int addFavCandidate(Author author) {
+		System.out.println(".. .. .. " + author.getName());
 		int affectedRows = 0;
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ")");
+			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ");--");
 
-			affectedRows = st.executeUpdate(query.toString());
+			st.executeUpdate(query.toString());
 
 			st.close();
 		} catch (SQLException se) {
 			System.err.println(SQLEXCEPTION + " adding fav candidate.");
+			se.printStackTrace();
 			System.err.println(se.getMessage());
 		}
 		return affectedRows;
 	}
 
-	public  int deleteFavCandidate(Author author) {
+	public int deleteFavCandidate(Author author) {
 		int affectedRows = 0;
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_candidate where authorname=?");
@@ -419,7 +425,7 @@ public class QueryEngine {
 		return affectedRows;
 	}
 
-	public  int countFavCandidates() {
+	public int countFavCandidates() {
 		int numberOfRows = 0;
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_candidate");
@@ -445,7 +451,7 @@ public class QueryEngine {
 	 * Queries
 	 * 
 	 */
-	public  List<String> fetchSavedQueries() {
+	public List<String> fetchSavedQueries() {
 		List<String> queryList = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -466,7 +472,7 @@ public class QueryEngine {
 		return queryList;
 	}
 
-	public  int addSavedQuery(String saveQuery) {
+	public int addSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
 			Statement st = getConn().createStatement();
@@ -483,7 +489,7 @@ public class QueryEngine {
 		return affectedRows;
 	}
 
-	public  int deleteSavedQuery(String saveQuery) {
+	public int deleteSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
@@ -499,7 +505,7 @@ public class QueryEngine {
 		return affectedRows;
 	}
 
-	public  int countSavedQueries() {
+	public int countSavedQueries() {
 		int numberOfRows = 0;
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
@@ -519,7 +525,7 @@ public class QueryEngine {
 		}
 		return numberOfRows;
 	}
-	
+
 	/*
 	 * 
 	 * Query 15 : to find a particular author in Favorite Author List
@@ -531,14 +537,14 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select distinct authorname from tb_candidate "
-					+ "where lower(authorname) = lower('" + author.getName() + "') ");
+			query.append("Select distinct authorname from tb_candidate " + "where lower(authorname) = lower('"
+					+ author.getName() + "') ");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
 				resultAuthor.setName(rs.getString("authorname"));
 			}
-			
+
 			if (resultAuthor.getName() != null) {
 				isPresent = true;
 			}
@@ -549,7 +555,7 @@ public class QueryEngine {
 			System.err.println(SQLEXCEPTION + " deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
-//		return resultAuthor;
+		// return resultAuthor;
 		return isPresent;
 	}
 
@@ -560,7 +566,7 @@ public class QueryEngine {
 	public static void setConn(Connection conn) {
 		QueryEngine.conn = conn;
 	}
-	
+
 	/*
 	 * 
 	 * Query 16 : to fetch distinct committee name list
@@ -586,10 +592,11 @@ public class QueryEngine {
 		}
 		return committeeList;
 	}
-	
+
 	/*
 	 * 
-	 * Query 17 : to fetch author list based on the committee and no of years served as a member
+	 * Query 17 : to fetch author list based on the committee and no of years
+	 * served as a member
 	 * 
 	 */
 	public List<Author> fetchAuthorList(String committeeName, int noOfYears) {
@@ -597,12 +604,12 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select university from tb_university "
-					+ "where lower(authorname) = lower('" + committeeName + "') and  = " + noOfYears);
+			query.append("Select university from tb_university " + "where lower(authorname) = lower('" + committeeName
+					+ "') and  = " + noOfYears);
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-//				authorList = rs.getString("committee");
+				// authorList = rs.getString("committee");
 			}
 
 			rs.close();
@@ -613,7 +620,6 @@ public class QueryEngine {
 		}
 		return authorList;
 	}
-	
 
 	/*
 	 * 
@@ -627,7 +633,8 @@ public class QueryEngine {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select distinct p.pbyear, count(*) from tb_publication p, tb_authorprofile a "
-					+ "where lower(a.authorname) = lower('" + author.getName() + "') and a.title = p.title group by p.pbyear");
+					+ "where lower(a.authorname) = lower('" + author.getName()
+					+ "') and a.title = p.title group by p.pbyear");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			System.out.println("### " + rs.getFetchSize());
@@ -643,7 +650,7 @@ public class QueryEngine {
 			System.err.println(se.getMessage());
 		}
 		return listPerYear;
-	}	
+	}
 
 	/*
 	 * 
@@ -655,8 +662,8 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select university from tb_university "
-					+ "where lower(authorname) = lower('" + author.getName() + "') ");
+			query.append("Select university from tb_university " + "where lower(authorname) = lower('"
+					+ author.getName() + "') ");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
@@ -674,11 +681,11 @@ public class QueryEngine {
 
 	/*
 	 * 
-	 * Query 20 : to fetch author list based on the committee and no of years served as a member
-	 * Return type: List<list, list>
+	 * Query 20 : to fetch author list based on the committee and no of years
+	 * served as a member Return type: List<list, list>
 	 * 
 	 */
 	public void convertXYToList() {
-		
+
 	}
 }

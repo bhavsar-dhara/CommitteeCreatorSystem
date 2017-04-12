@@ -67,25 +67,25 @@
       <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
               <folding>
-                <element signature="e#3214#3222#0" expanded="true" />
-                <element signature="e#6070#6078#0" expanded="true" />
-                <element signature="e#7507#7515#0" expanded="true" />
-                <element signature="e#9236#9244#0" expanded="true" />
-                <element signature="e#18262#18263#0" expanded="true" />
-                <element signature="e#18280#18281#0" expanded="true" />
-                <element signature="e#18328#18329#0" expanded="true" />
-                <element signature="e#18358#18359#0" expanded="true" />
-                <marker date="1492307145000" expanded="true" signature="443:507" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492307145000" expanded="true" signature="551:615" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492307145000" expanded="true" signature="660:797" ph="select disti... tb_authorProfile" />
-                <marker date="1492307145000" expanded="true" signature="842:904" ph="select disti... tb_authorProfile" />
-                <marker date="1492307145000" expanded="true" signature="14268:14311" ph="DELETE from " />
-                <marker date="1492307145000" expanded="true" signature="14708:14741" ph="SELECT COUNT... tb_candidate" />
-                <marker date="1492307145000" expanded="true" signature="16471:16512" ph="DELETE from " />
-                <marker date="1492307145000" expanded="true" signature="16901:16937" ph="SELECT COUNT... tb_savedqueries" />
+                <element signature="e#3300#3308#0" expanded="true" />
+                <element signature="e#6157#6165#0" expanded="true" />
+                <element signature="e#7587#7595#0" expanded="true" />
+                <element signature="e#9306#9314#0" expanded="true" />
+                <element signature="e#18399#18400#0" expanded="true" />
+                <element signature="e#18417#18418#0" expanded="true" />
+                <element signature="e#18465#18466#0" expanded="true" />
+                <element signature="e#18495#18496#0" expanded="true" />
+                <marker date="1492307468000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492307468000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492307468000" expanded="true" signature="708:845" ph="select disti... tb_authorProfile" />
+                <marker date="1492307468000" expanded="true" signature="890:952" ph="select disti... tb_authorProfile" />
+                <marker date="1492307468000" expanded="true" signature="14406:14449" ph="DELETE from " />
+                <marker date="1492307468000" expanded="true" signature="14846:14879" ph="SELECT COUNT... tb_candidate" />
+                <marker date="1492307468000" expanded="true" signature="16609:16650" ph="DELETE from " />
+                <marker date="1492307468000" expanded="true" signature="17039:17075" ph="SELECT COUNT... tb_savedqueries" />
               </folding>
             </state>
           </provider>
@@ -266,10 +266,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -286,6 +282,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -803,12 +803,12 @@
       <updated>1492298461748</updated>
       <workItem from="1492298466763" duration="3401000" />
       <workItem from="1492305054405" duration="11000" />
-      <workItem from="1492305081517" duration="1780000" />
+      <workItem from="1492305081517" duration="2030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5192000" />
+    <option name="totallyTimeSpent" value="5442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="173" y="23" width="1231" height="812" extended-state="0" />
@@ -898,22 +898,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3214#3222#0" expanded="true" />
-            <element signature="e#6070#6078#0" expanded="true" />
-            <element signature="e#7507#7515#0" expanded="true" />
-            <element signature="e#9236#9244#0" expanded="true" />
-            <element signature="e#18262#18263#0" expanded="true" />
-            <element signature="e#18280#18281#0" expanded="true" />
-            <element signature="e#18328#18329#0" expanded="true" />
-            <element signature="e#18358#18359#0" expanded="true" />
-            <marker date="1492307145000" expanded="true" signature="443:507" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="551:615" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="660:797" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="842:904" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="14268:14311" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="14708:14741" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492307145000" expanded="true" signature="16471:16512" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="16901:16937" ph="SELECT COUNT... tb_savedqueries" />
+            <element signature="e#3300#3308#0" expanded="true" />
+            <element signature="e#6157#6165#0" expanded="true" />
+            <element signature="e#7587#7595#0" expanded="true" />
+            <element signature="e#9306#9314#0" expanded="true" />
+            <element signature="e#18399#18400#0" expanded="true" />
+            <element signature="e#18417#18418#0" expanded="true" />
+            <element signature="e#18465#18466#0" expanded="true" />
+            <element signature="e#18495#18496#0" expanded="true" />
+            <marker date="1492307468000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="708:845" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="890:952" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="14406:14449" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="14846:14879" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492307468000" expanded="true" signature="16609:16650" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="17039:17075" ph="SELECT COUNT... tb_savedqueries" />
           </folding>
         </state>
       </provider>
@@ -972,22 +972,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3214#3222#0" expanded="true" />
-            <element signature="e#6070#6078#0" expanded="true" />
-            <element signature="e#7507#7515#0" expanded="true" />
-            <element signature="e#9236#9244#0" expanded="true" />
-            <element signature="e#18262#18263#0" expanded="true" />
-            <element signature="e#18280#18281#0" expanded="true" />
-            <element signature="e#18328#18329#0" expanded="true" />
-            <element signature="e#18358#18359#0" expanded="true" />
-            <marker date="1492307145000" expanded="true" signature="443:507" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="551:615" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="660:797" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="842:904" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="14268:14311" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="14708:14741" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492307145000" expanded="true" signature="16471:16512" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="16901:16937" ph="SELECT COUNT... tb_savedqueries" />
+            <element signature="e#3300#3308#0" expanded="true" />
+            <element signature="e#6157#6165#0" expanded="true" />
+            <element signature="e#7587#7595#0" expanded="true" />
+            <element signature="e#9306#9314#0" expanded="true" />
+            <element signature="e#18399#18400#0" expanded="true" />
+            <element signature="e#18417#18418#0" expanded="true" />
+            <element signature="e#18465#18466#0" expanded="true" />
+            <element signature="e#18495#18496#0" expanded="true" />
+            <marker date="1492307468000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="708:845" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="890:952" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="14406:14449" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="14846:14879" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492307468000" expanded="true" signature="16609:16650" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="17039:17075" ph="SELECT COUNT... tb_savedqueries" />
           </folding>
         </state>
       </provider>
@@ -1104,25 +1104,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
           <folding>
-            <element signature="e#3214#3222#0" expanded="true" />
-            <element signature="e#6070#6078#0" expanded="true" />
-            <element signature="e#7507#7515#0" expanded="true" />
-            <element signature="e#9236#9244#0" expanded="true" />
-            <element signature="e#18262#18263#0" expanded="true" />
-            <element signature="e#18280#18281#0" expanded="true" />
-            <element signature="e#18328#18329#0" expanded="true" />
-            <element signature="e#18358#18359#0" expanded="true" />
-            <marker date="1492307145000" expanded="true" signature="443:507" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="551:615" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492307145000" expanded="true" signature="660:797" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="842:904" ph="select disti... tb_authorProfile" />
-            <marker date="1492307145000" expanded="true" signature="14268:14311" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="14708:14741" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492307145000" expanded="true" signature="16471:16512" ph="DELETE from " />
-            <marker date="1492307145000" expanded="true" signature="16901:16937" ph="SELECT COUNT... tb_savedqueries" />
+            <element signature="e#3300#3308#0" expanded="true" />
+            <element signature="e#6157#6165#0" expanded="true" />
+            <element signature="e#7587#7595#0" expanded="true" />
+            <element signature="e#9306#9314#0" expanded="true" />
+            <element signature="e#18399#18400#0" expanded="true" />
+            <element signature="e#18417#18418#0" expanded="true" />
+            <element signature="e#18465#18466#0" expanded="true" />
+            <element signature="e#18495#18496#0" expanded="true" />
+            <marker date="1492307468000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492307468000" expanded="true" signature="708:845" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="890:952" ph="select disti... tb_authorProfile" />
+            <marker date="1492307468000" expanded="true" signature="14406:14449" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="14846:14879" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492307468000" expanded="true" signature="16609:16650" ph="DELETE from " />
+            <marker date="1492307468000" expanded="true" signature="17039:17075" ph="SELECT COUNT... tb_savedqueries" />
           </folding>
         </state>
       </provider>
