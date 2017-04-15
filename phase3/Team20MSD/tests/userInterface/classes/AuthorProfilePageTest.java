@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 
 import static org.junit.Assert.*;
 
@@ -8,8 +8,9 @@ import org.junit.Test;
 import main.classes.Author;
 import main.classes.Publication;
 import java.util.ArrayList;
-import main.classes._userInterface;
+import main.classes.ConcreteUserInterface;
 import main.interfaces.UserInterface;
+import userInterface.classes.AuthorProfilePage;
 import javafx.collections.FXCollections;
 import javafx.scene.control.Button;
 

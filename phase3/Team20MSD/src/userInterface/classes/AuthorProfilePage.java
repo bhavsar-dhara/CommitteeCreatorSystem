@@ -1,8 +1,8 @@
-package scndPartOfUI;
+package userInterface.classes;
 import main.classes.Author;
 import main.classes.Publication;
 import main.interfaces.*;
-import main.search.Result;
+import userInterface.interfaces.CandidateListListener;
 
 import java.util.ArrayList;
 
@@ -55,6 +55,7 @@ public class AuthorProfilePage implements CandidateListListener {
 		setRemBut();
 		setSimAuthBut();
 		buttonArea = new HBox(buttonAreaSpacing,ui.hasCand(atr) ? remBut:addBut,simAuthBut);
+		buttonArea.setAlignment(Pos.CENTER);
 	}
 	
 	private int sizeOfAddRemBut = 200;
@@ -93,7 +94,7 @@ public class AuthorProfilePage implements CandidateListListener {
 		simAuthBut = new Button("Find similar authors");
 		simAuthBut.setFont(butTextFont);
 		simAuthBut.setOnAction((ActionEvent ae) -> {
-			Result page = new Result();
+			SearchResultPage page = new SearchResultPage();
 			ui.displayNewWindow(page.getScene());
 		});
 	}
@@ -107,9 +108,16 @@ public class AuthorProfilePage implements CandidateListListener {
 	}
 	
 	private void setTableColumns(){
+		addStringColumnToTable("Type","type");
 		addStringColumnToTable("Title","title");
+		addIntegerColumnToTable("Year","pbyear");
 		addStringColumnToTable("Publisher","publisher");
-		addIntegerColumnToTable("Year","year");
+		addStringColumnToTable("Book Title","booktitle");
+		addStringColumnToTable("Journal","journal");
+		addStringColumnToTable("Volume","volume");
+		addStringColumnToTable("Number","number");
+		addStringColumnToTable("School","school");
+		addStringColumnToTable("Pages","pages");
 	}
 	
 	private void addStringColumnToTable(String header,String propertyName){

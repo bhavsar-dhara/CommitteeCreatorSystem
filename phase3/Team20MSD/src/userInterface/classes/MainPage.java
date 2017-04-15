@@ -1,15 +1,15 @@
-package main.search;
+package userInterface.classes;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-public class Candidate {
+public class MainPage {
 
-	public Candidate() throws Exception{
+	public MainPage() throws Exception{
 //      Parent root = FXMLLoader.load(getClass().getResource("/search/Search.fxml"));
-		root = FXMLLoader.load(getClass().getResource("/main/search/Search.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/userInterface/fxmlFiles/MainPage.fxml"));
 	}
     public Scene getScene() {
     	return new Scene(root, 600, 650);

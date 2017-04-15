@@ -2,7 +2,8 @@ package main.interfaces;
 
 import main.classes.Author;
 import main.classes.Publication;
-import scndPartOfUI.SearchQuery;
+import userInterface.classes.SearchQuery;
+import userInterface.interfaces.CandidateListListener;
 
 import java.util.ArrayList;
 import java.util.Collection;

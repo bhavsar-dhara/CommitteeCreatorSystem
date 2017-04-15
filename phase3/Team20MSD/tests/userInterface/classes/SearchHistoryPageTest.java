@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Hyperlink;
 import main.interfaces.UserInterface;
+import userInterface.classes.SearchHistoryPage;
 import main.classes.QueryEngine;
 import main.classes.Author;
 import java.util.ArrayList;

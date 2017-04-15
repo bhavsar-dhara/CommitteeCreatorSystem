@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 
 import static org.junit.Assert.*;
 
@@ -12,6 +12,7 @@ import main.classes.Author;
 import main.classes.Publication;
 import java.util.ArrayList;
 import main.interfaces.UserInterface;
+import userInterface.classes.CandidateListPage;
 
 public class CandidateListPageTest {
 

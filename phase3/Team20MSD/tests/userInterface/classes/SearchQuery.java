@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 
 public class SearchQuery {
 	public SearchQuery(String query){

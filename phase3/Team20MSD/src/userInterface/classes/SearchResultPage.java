@@ -1,4 +1,4 @@
-package main.search;
+package userInterface.classes;
 
 import java.util.List;
 
@@ -16,9 +16,8 @@ import javafx.stage.Stage;
 import main.classes.Author;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
-import scndPartOfUI.AuthorProfilePage;
 
-public class Result {
+public class SearchResultPage {
 
 	private TableView table = new TableView();
 

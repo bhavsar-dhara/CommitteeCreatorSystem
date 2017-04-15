@@ -1,5 +1,6 @@
-package scndPartOfUI;
+package userInterface.classes;
 import main.interfaces.*;
+import userInterface.interfaces.CandidateListListener;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -46,9 +47,14 @@ public class CandidateListPage implements CandidateListListener {
 	private ArrayList<Author> selectedAuthors = new ArrayList<>();
 	
 	private int getPageCount(){
-		int quotient = (int) ui.getCandListSize()/itemNbrPerPage;
-		int remainder = ui.getCandListSize() % itemNbrPerPage;
-		return remainder == 0 ? quotient : quotient +1;
+		if (ui.getCandListSize()==0){
+			return 1;
+		}
+		else {
+			int quotient = (int) ui.getCandListSize()/itemNbrPerPage;
+			int remainder = ui.getCandListSize() % itemNbrPerPage;
+			return remainder == 0 ? quotient : quotient +1;
+		}
 	}
 	
 	private void setPageHead() {

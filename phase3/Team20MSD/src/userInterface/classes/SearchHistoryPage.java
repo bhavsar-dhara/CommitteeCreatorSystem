@@ -1,7 +1,9 @@
-package scndPartOfUI;
+package userInterface.classes;
 import main.classes.Author;
 import main.interfaces.*;
-import main.search.Result;
+import userInterface.classes.SearchQuery;
+import userInterface.classes.UITesting;
+import userInterface.interfaces.SearchHistoryListener;
 
 import java.util.ArrayList;
 
@@ -44,9 +46,14 @@ public class SearchHistoryPage implements SearchHistoryListener {
 	private VBox canvas = new VBox(10,pageHead,buttonArea,searchHistoryPagination);
 	
 	private int getPageCount(){
-		int quotient = (int) ui.getSearchHistorySize()/itemNbrPerPage;
-		int remainder = ui.getSearchHistorySize() % itemNbrPerPage;
-		return remainder == 0 ? quotient : quotient +1;
+		if (ui.getSearchHistorySize()==0){
+			return 1;
+		}
+		else {
+			int quotient = (int) ui.getSearchHistorySize()/itemNbrPerPage;
+			int remainder = ui.getSearchHistorySize() % itemNbrPerPage;
+			return remainder == 0 ? quotient : quotient +1;
+		}
 	}
 	
 	private void setPageHead() {
@@ -98,7 +105,7 @@ public class SearchHistoryPage implements SearchHistoryListener {
 	private void setHyperLink(Hyperlink hl,SearchQuery sq){
 		hl.setOnAction((ActionEvent e) -> {
 			ui.getSearchResult(sq);
-			Result sr = new Result();
+			SearchResultPage sr = new SearchResultPage();
 			ui.displayNewWindow(sr.getScene());
 		});
 		hl.setFont(new Font("Arial",20));

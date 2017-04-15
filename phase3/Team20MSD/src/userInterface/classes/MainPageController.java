@@ -1,4 +1,4 @@
-package main.search;
+package userInterface.classes;
 
 import java.net.URL;
 import java.util.List;
@@ -16,11 +16,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.classes.QueryEngine;
-import main.classes._userInterface;
+import main.classes.ConcreteUserInterface;
 import main.interfaces.UserInterface;
-import scndPartOfUI.CandidateListPage;
 
-public class searchcontroller implements Initializable {
+public class MainPageController implements Initializable {
 
 	// declaration
 
@@ -83,7 +82,7 @@ public class searchcontroller implements Initializable {
 		// intArray, Integer.parseInt(numofpub1));
 		// TableViewSample tableViewSample = new TableViewSample();
 
-		Result tableViewSample = new Result();
+		SearchResultPage tableViewSample = new SearchResultPage();
 
 		// pass the criteria variables to query engine
 		tableViewSample.setCurrentInfo(keyword1, conferencename1, pubdate1, numofpub1, numofcom1,ui,qe);
@@ -114,7 +113,7 @@ public class searchcontroller implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		qe = new QueryEngine();
-		ui = new _userInterface(qe);
+		ui = new ConcreteUserInterface(qe);
 		
 		List<String> list = qe.fetchJournalNames();
 		List<Integer> plist = qe.fetchYearsAvailable();

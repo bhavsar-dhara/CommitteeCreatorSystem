@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 
 import java.util.concurrent.CountDownLatch;
 

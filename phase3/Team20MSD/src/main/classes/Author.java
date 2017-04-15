@@ -133,30 +133,4 @@ public class Author implements Serializable {
 			author.append("publication = " + publication.toString());
 		return author.toString();
 	}
-	
-	// titleAsc: -> void
-	// EFFECT: Sort this author's publications by title in ascending order
-	public void titleAsc() {
-
-	}
-
-	public void titleDesc() {
-
-	}
-
-	public void yearAsc() {
-
-	}
-
-	public void yearDesc() {
-
-	}
-
-	public void publsAsc() {
-
-	}
-
-	public void publsDesc() {
-
-	}
 }

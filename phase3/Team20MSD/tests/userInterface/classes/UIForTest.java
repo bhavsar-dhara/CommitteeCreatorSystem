@@ -1,4 +1,4 @@
-package scndPartOfUI;
+package userInterface.classes;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,8 +10,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.classes.Author;
 import main.classes.Publication;
-import main.interfaces.CandidateListListener;
-import main.interfaces.SearchHistoryListener;
+import userInterface.classes.CandidateListPage;
+import userInterface.interfaces.CandidateListListener;
+import userInterface.interfaces.SearchHistoryListener;
 
 public class UIForTest implements UITesting {
 

@@ -21,7 +21,7 @@ public class QueryEngine {
 	static String GET_NOPB_BY_AUTHORNAME = "select distinct numberOfPb from tb_NumberOfPb where authorname=?";
 	static String GET_AUTHORNAME_BY_NOPB = "select distinct authorname from tb_NumberOfPb where numberOfPb=?";
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
-	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
+	static String GET_AUTHORNAME_BY_TITLE = "sele ct distinct authorname from tb_authorProfile where title=?";
 
 	// a singleton jdbc connection class
 	private static Connection connectToDatabaseOrDisconnect() {
@@ -220,7 +220,7 @@ public class QueryEngine {
 			while (rs.next()) {
 				Publication publicationRS = new Publication();
 				publicationRS.setTitle(rs.getString("title"));
-				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "");
+				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "N/A");
 				publicationRS.setPbyear(rs.getInt("pbyear"));
 				// String publication = rs.getString(1);
 				listofpublicationbyauthorname.add(publicationRS);
@@ -357,45 +357,79 @@ public class QueryEngine {
 	 * candidates
 	 * 
 	 */
-	public  Author fetchFavCandidate(int i) {
-		List<Author> candidatesList = new ArrayList<>();
-		try {
-			Statement st = conn.createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("Select distinct authorname from tb_candidate ");
+//	public  Author fetchFavCandidate(int i) {
+//		List<Author> candidatesList = new ArrayList<>();
+//		try {
+//			Statement st = conn.createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("Select distinct authorname from tb_candidate ");
+//
+//			ResultSet rs = st.executeQuery(query.toString());
+//			while (rs.next()) {
+//				candidatesList.add(new Author(rs.getString("authorname")));
+//			}
+//
+//			rs.close();
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + "querying fav candidate list.");
+//			System.err.println(se.getMessage());
+//		}
+//		return candidatesList.get(i);
+//	}
+	
+	public Author fetchCandidate(int i) {
+        try {
+            String sql = "select * from tb_candidate";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            List<Author> listofCandidate = new ArrayList<Author>();
+            while (rs.next()) {
+                listofCandidate.add(new Author(rs.getString(1)));
+            }
+            ps.close();
+            rs.close();
+            return listofCandidate.get(i);
+        } catch (SQLException e) {
+            System.out.println("Failed");
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-			ResultSet rs = st.executeQuery(query.toString());
-			while (rs.next()) {
-				candidatesList.add(new Author(rs.getString("authorname")));
-			}
+//	public  int addFavCandidate(Author author) {
+//		int affectedRows = 0;
+//		try {
+//			Statement st = conn.createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ")");
+//
+//			affectedRows = st.executeUpdate(query.toString()); 
+//
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + "adding fav candidate.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+	
+	public void addAuthorIntoCandidate(Author a) {
 
-			rs.close();
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "querying fav candidate list.");
-			System.err.println(se.getMessage());
-		}
-		return candidatesList.get(i);
+        try {
+            String sql = "insert into tb_candidate values(?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, a.getName());
+            ps.executeUpdate();
+            ps.close();
+            //executed = true;
+        } catch (SQLException e) {
+            System.out.println("Failed!");
+            e.printStackTrace();
+        }
 	}
 
-	public  int addFavCandidate(Author author) {
-		int affectedRows = 0;
-		try {
-			Statement st = conn.createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ")");
-
-			affectedRows = st.executeUpdate(query.toString());
-
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + "adding fav candidate.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	public  int deleteFavCandidate(Author author) {
+	public void deleteFavCandidate(Author author) {
 		int affectedRows = 0;
 		try {
 			PreparedStatement pstmt = conn.prepareStatement("DELETE from tb_candidate where authorname=?");
@@ -408,7 +442,7 @@ public class QueryEngine {
 			System.err.println(SQLEXCEPTION + "deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
-		return affectedRows;
+		//return affectedRows;
 	}
 
 	public  int countFavCandidates() {

@@ -1,7 +1,7 @@
-package scndPartOfUI;
+package userInterface.classes;
 import main.classes.Author;
-import main.interfaces.SearchHistoryListener;
 import main.interfaces.UserInterface;
+import userInterface.interfaces.SearchHistoryListener;
 
 public interface UITesting extends UserInterface {
 	public void setTestData();

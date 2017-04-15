@@ -8,12 +8,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.interfaces.CandidateListListener;
 import main.interfaces.UserInterface;
+import userInterface.interfaces.CandidateListListener;
 
-public class _userInterface implements UserInterface {
+public class ConcreteUserInterface implements UserInterface {
 	
-	public _userInterface(QueryEngine qe){
+	public ConcreteUserInterface(QueryEngine qe){
 		this.qe = qe;
 	}
 	
@@ -32,7 +32,7 @@ public class _userInterface implements UserInterface {
 	
 	// operations on candidate list
 	public void addCand(Author a){
-		qe.addFavCandidate(a);
+		qe.addAuthorIntoCandidate(a);
 		CandListListeners.forEach((CandidateListListener l) -> {
 			l.refresh();
 		});
@@ -50,7 +50,7 @@ public class _userInterface implements UserInterface {
 	
 	public void remCand(List<Author> cands){
 		for (int i=0;i<cands.size();i++){
-			remCand(cands.get(i));
+			qe.deleteFavCandidate(cands.get(i));
 		}
 		CandListListeners.forEach((CandidateListListener l) -> {
 			l.refresh();
@@ -60,7 +60,7 @@ public class _userInterface implements UserInterface {
 		return qe.countFavCandidates();
 	}
 	public Author getCand(int i){
-		return qe.fetchFavCandidate(i);
+		return qe.fetchCandidate(i);
 	}
 	
 	public void addListenerToCandList(CandidateListListener p){
