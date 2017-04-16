@@ -28,6 +28,7 @@ import javafx.scene.control.ChoiceBox;
 //import main.java.classes.SearchQuery;
 import javafx.scene.control.TextField;
 import main.classes.QueryEngine;
+//This userInterface import may has some problem!!!FIX IT....................................Pay attention here!
 import main.classes._userInterface;
 import main.interfaces.UserInterface;
 import scndPartOfUI.AuthorProfilePage;
