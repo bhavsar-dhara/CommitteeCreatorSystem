@@ -3,35 +3,33 @@ package main.search;
 
 import java.io.IOException;
 import java.net.URL;
-
-import javafx.scene.control.*;
-
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.cell.PropertyValueFactory;
-import main.classes.Author;
-import java.net.URL;
-import java.util.List;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 //import main.java.classes.Author;
 //import main.java.classes.SearchQuery;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import main.classes.Author;
+import main.classes.ConcreteUserInterface;
 import main.classes.QueryEngine;
-import main.classes._userInterface;
 import main.interfaces.UserInterface;
 import scndPartOfUI.AuthorProfilePage;
-import scndPartOfUI.CandidateListPage;
 
 
 
@@ -79,7 +77,7 @@ public class Front implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         qe = new QueryEngine();
-        ui = new _userInterface(qe);
+        ui = new ConcreteUserInterface(qe);
         List<Integer> pubno = new ArrayList<Integer>();
         pubno.add(1);
         pubno.add(2);
