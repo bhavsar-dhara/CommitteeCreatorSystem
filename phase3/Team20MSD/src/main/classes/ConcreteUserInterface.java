@@ -32,20 +32,24 @@ public class ConcreteUserInterface implements UserInterface {
 	
 	// operations on candidate list
 	public void addCand(Author a){
-		qe.addAuthorIntoCandidate(a);
-		CandListListeners.forEach((CandidateListListener l) -> {
-			l.refresh();
-		});
+		if (!hasCand(a)) {
+			qe.addAuthorIntoCandidate(a);
+			CandListListeners.forEach((CandidateListListener l) -> {
+				l.refresh();
+			});
+		}
 	}
 	public boolean hasCand(Author a){
 		return qe.isFavCandidate(a);
 	}
 	
 	public void remCand(Author a){
-		qe.deleteFavCandidate(a);
-		CandListListeners.forEach((CandidateListListener l) -> {
-			l.refresh();
-		});
+		if (hasCand(a)) {
+			qe.deleteFavCandidate(a);
+			CandListListeners.forEach((CandidateListListener l) -> {
+				l.refresh();
+			});
+		}
 	}
 	
 	public void remCand(List<Author> cands){
@@ -67,10 +71,15 @@ public class ConcreteUserInterface implements UserInterface {
 		CandListListeners.add(p);
 	}
 		
+	public ObservableList<Author> getSearchResult(Author a) {
+		return (ObservableList<Author>) qe.getSimilarAuthorBySamePublication(a);
+	} 
+	
 	public ObservableList<Publication> getAuthorPubs(Author atr){
 		return (ObservableList<Publication>) qe.getPublicationByAuthorName(atr);
 	}
 	
 	private QueryEngine qe;
-	private ArrayList<CandidateListListener> CandListListeners = new ArrayList<>(); 
+	private ArrayList<CandidateListListener> CandListListeners = new ArrayList<>();
+
 }

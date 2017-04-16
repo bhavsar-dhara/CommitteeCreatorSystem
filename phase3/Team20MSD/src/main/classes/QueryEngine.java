@@ -240,7 +240,7 @@ public class QueryEngine {
 	 */
 	public  List<Author> getSimilarAuthorBySamePublication(Author author) {
 		List<Publication> listofpublication = getPublicationByAuthorName(author);
-		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
+		List<Author> listofAuthorBySamePB = FXCollections.observableArrayList();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
 			String titleName = listofpublication.get(i).getTitle();
 			try {
@@ -250,6 +250,8 @@ public class QueryEngine {
 				while (rs.next()) {
 					Author authorRS = new Author();
 					authorRS.setName(rs.getString("authorname"));
+					authorRS.setTitle(titleName);
+					authorRS.setNoOfPublication(rs.getString("numberofpb"));
 					// String authornameBySamePB = rs.getString(1);
 					listofAuthorBySamePB.add(authorRS);
 				}

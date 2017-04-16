@@ -121,4 +121,8 @@ public class UIForTest implements UITesting {
 			searchHistory.add(new SearchQuery(String.valueOf(i)));
 		}
 	}
+
+	public ObservableList<Author> getSearchResult(Author a) {
+		return null;
+	}
 }
