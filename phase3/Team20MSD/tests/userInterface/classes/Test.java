@@ -1,11 +1,15 @@
 package userInterface.classes;
 
+import java.util.concurrent.TimeUnit;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import main.classes.Author;
 import userInterface.classes.AuthorProfilePage;
 import userInterface.classes.CandidateListPage;
 import userInterface.classes.SearchHistoryPage;
+import userInterface.messageBoxes.Progress;
+import userInterface.messageBoxes.Warning;
 
 public class Test extends Application {
 	public void start(Stage stage){
@@ -17,9 +21,6 @@ public class Test extends Application {
 		SearchHistoryPage shp = new SearchHistoryPage(ui);
 		stage.setScene(app.getScene());
 		stage.show();
-		Stage stage2 = new Stage();
-		stage2.setScene(clp.getScene());
-		stage2.show();
 	}
 	
 	public static void main(String[] args){

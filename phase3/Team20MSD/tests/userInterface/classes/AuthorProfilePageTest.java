@@ -12,7 +12,9 @@ import main.classes.ConcreteUserInterface;
 import main.interfaces.UserInterface;
 import userInterface.classes.AuthorProfilePage;
 import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 
 public class AuthorProfilePageTest {
 
@@ -72,7 +74,6 @@ public class AuthorProfilePageTest {
 					uiForTest.getSearchResult(i),rFTSimAuth.get(i));
 		}
 	}
-	
 	
 	
 }

@@ -28,12 +28,13 @@ public class AuthorProfilePage implements CandidateListListener {
 		atr = a;
 		this.ui = ui;
 		ui.addListenerToCandList(this);
+		setDropArea();
 		setName();
 		setButtonArea();
 		setBlgrphyTable();
 		setCanvas();
 	}
-	
+
 	private Author atr;
 	private UserInterface ui;
 	private Label name;
@@ -43,6 +44,14 @@ public class AuthorProfilePage implements CandidateListListener {
 	private TableView<Publication> blgrphyTable;
 	private HBox buttonArea;
 	private VBox canvas;
+	private Label dropHere;
+	private HBox dropArea;
+	
+	private void setDropArea() {
+		dropHere = new Label("drop here");
+		dropArea = new HBox(dropHere);
+		dropArea.setAlignment(Pos.CENTER_RIGHT);
+	}
 	
 	private void setName(){
 		name = new Label(atr.getName());
@@ -133,7 +142,10 @@ public class AuthorProfilePage implements CandidateListListener {
 	}
 	
 	private void setCanvas(){
-		canvas = new VBox(20,name,buttonArea,blgrphyTable);
+		canvas = new VBox();
+		VBox.setMargin(dropArea,new Insets(0,0,-20,0));
+		canvas.getChildren().addAll(dropArea,name,buttonArea,blgrphyTable);
+		canvas.setSpacing(20);
 		canvas.setAlignment(Pos.CENTER);
 		canvas.setPadding(new Insets(20,40,20,40));
 	}
@@ -141,6 +153,7 @@ public class AuthorProfilePage implements CandidateListListener {
 		return new Scene(canvas);
 	}
 	
+	// getters for tests
 	Button getAddBut(){
 		return addBut;
 	}
@@ -155,6 +168,14 @@ public class AuthorProfilePage implements CandidateListListener {
 	
 	Button getSimAuthBut(){
 		return simAuthBut;
+	}
+	
+	Label getName(){
+		return name;
+	}
+	
+	Label getDropHere(){
+		return dropHere;
 	}
 	
 }
