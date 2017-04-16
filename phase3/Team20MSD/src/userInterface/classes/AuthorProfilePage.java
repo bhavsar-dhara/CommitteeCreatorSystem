@@ -7,25 +7,28 @@ import userInterface.helperClasses.TableColumnAdder;
 import userInterface.helperClasses.UIElementFixer;
 import userInterface.interfaces.CandidateListListener;
 
-import java.util.ArrayList;
-
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.input.DragEvent;
 
 public class AuthorProfilePage implements CandidateListListener {
 	
@@ -37,14 +40,16 @@ public class AuthorProfilePage implements CandidateListListener {
 		setNameArea();
 		setButtonArea();
 		setAuthorInformationPane();
+		setDragAndDropFeature();
 		setCanvas();
 	}
 
 	private Author atr;
 	private UserInterface ui;
 	
-	private Label dropHere;
+	private Label dropLabel;
 	private HBox dropArea;
+	private Image downArrow;
 	
 	private Label name;
 	private Label associatedSchool;
@@ -69,10 +74,13 @@ public class AuthorProfilePage implements CandidateListListener {
 	private VBox canvas;
 
 	private void setDropArea() {
-		dropHere = new Label("drop here");
-		dropArea = new HBox(dropHere);
-		dropArea.setAlignment(Pos.CENTER_RIGHT);
+		dropLabel = new Label("Drag the Author's name & Drop here to add him to candidate list");
+		dropLabel.setWrapText(true);
+		dropArea = new HBox(dropLabel);
+		UIElementFixer.fixElementWidth(dropArea, 100);
+		UIElementFixer.fixElementHeight(dropArea,100);
 		VBox.setMargin(dropArea,new Insets(0,0,-20,0));
+		downArrow = new Image("/resources/Down Arrow.gif",100,100,true,true);
 	}
 	
 	private void setNameArea(){
@@ -82,6 +90,67 @@ public class AuthorProfilePage implements CandidateListListener {
 		associatedSchool.setFont(new Font("Black",15));
 		nameArea = new VBox(name,associatedSchool);
 		nameArea.setAlignment(Pos.CENTER);
+	}
+	
+	// EFFECT: allows the user to drag the name and drop it over "drop here" label
+	//         to add this author to candidate list
+	private void setDragAndDropFeature(){
+		setDragDetectedEvent();
+		setDragOverEvent();
+		setDragEnteredEvent();
+		setDragExitedEvent();
+		setDragDroppedEvent();
+	}
+
+	private void setDragDetectedEvent() {
+		name.setOnDragDetected((MouseEvent e) -> {
+			Dragboard db = name.startDragAndDrop(TransferMode.ANY);
+			ClipboardContent content = new ClipboardContent();
+			content.putString(name.getText());
+			db.setContent(content);
+			
+			e.consume();
+		});
+	}
+
+	private void setDragOverEvent() {
+		dropLabel.setOnDragOver((DragEvent e) -> {
+			if (e.getDragboard().hasString()){
+				e.acceptTransferModes(TransferMode.MOVE);
+			}
+			e.consume();
+		});
+	}
+
+	private void setDragEnteredEvent() {
+		dropLabel.setOnDragEntered((DragEvent e) -> {
+			if (e.getDragboard().hasString()){
+				dropLabel.setText("");
+				dropLabel.setGraphic(new ImageView(downArrow));
+			}
+			e.consume();
+		});
+	}
+
+	private void setDragExitedEvent() {
+		dropLabel.setOnDragExited((DragEvent e) -> {
+			dropLabel.setText("Drag the Author's name & Drop here to add him to candidate list");
+			dropLabel.setGraphic(null);
+			e.consume();
+		});
+	}
+
+	private void setDragDroppedEvent() {
+		dropLabel.setOnDragDropped((DragEvent e) -> {
+			Dragboard db = e.getDragboard();
+			boolean success = false;
+			if (db.hasString()){
+				ui.addCand(new Author(db.getString()));
+				success = true;
+			}
+			e.setDropCompleted(success);
+			e.consume();
+		});
 	}
 	
 	private void setButtonArea(){
@@ -198,8 +267,8 @@ public class AuthorProfilePage implements CandidateListListener {
 	
 	private void setCanvas(){
 		canvas = new VBox(20,dropArea,nameArea,buttonArea,authorInformationPane);
-		canvas.setAlignment(Pos.CENTER);
 		canvas.setPadding(new Insets(20,40,20,40));
+		canvas.setAlignment(Pos.CENTER_RIGHT);
 	}
 	public Scene getScene(){
 		return new Scene(canvas);
@@ -226,8 +295,8 @@ public class AuthorProfilePage implements CandidateListListener {
 		return name;
 	}
 	
-	Label getDropHere(){
-		return dropHere;
+	Label getdropLabel(){
+		return dropLabel;
 	}
 	
 }
