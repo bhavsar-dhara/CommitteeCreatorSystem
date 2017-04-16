@@ -673,4 +673,67 @@ public class QueryEngine {
 	public void convertXYToList() {
 
 	}
+
+
+	/**  Query 21
+	 * Candidate Details include candidate names, their role in committee(maybe more than one roles)
+	 * and their number of publication. Candidate Review page mainly aim at comparing different between
+	 * authors basic contribute and performance.
+	 * @param i
+	 * @return List of Authors with name, committee role list, and numberofPb setted.
+	 */
+	public List<Author> fetchCandidateDetails(int i) {
+		List<Author> candidatesListWithDetails = new ArrayList<>();
+		List<String> candidates = new ArrayList<String>();
+		try {
+			Statement st = getConn().createStatement();
+			StringBuilder query = new StringBuilder();
+			query.append("Select distinct authorname From tb_candidate");
+			ResultSet rs = st.executeQuery(query.toString());
+			while (rs.next()) {
+				Author CandidateAuthor = new Author();
+				String authorName = rs.getString("authorname");
+				CandidateAuthor.setName(authorName);
+				String rolestring = getCommitteeRoleByAuthorName(authorName);
+				CandidateAuthor.setRole(rolestring);
+				int numberofpb = getNumberofPBByAuthorName(CandidateAuthor);
+				CandidateAuthor.setNoOfPublication(Integer.toString(numberofpb));
+				candidatesListWithDetails.add(CandidateAuthor);
+			}
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + " querying fav candidate list.");
+			System.err.println(se.getMessage());
+		}
+		return candidatesListWithDetails;
+	}
+
+	/**  Query 22
+	 * This is a help method for fetchCandidateDetails method.
+	 * Get their role of every committee they ever attened by their name.
+	 * @param authorname
+	 * @return a string, the role of an author. The role may more than one.
+	 */
+	private static String getCommitteeRoleByAuthorName(String authorname) {
+		String roleString = "";
+		try {
+			String sql = "select role from tb_committeecheck where authorname =?";
+			PreparedStatement ps = getConn().prepareStatement(sql);
+			ps.setString(1, authorname);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				roleString = roleString.concat("," + rs.getString(1));
+			}
+			ps.close();
+			rs.close();
+		} catch (SQLException e) {
+			System.out.println(SQLEXCEPTION);
+			e.printStackTrace();
+		}
+		return roleString;
+	}
+
+
 }
+

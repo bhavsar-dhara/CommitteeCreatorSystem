@@ -1,4 +1,4 @@
-package main.xmlparser;
+package main.fileEditors;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,6 +13,16 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * This class main aim at edit XML file and read different tag under same root files.
+ * Afrer read different publication (articles, inproceedings, incollection, book etc) set different type.
+ * Then deep read their child node, and save different data into database tables.
+ * The data in tb_publication, tb_authorProfile are directly data readed from xml file.
+ * The data in tb_numberofpb are data calculated in the mean time of reading.
+ * Also create other empty tables for further use such as tb_candidate, tb_savedQueries.
+ * Also include a time calculater because fill data into remote AWS server cost many time than fill in local.
+ */
 public class XMLParser {
 
     static String CONNECTIONERROR = "Failed!";
