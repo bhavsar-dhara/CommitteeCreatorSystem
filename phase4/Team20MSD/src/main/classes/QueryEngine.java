@@ -17,7 +17,7 @@ public class QueryEngine {
 
 	static String GET_NOPB_BY_AUTHORNAME = "select distinct numberOfPb from tb_NumberOfPb where authorname=?";
 	static String GET_AUTHORNAME_BY_NOPB = "select distinct authorname from tb_NumberOfPb where numberOfPb=?";
-	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.title, tp.publisher, tp.pbyear from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
+	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.* from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
 	// a singleton jdbc connection class
@@ -36,18 +36,6 @@ public class QueryEngine {
 				// String url = "jdbc:postgresql://localhost:5432/msddblp";
 				// conn = DriverManager.getConnection(url, "postgres",
 				// "1991715");
-
-				// Connection to AWS PostgreSQL Database
-				// ERROR ::: on trying to connect to remote
-				// Connection refused. Check that the hostname and port are
-				// correct and that the postmaster is accepting TCP/IP
-				// connections.
-				// String url =
-				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-				//// url =
-				// "jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp";
-				// conn = DriverManager.getConnection(url, "luliuAWS",
-				// "1991715ll");
 
 				System.out.println("Connection made successfully...");
 			} catch (ClassNotFoundException e) {
@@ -73,23 +61,15 @@ public class QueryEngine {
 	// output: list of authors
 
 	// TODO : multiple conferences selected?
-	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
-			int noOfPublication, boolean isServedAsCommittee) {
-
-		// System.err.println(confJournal);
-		// System.err.println(keywords);
-		// System.err.println(years[0]);
-		// System.err.println(noOfPublication);
+	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years, int noOfPublication,
+			boolean isServedAsCommittee) {
 
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct * " +
-					"FROM tb_publication tp, " +
-					"tb_authorprofile ta, " +
-					"tb_numberofpb tn, " +
-					"tb_committeecheck tc ");
+			query.append("SELECT distinct * " + "FROM tb_publication tp, " + "tb_authorprofile ta, "
+					+ "tb_numberofpb tn, " + "tb_committeecheck tc ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 
 			if (confJournal != null && !confJournal.equals("")) {
@@ -114,7 +94,7 @@ public class QueryEngine {
 				query.append("and tc.authorname = ta.authorname" + " ");
 			}
 
-//			System.out.println("............" + query.toString());
+			// System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			// System.out.println(rs.getFetchSize() + "......");
@@ -233,9 +213,19 @@ public class QueryEngine {
 			while (rs.next()) {
 				Publication publicationRS = new Publication();
 				publicationRS.setTitle(rs.getString("title"));
-				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "");
-				publicationRS.setPbyear(rs.getInt("pbyear"));
-				// String publication = rs.getString(1);
+				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "N/A");
+				publicationRS.setPbyear(rs.getInt("pbyear") > 0 && rs.getInt("pbyear") < 2018 ? rs.getInt("pbyear") : 0);
+				publicationRS.setType(rs.getString("type"));
+				publicationRS.setPages(rs.getString("pages") != null ? rs.getString("pages") : "N/A");
+				publicationRS.setJournal(rs.getString("journal") != null ? rs.getString("journal") : "N/A");
+				publicationRS.setEe(rs.getString("ee") != null ? rs.getString("ee") : "N/A");
+				publicationRS.setUrl(rs.getString("url") != null ? rs.getString("url") : "N/A");
+				publicationRS.setVolume(rs.getString("volume") != null ? rs.getString("volume") : "N/A");
+				publicationRS.setBooktitle(rs.getString("booktitle") != null ? rs.getString("booktitle") : "N/A");
+				publicationRS.setIsbn(rs.getString("isbn") != null ? rs.getString("isbn") : "N/A");
+				publicationRS.setEditor(rs.getString("editor") != null ? rs.getString("editor") : "N/A");
+				publicationRS.setSchool(rs.getString("school") != null ? rs.getString("school") : "N/A");
+				publicationRS.setNumber(rs.getString("number") != null ? rs.getString("number") : "N/A");
 				listofpublicationbyauthorname.add(publicationRS);
 			}
 			return listofpublicationbyauthorname;
@@ -369,60 +359,55 @@ public class QueryEngine {
 	 * candidates
 	 * 
 	 */
-	public Author fetchFavCandidate(int i) {
-		List<Author> candidatesList = new ArrayList<>();
+	public Author fetchCandidates(int i) {
+		List<Author> listofCandidate = new ArrayList<Author>();
 		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("Select distinct authorname from tb_candidate ");
+			String sql = "select * from tb_candidate";
+			PreparedStatement ps = conn.prepareStatement(sql);
 
-			ResultSet rs = st.executeQuery(query.toString());
+			ResultSet rs = ps.executeQuery();
+
 			while (rs.next()) {
-				candidatesList.add(new Author(rs.getString("authorname")));
+				listofCandidate.add(new Author(rs.getString(1)));
 			}
 
+			ps.close();
 			rs.close();
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying fav candidate list.");
-			System.err.println(se.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Failed");
+			e.printStackTrace();
 		}
-		return candidatesList.get(0);
+		return listofCandidate.get(i);
 	}
 
-	public int addFavCandidate(Author author) {
+	public void addAuthorIntoCandidate(Author author) {
 		System.out.println(".. .. .. " + author.getName());
-		int affectedRows = 0;
 		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_candidate(authorname) VALUES (" + author.getName() + ");--");
-
-			st.executeUpdate(query.toString());
-
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " adding fav candidate.");
-			se.printStackTrace();
-			System.err.println(se.getMessage());
+			String sql = "insert into tb_candidate values(?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, author.getName());
+			
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("Failed!");
+			e.printStackTrace();
 		}
-		return affectedRows;
 	}
 
-	public int deleteFavCandidate(Author author) {
-		int affectedRows = 0;
+	public void deleteFavCandidate(Author author) {
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_candidate where authorname=?");
 			pstmt.setString(1, author.getName());
 
-			affectedRows = pstmt.executeUpdate();
+			pstmt.executeUpdate();
 
 			pstmt.close();
 		} catch (SQLException se) {
 			System.err.println(SQLEXCEPTION + " deleting fav candidate.");
 			System.err.println(se.getMessage());
 		}
-		return affectedRows;
 	}
 
 	public int countFavCandidates() {

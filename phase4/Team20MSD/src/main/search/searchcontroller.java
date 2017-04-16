@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.classes.QueryEngine;
-import main.classes._userInterface;
+import main.classes.ConcreteUserInterface;
 import main.interfaces.UserInterface;
 import scndPartOfUI.CandidateListPage;
 
@@ -120,7 +120,7 @@ public class searchcontroller implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		qe = new QueryEngine();
-		ui = new _userInterface(qe);
+		ui = new ConcreteUserInterface(qe);
 
 		List<String> list = qe.fetchJournalNames();
 		List<Integer> plist = qe.fetchYearsAvailable();

@@ -1,17 +1,16 @@
 package scndPartOfUI;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.Rule;
 import org.junit.Test;
 
-import main.classes.Author;
-import main.classes.Publication;
-import java.util.ArrayList;
-import main.classes._userInterface;
-import main.interfaces.UserInterface;
 import javafx.collections.FXCollections;
-import javafx.scene.control.Button;
+import main.classes.Author;
 
 public class AuthorProfilePageTest {
 

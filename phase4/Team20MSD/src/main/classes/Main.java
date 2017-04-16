@@ -2,13 +2,13 @@ package main.classes;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import main.search.Candidate;
+import main.search.MainPage;
 
 public class Main extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-		Candidate mainPage = new Candidate();
+		MainPage mainPage = new MainPage();
 		stage.setScene(mainPage.getScene());
 		stage.show();
 	}
