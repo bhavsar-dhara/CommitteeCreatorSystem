@@ -1,15 +1,10 @@
 package main.classes;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javafx.collections.FXCollections;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.collections.FXCollections;
 
 public class QueryEngine {
 
@@ -71,7 +66,7 @@ public class QueryEngine {
 
 	// TODO : multiple conferences selected?
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years,
-			int noOfPublication) {
+			int noOfPublication, boolean isServedAsCommittee) {
 
 		System.err.println(confJournal);
 		System.err.println(keywords);
@@ -82,7 +77,7 @@ public class QueryEngine {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn ");
+			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn, tb_committeecheck tc ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 
 			if (confJournal != null && !confJournal.equals("")) {
@@ -103,6 +98,10 @@ public class QueryEngine {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
+			if (isServedAsCommittee) {
+				query.append("and tc.authorname = ta.authorname" + " ");
+			}
+
 			System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
@@ -112,6 +111,9 @@ public class QueryEngine {
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
 				author.setNoOfPublication(rs.getString("numberofpb"));
+				author.setRole(rs.getString("role"));
+				author.setCheckYear(rs.getInt("checkyear"));
+				author.setCommittee(rs.getString("committee"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setType(rs.getString("type"));

@@ -43,7 +43,7 @@ public class Author implements Serializable {
 	private String noOfPublication;
 	private int checkYear;
 	private String role;
-	private boolean isCommittee;
+	private String committee;
 	private Publication publication;
 	
 	public Long getId() {
@@ -96,12 +96,12 @@ public class Author implements Serializable {
 		this.role = role;
 	}
 
-	public boolean isCommittee() {
-		return isCommittee;
+	public String isCommittee() {
+		return committee;
 	}
 
-	public void setCommittee(boolean isCommittee) {
-		this.isCommittee = isCommittee;
+	public void setCommittee(String isCommittee) {
+		this.committee = isCommittee;
 	}
 
 	public Publication getPublication() {
@@ -127,8 +127,8 @@ public class Author implements Serializable {
 //			author.append("checkYear = " + checkYear + " \n ");
 		if(role != null)
 			author.append("role = " + role + " \n ");
-//		if(isCommittee == null)
-//			author.append("isCommittee = " + isCommittee + " \n ");
+//		if(committee == null)
+//			author.append("committee = " + committee + " \n ");
 		if(publication != null) 
 			author.append("publication = " + publication.toString());
 		return author.toString();

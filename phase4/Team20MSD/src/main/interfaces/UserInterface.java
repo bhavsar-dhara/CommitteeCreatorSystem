@@ -1,16 +1,13 @@
 package main.interfaces;
 
-import main.classes.Author;
-import main.classes.Publication;
-import scndPartOfUI.SearchQuery;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import main.classes.Author;
+import main.classes.Publication;
+
+import java.util.List;
+
+//import scndPartOfUI.SearchQuery;
 
 public interface UserInterface {
 	

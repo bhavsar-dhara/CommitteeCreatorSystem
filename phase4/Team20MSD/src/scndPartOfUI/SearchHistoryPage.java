@@ -1,3 +1,4 @@
+/*
 package scndPartOfUI;
 import main.classes.Author;
 import main.interfaces.*;
@@ -134,3 +135,4 @@ public class SearchHistoryPage implements SearchHistoryListener {
 		return itemNbrPerPage;
 	}
 }
+*/
