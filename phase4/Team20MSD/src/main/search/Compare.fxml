@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="1086.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.search.Compare">
+    
+   <children>
+      <Label alignment="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="41.0" prefWidth="226.0" text="Overview of Authors" />
+      <Separator layoutX="25.0" layoutY="685.0" prefHeight="0.0" prefWidth="390.0" />
+    <AnchorPane layoutX="340.0" layoutY="84.0" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="753.0">
+         <children>
+            <PieChart fx:id="myPieChart" layoutX="14.0" layoutY="29.0" prefHeight="591.0" prefWidth="668.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="14.0" />
+         </children>
+      </AnchorPane>
+
+      <TableView fx:id="tableHistory" layoutX="11.0" layoutY="79.0" prefHeight="608.0" prefWidth="320.0">
+         <columns>
+            <TableColumn fx:id="colYear" prefWidth="151.00006103515625" text="Author Name" />
+            <TableColumn fx:id="colAmnt" prefWidth="165.99996948242188" text="Committe role" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
