@@ -1,7 +1,5 @@
 package main.search;
 
-import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -12,11 +10,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import main.classes.Author;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
 import scndPartOfUI.AuthorProfilePage;
+
+import java.util.List;
 
 public class Result {
 
@@ -24,13 +23,24 @@ public class Result {
 
     ObservableList<Author> products = FXCollections.observableArrayList();
 
-	public void setCurrentInfo(String key, String conf, String date, String numofpub, String commit,UserInterface ui,QueryEngine qe) {
+	public void setCurrentInfo(String key,
+							   String conf,
+							   String date,
+							   String numofpub,
+							   String commit,
+							   boolean isSearvedAsCommittee,
+							   UserInterface ui,
+							   QueryEngine qe) {
 		
 		// TODO : if multiple year selection enabled - change code
 		 int[] intArray = new int[1];
 		 intArray[0] = Integer.parseInt(date);
-		 
-		 List<Author> authorList = qe.populateListOfAuthors(conf.trim(), key.trim(), intArray, Integer.parseInt(numofpub));
+		 List<Author> authorList = qe.populateListOfAuthors(
+		 		conf.trim(),
+				 key.trim(),
+				 intArray,
+				 Integer.parseInt(numofpub),
+				 isSearvedAsCommittee);
 		 
 		 for (Author a : authorList) {
 			 products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));

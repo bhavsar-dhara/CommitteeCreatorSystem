@@ -77,7 +77,11 @@ public class QueryEngine {
 		try {
 			Statement st = conn.createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct * FROM tb_publication tp, tb_authorprofile ta, tb_numberofpb tn, tb_committeecheck tc ");
+			query.append("SELECT distinct * " +
+					"FROM tb_publication tp, " +
+					"tb_authorprofile ta, " +
+					"tb_numberofpb tn, " +
+					"tb_committeecheck tc ");
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 
 			if (confJournal != null && !confJournal.equals("")) {
