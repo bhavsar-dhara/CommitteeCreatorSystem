@@ -82,7 +82,14 @@ public class ConcreteUserInterface implements UserInterface {
 	public ObservableList<Publication> getAuthorPubs(Author atr) {
 		return (ObservableList<Publication>) qe.getPublicationByAuthorName(atr);
 	}
+	
+	@Override
+	public Author getSearchResult(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	private QueryEngine qe;
 	private ArrayList<CandidateListListener> CandListListeners = new ArrayList<>();
+	
 }

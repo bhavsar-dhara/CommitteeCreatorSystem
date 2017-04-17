@@ -12,15 +12,14 @@ import main.java.search.userinterface.helperclasses.TableColumnAdder;
 import main.java.serach.interfaces.UserInterface;
 
 public class SimilarAuthorsPage {
-	
-	public SimilarAuthorsPage(Author a,UserInterface ui){
+
+	public SimilarAuthorsPage(Author a, UserInterface ui) {
 		this.ui = ui;
 		setResultTable(a);
 		setButton();
 		setCanvas();
 	}
-	
-	
+
 	private void setResultTable(Author a) {
 		SortedList<Author> origList = new SortedList<>(ui.getSearchResult(a));
 		resultTable = new TableView<Author>(origList);
@@ -29,7 +28,6 @@ public class SimilarAuthorsPage {
 		resultTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 	}
 
-
 	private void setResultTableColumns() {
 		TableColumnAdder<Author> tca = new TableColumnAdder<>(resultTable);
 		tca.addStringColumnToTable("Name", "name");
@@ -37,27 +35,25 @@ public class SimilarAuthorsPage {
 		tca.addIntegerColumnToTable("Total Number of Publication", "noOfPublication");
 	}
 
-
 	private void setButton() {
 		viewProfileBut = new Button("View Profile");
 		viewProfileBut.setOnAction((ActionEvent e) -> {
-			if (!resultTable.getSelectionModel().isEmpty()){
-				AuthorProfilePage app = new AuthorProfilePage(resultTable.getSelectionModel().getSelectedItems().get(0),ui);
+			if (!resultTable.getSelectionModel().isEmpty()) {
+				AuthorProfilePage app = new AuthorProfilePage(resultTable.getSelectionModel().getSelectedItems().get(0),
+						ui);
 				ui.displayNewWindow(app.getScene());
 			}
 		});
 	}
 
-
 	private void setCanvas() {
-		canvas = new VBox(20,resultTable,viewProfileBut);
-		canvas.setPadding(new Insets(10,10,10,10));
+		canvas = new VBox(20, resultTable, viewProfileBut);
+		canvas.setPadding(new Insets(10, 10, 10, 10));
 	}
-	
-	public Scene getScene(){
+
+	public Scene getScene() {
 		return new Scene(canvas);
 	}
-
 
 	private TableView<Author> resultTable;
 	private Button viewProfileBut;

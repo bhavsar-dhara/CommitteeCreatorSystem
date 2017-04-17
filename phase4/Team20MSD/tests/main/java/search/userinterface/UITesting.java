@@ -1,5 +1,6 @@
 package main.java.search.userinterface;
 
+import javafx.collections.ObservableList;
 import main.java.search.model.Author;
 import main.java.serach.interfaces.SearchHistoryListener;
 import main.java.serach.interfaces.UserInterface;
@@ -10,15 +11,17 @@ public interface UITesting extends UserInterface {
 	public int getSearchResultSize();
 
 	public Author getSearchResult(int i);
+	
+	public ObservableList<Author> getSearchResult(Author a);
 
-//	public void getSearchResult(Result sq);
-//
-//	// operations on search history
-//	public void addSearchToHistory(Result sq);
+	// public void getSearchResult(Result sq);
+	//
+	// // operations on search history
+	// public void addSearchToHistory(Result sq);
 
 	public int getSearchHistorySize();
 
-//	public Result getSearchHistoryItem(int i);
+	// public Result getSearchHistoryItem(int i);
 
 	public void clearSearchHistory();
 

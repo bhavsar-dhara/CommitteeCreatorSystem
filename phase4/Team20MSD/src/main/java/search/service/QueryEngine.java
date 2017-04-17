@@ -379,7 +379,7 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("Select distinct journal from tb_publication ");
+			query.append("Select distinct journal from tb_publication order by journal");
 
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
@@ -503,7 +503,7 @@ public class QueryEngine {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
+//				System.out.println("numberOfRows= " + numberOfRows);
 			} else {
 				System.err.println("error: could not get the record counts");
 			}
@@ -643,7 +643,8 @@ public class QueryEngine {
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " deleting fav candidate.");
+			System.err.println(SQLEXCEPTION + " checking is a fav candidate.");
+			se.printStackTrace();
 			System.err.println(se.getMessage());
 		}
 		// return resultAuthor;
