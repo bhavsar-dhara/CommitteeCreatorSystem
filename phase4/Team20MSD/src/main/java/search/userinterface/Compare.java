@@ -124,7 +124,7 @@ public class Compare implements Initializable {
 //                        new PieChart.Data("Apples", 30));
 
 //        final PieChart chart = new PieChart(pieChartData);
-        myPieChart.setTitle("The publication number Percentage of different authors ");
+        myPieChart.setTitle("Publication Number of Different Authors ");
         myPieChart.setData(data);
 
 

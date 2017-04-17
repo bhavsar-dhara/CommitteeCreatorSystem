@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1449">
-              <caret line="125" column="60" lean-forward="true" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
+            <state relative-caret-position="301">
+              <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,14 +195,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="-388">
+              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -243,10 +243,10 @@
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/CandidateListPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/model/Author.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Compare.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Front.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Front.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java" />
       </list>
     </option>
   </component>
@@ -967,12 +967,12 @@
       <workItem from="1492305054405" duration="11000" />
       <workItem from="1492305081517" duration="5427000" />
       <workItem from="1492374120847" duration="6606000" />
-      <workItem from="1492408758535" duration="12991000" />
+      <workItem from="1492408758535" duration="13257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28436000" />
+    <option name="totallyTimeSpent" value="28702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1410" height="877" extended-state="0" />
@@ -1460,16 +1460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="125" column="60" lean-forward="true" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3856">
@@ -1515,9 +1505,19 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="-388">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
