@@ -16,6 +16,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -35,6 +36,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.java.search.model.Author;
 import main.java.search.service.QueryEngine;
+import main.java.serach.interfaces.UserInterface;
 //import pkgcommon.Functions;
 //import pkgmodels.ExportHistory;
 
@@ -42,30 +44,24 @@ import main.java.search.service.QueryEngine;
 
 public class Compare implements Initializable {
 
-    @FXML
-    private TextField txtProductionYear;
-    @FXML
-    private TextField txtAmountExported;
-    @FXML
-    private TextField txtPricePerKg;
-    @FXML
-    private TextField txtCountry;
-    @FXML
-    private TextField txtInchargeManager;
-    private Connection conn;
-    private PreparedStatement pst;
+
 //    private Functions functions;
+
+    private ObservableList<PieChart.Data> data2;
     @FXML
     private Button btnRecordEx;
+    @FXML
+    private Button linechartclick;
 
     private ObservableList<Author> data1;
 
     //Pie chart Data
     private ObservableList<PieChart.Data> data;
-    //Tableview data
-//    private ObservableList<ExportHistory> histData;
+
     @FXML
     private PieChart myPieChart;
+    @FXML
+    private PieChart pie1;
     @FXML
     private Button btnViewChart;
     @FXML
@@ -74,22 +70,6 @@ public class Compare implements Initializable {
     private TableColumn<Author, String> aname;
     @FXML
     private TableView<Author> colAmnt;
-
-
-//    @FXML
-//    private TableView<ExportHistory> tableHistory;
-//    @FXML
-//    private TableColumn<ExportHistory, String> colManager;
-//    @FXML
-//
-//    private TableColumn<ExportHistory, Integer> colYear;
-//    @FXML
-//    private TableColumn<ExportHistory, Double> colAmnt;
-//    @FXML
-//    private TableColumn<ExportHistory, Double> colPrice;
-//    @FXML
-//    private TableColumn<ExportHistory, String> colCtry;
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -115,20 +95,43 @@ public class Compare implements Initializable {
     private void buildPieChartData( ObservableList<PieChart.Data> data) {
 
 
-//        ObservableList<PieChart.Data> pieChartData =
-//                FXCollections.observableArrayList(
-//                        new PieChart.Data("Grapefruit", 13),
-//                        new PieChart.Data("Oranges", 25),
-//                        new PieChart.Data("Plums", 10),
-//                        new PieChart.Data("Pears", 22),
-//                        new PieChart.Data("Apples", 30));
-
-//        final PieChart chart = new PieChart(pieChartData);
-        myPieChart.setTitle("Number oF Publication  of Different Authors ");
+        myPieChart.setTitle("Number of Publication of Different Authors ");
         myPieChart.setData(data);
 
 
     }
+
+    @FXML
+    private void lineclick(Event event) throws Exception {
+        Author selectedauthor = colAmnt.getSelectionModel().getSelectedItem();
+
+        if (selectedauthor != null) {
+            System.out.println(selectedauthor.getName());
+            MakeLineGraph(selectedauthor);
+        }
+
+
+    }
+    private void MakeLineGraph(Author name) {
+
+
+        System.out.println("connection complete");
+
+        ObservableList<PieChart.Data> pieChartData2 =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Grapefruit", 13),
+                        new PieChart.Data("Oranges", 25),
+                        new PieChart.Data("Plums", 10),
+                        new PieChart.Data("Pears", 22),
+                        new PieChart.Data("Apples", 30));
+
+        pie1.setTitle(name.getName() +"'s Yearly Publication");
+        pie1.setData(pieChartData2);
+
+
+    }
+    private UserInterface ui;
+
     private QueryEngine qe;
 //    }
 }
