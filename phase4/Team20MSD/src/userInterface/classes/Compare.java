@@ -1,45 +1,26 @@
 
 package userInterface.classes;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Platform;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 //import main.java.search.model.Author;
 //import main.java.search.service.QueryEngine;
 //import main.java.serach.interfaces.UserInterface;
-
-import main.classes.*;
+import main.classes.Author;
+import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
 
 //import pkgcommon.Functions;
@@ -78,7 +59,7 @@ public class Compare implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        qe = new QueryEngine();
+        qe = QueryEngine.instance();
         data = FXCollections.observableArrayList();
         data1 = FXCollections.observableArrayList();
         List<Author> authorslist  =qe.fetchCandidateDetails();

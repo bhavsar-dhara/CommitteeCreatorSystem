@@ -85,7 +85,7 @@ public class Front implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		qe = new QueryEngine();
+		qe = QueryEngine.instance();
 		ui = new ConcreteUserInterface(qe);
 		List<Integer> pubno = new ArrayList<Integer>();
 		pubno.add(1);

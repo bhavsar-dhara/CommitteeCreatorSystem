@@ -13,7 +13,7 @@ import main.classes.QueryEngine;
 
 public class TestQueryEngine {
 	
-QueryEngine searchQuery = new QueryEngine();
+QueryEngine searchQuery = QueryEngine.instance();
 	
 	Publication publication1 = new Publication("Parallel Approximation Schemes for Problems on Planar Graphs.", "articles", 1996, 
 			"387-408", "Acta Inf.", "http://dx.doi.org/10.1007/s002360050049", "db/journals/acta/acta33.html#DiazST96", "33", 
