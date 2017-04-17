@@ -54,9 +54,9 @@
             <state relative-caret-position="252">
               <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding>
-                <marker date="1492421124000" expanded="true" signature="1707:1712" ph="..." />
-                <marker date="1492421124000" expanded="true" signature="1707:1725" ph="..." />
-                <marker date="1492421124000" expanded="true" signature="1707:1739" ph="..." />
+                <marker date="1492423643000" expanded="true" signature="1707:1712" ph="..." />
+                <marker date="1492423643000" expanded="true" signature="1707:1725" ph="..." />
+                <marker date="1492423643000" expanded="true" signature="1707:1739" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,8 +65,8 @@
       <file leaf-file-name="Compare.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
+            <state relative-caret-position="285">
+              <caret line="126" column="37" lean-forward="false" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -967,12 +967,12 @@
       <workItem from="1492305054405" duration="11000" />
       <workItem from="1492305081517" duration="5427000" />
       <workItem from="1492374120847" duration="6606000" />
-      <workItem from="1492408758535" duration="13257000" />
+      <workItem from="1492408758535" duration="13820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28702000" />
+    <option name="totallyTimeSpent" value="29265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1410" height="877" extended-state="0" />
@@ -988,7 +988,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37834394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37834394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1445,9 +1445,9 @@
         <state relative-caret-position="252">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <marker date="1492421124000" expanded="true" signature="1707:1712" ph="..." />
-            <marker date="1492421124000" expanded="true" signature="1707:1725" ph="..." />
-            <marker date="1492421124000" expanded="true" signature="1707:1739" ph="..." />
+            <marker date="1492423643000" expanded="true" signature="1707:1712" ph="..." />
+            <marker date="1492423643000" expanded="true" signature="1707:1725" ph="..." />
+            <marker date="1492423643000" expanded="true" signature="1707:1739" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1513,8 +1513,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
+        <state relative-caret-position="285">
+          <caret line="126" column="37" lean-forward="false" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
