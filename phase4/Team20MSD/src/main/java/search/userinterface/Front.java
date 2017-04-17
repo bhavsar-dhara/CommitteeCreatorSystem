@@ -150,6 +150,8 @@ public class Front implements Initializable {
 	private void setSearch(Event event) throws Exception {
 
 		System.out.println("onButtonCLick.........");
+		System.out.println(check.selectedProperty().getValue());
+
 
 		// Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please Enter
 		// proper information " + " ?",
@@ -206,7 +208,7 @@ public class Front implements Initializable {
 		}
 
 		List<Author> authorList = qe.populateListOfAuthors(conferencename1, keyword1, intArray,
-				Integer.parseInt(numofpub1), false);
+				Integer.parseInt(numofpub1), check.selectedProperty().getValue());
 
 		for (Author a : authorList) {
 			data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication(), a.getPublication()));

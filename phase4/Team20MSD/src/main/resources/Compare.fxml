@@ -21,7 +21,7 @@
 		<TableView fx:id="colAmnt" layoutX="11.0" layoutY="103.0" prefHeight="584.0" prefWidth="320.0">
 			<columns>
 				<TableColumn fx:id="aname" prefWidth="151.00006103515625" text="Author Name" />
-				<TableColumn fx:id="colrole" prefWidth="165.99996948242188" text="Committe role" />
+				<TableColumn fx:id="colrole" prefWidth="165.99996948242188" text="Committe Role" />
 			</columns>
 		</TableView>
       <ImageView fitHeight="72.0" fitWidth="106.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">

@@ -22,14 +22,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Front.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Front.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2838">
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <state relative-caret-position="578">
+              <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
               <folding>
-                <element signature="e#1918#1927#0" expanded="true" />
-                <element signature="e#2184#2193#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,28 +57,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compare.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Compare.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="SimilarAuthorsPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/SimilarAuthorsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-              <folding>
-                <marker date="1492421124000" expanded="true" signature="1707:1712" ph="..." />
-                <marker date="1492421124000" expanded="true" signature="1707:1725" ph="..." />
-                <marker date="1492421124000" expanded="true" signature="1707:1739" ph="..." />
-              </folding>
+            <state relative-caret-position="630">
+              <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Compare.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Compare.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding>
+                <marker date="1492423643000" expanded="true" signature="1707:1712" ph="..." />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
+            <state relative-caret-position="256">
+              <caret line="96" column="51" lean-forward="true" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +97,8 @@
       <file leaf-file-name="Author.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/model/Author.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="e#1877#1878#0" expanded="true" />
                 <element signature="e#1895#1896#0" expanded="true" />
@@ -92,63 +112,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding>
-                <marker date="1492421831000" expanded="false" signature="1607:1612" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1633:1636" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1663:1668" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1681:1684" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1721:1726" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1745:1748" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1777:1782" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1797:1800" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1841:1846" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1869:1872" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1896:1901" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1911:1914" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1945:1950" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="1963:1966" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="1991:1996" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2007:2010" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2043:2048" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2063:2066" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2094:2099" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2113:2116" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2155:2160" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2181:2184" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2212:2217" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2231:2234" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2273:2278" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2299:2302" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2333:2338" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2355:2358" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2403:2408" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2435:2438" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2464:2469" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2481:2484" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2519:2524" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2541:2544" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2575:2580" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2597:2600" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2645:2650" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2677:2680" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2708:2713" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2727:2730" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2769:2774" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2795:2798" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2826:2831" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2845:2848" ph=" }" />
-                <marker date="1492421831000" expanded="false" signature="2887:2892" ph=" { " />
-                <marker date="1492421831000" expanded="false" signature="2913:2916" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CandidateListPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/CandidateListPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -157,13 +120,9 @@
       <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3856">
+            <state relative-caret-position="12555">
               <caret line="849" column="12" lean-forward="false" selection-start-line="849" selection-start-column="12" selection-end-line="849" selection-end-column="12" />
               <folding>
-                <element signature="e#3024#3032#0" expanded="true" />
-                <element signature="e#6529#6537#0" expanded="true" />
-                <element signature="e#8144#8152#0" expanded="true" />
-                <element signature="e#15222#15230#0" expanded="true" />
                 <element signature="e#20661#20662#0" expanded="true" />
                 <element signature="e#20679#20680#0" expanded="true" />
                 <element signature="e#20782#20783#0" expanded="true" />
@@ -185,26 +144,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorProfilePage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/AuthorProfilePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="138" column="45" lean-forward="true" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-388">
+            <state relative-caret-position="315">
               <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -244,9 +193,9 @@
         <option value="$PROJECT_DIR$/src/main/java/search/model/Author.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Compare.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Front.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Front.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java" />
+        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Front.java" />
       </list>
     </option>
   </component>
@@ -257,9 +206,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="25" />
     <option name="y" value="23" />
-    <option name="width" value="1410" />
+    <option name="width" value="1404" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectView">
@@ -277,6 +225,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -481,9 +432,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -967,38 +915,40 @@
       <workItem from="1492305054405" duration="11000" />
       <workItem from="1492305081517" duration="5427000" />
       <workItem from="1492374120847" duration="6606000" />
-      <workItem from="1492408758535" duration="13257000" />
+      <workItem from="1492408758535" duration="14106000" />
+      <workItem from="1492423986720" duration="121000" />
+      <workItem from="1492445170107" duration="2385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28702000" />
+    <option name="totallyTimeSpent" value="32057000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="23" width="1410" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1404" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28025478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37834394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23684211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29299363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1042,282 +992,41 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java" />
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Warning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="54" column="48" lean-forward="false" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Progress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="115" column="51" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Front.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="219" column="79" lean-forward="true" selection-start-line="219" selection-start-column="79" selection-end-line="219" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Compare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/Warning.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/Progress.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/MainPage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/Front.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/search/Compare.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6626">
@@ -1330,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,18 +1054,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/AuthorProfilePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="138" column="45" lean-forward="true" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+        <state relative-caret-position="1650">
+          <caret line="138" column="45" lean-forward="false" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1373,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/model/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="e#1877#1878#0" expanded="true" />
             <element signature="e#1895#1896#0" expanded="true" />
@@ -1386,54 +1085,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <marker date="1492421831000" expanded="false" signature="1607:1612" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1633:1636" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1663:1668" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1681:1684" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1721:1726" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1745:1748" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1777:1782" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1797:1800" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1841:1846" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1869:1872" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1896:1901" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1911:1914" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1945:1950" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="1963:1966" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="1991:1996" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2007:2010" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2043:2048" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2063:2066" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2094:2099" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2113:2116" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2155:2160" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2181:2184" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2212:2217" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2231:2234" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2273:2278" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2299:2302" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2333:2338" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2355:2358" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2403:2408" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2435:2438" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2464:2469" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2481:2484" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2519:2524" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2541:2544" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2575:2580" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2597:2600" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2645:2650" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2677:2680" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2708:2713" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2727:2730" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2769:2774" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2795:2798" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2826:2831" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2845:2848" ph=" }" />
-            <marker date="1492421831000" expanded="false" signature="2887:2892" ph=" { " />
-            <marker date="1492421831000" expanded="false" signature="2913:2916" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,33 +1094,19 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="300">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <marker date="1492421124000" expanded="true" signature="1707:1712" ph="..." />
-            <marker date="1492421124000" expanded="true" signature="1707:1725" ph="..." />
-            <marker date="1492421124000" expanded="true" signature="1707:1739" ph="..." />
+            <marker date="1492423643000" expanded="true" signature="1707:1712" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/ConcreteUserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3856">
+        <state relative-caret-position="12555">
           <caret line="849" column="12" lean-forward="false" selection-start-line="849" selection-start-column="12" selection-end-line="849" selection-end-column="12" />
           <folding>
-            <element signature="e#3024#3032#0" expanded="true" />
-            <element signature="e#6529#6537#0" expanded="true" />
-            <element signature="e#8144#8152#0" expanded="true" />
-            <element signature="e#15222#15230#0" expanded="true" />
             <element signature="e#20661#20662#0" expanded="true" />
             <element signature="e#20679#20680#0" expanded="true" />
             <element signature="e#20782#20783#0" expanded="true" />
@@ -1489,23 +1127,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2838">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding>
-            <element signature="e#1918#1927#0" expanded="true" />
-            <element signature="e#2184#2193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
+        <state relative-caret-position="315">
           <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding />
         </state>
@@ -1513,8 +1140,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="126" column="68" lean-forward="false" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="68" />
+        <state relative-caret-position="256">
+          <caret line="96" column="51" lean-forward="true" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/ConcreteUserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/SimilarAuthorsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
