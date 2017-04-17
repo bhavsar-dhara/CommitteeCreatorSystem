@@ -10,6 +10,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
+/**
+ * @author Dhara
+ *
+ */
 public class QueryEngine {
 
 	private static Connection conn = connectToDatabaseOrDisconnect();
@@ -22,7 +50,10 @@ public class QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.* from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select distinct authorname from tb_authorProfile where title=?";
 
-	// a singleton jdbc connection class
+	/**
+	 * a static jdbc connection class
+	 * @return java.sql.Connection
+	 */
 	private static Connection connectToDatabaseOrDisconnect() {
 		if (getConn() == null) {
 			try {
@@ -53,16 +84,17 @@ public class QueryEngine {
 		return getConn();
 	}
 
-	// Query 1 Search for author list
-	// input: 1. from a particular conference/journal
-	// 2. keywords present in the title of the publication
-	// 3. selecting publication year(s)
-	// 4. minimum # of publications made
-	// 5. has been a previous committee member or not
-	// 6. saving the search criteria??
-	// output: list of authors
+	/**
+	 * Query 1 : Search for author and his every publication list
+	 * @param confJournal: based on a particular conference/journal selected
+	 * @param keywords: based on keywords present in the title of the publication entered
+	 * @param years: selecting publication year(s)
+	 * @param noOfPublication: minimum # of publications made
+	 * @param isServedAsCommittee: has been a previous committee member or not
+	 * @return list of Author with all his publications
+	 * @exception SQLException
+	 */
 
-	// TODO : multiple conferences selected?
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years, int noOfPublication,
 			boolean isServedAsCommittee) {
 
@@ -70,12 +102,8 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*
-																					 * +
-																					 * "tc.role, tc.checkyear,  "
-																					 * +
-																					 * "tc.committee, "
-																					 */
+			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, "
+					/* + "tc.role, tc.checkyear, tc.committee, " */
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
 					+ "FROM tb_publication tp, " + "tb_authorprofile ta, "
@@ -97,7 +125,7 @@ public class QueryEngine {
 			}
 
 			if (noOfPublication > 0) {
-				query.append("and tn.numberofpb = " + noOfPublication + " ");
+				query.append("and tn.numberofpb >= " + noOfPublication + " ");
 			}
 
 			// if (isServedAsCommittee) {
@@ -155,10 +183,12 @@ public class QueryEngine {
 		return listOfAuthors;
 	}
 
-	// Query 2 Search for similar authors
-	// result based on: 1. were members of same committee
-	// 2. have papers published in similar conference or journal
-	// output: list of authors
+	/**
+	 * Query 2 : Search for similar authors
+	 * @param author
+	 * @return list of Authors with similar profile as the given author 
+	 * @exception SQLException
+	 */
 	public List<Author> getSimilarAuthorList(Author author) {
 		List<Author> similarAuthors = new ArrayList<Author>();
 		List<Author> similarAuthorofSameNopb;
@@ -173,9 +203,11 @@ public class QueryEngine {
 		return similarAuthors;
 	}
 
-	/*
-	 * Sub-Query 3a Method to fetch number of publication based on author name
-	 * 
+	/**
+	 * Sub-Query 3a : Method to fetch number of publication based on author name
+	 * @param author
+	 * @return number of publications 
+	 * @exception SQLException
 	 */
 	public int getNumberofPBByAuthorName(Author author) {
 		try {
@@ -194,10 +226,11 @@ public class QueryEngine {
 		return -1;
 	}
 
-	/*
-	 * Sub-Query 3b Method to fetch similar authors having same number on
-	 * published data
-	 * 
+	/**
+	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
+	 * @param author
+	 * @return list of authors with the same number of publications
+	 * @exception SQLException
 	 */
 	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
 		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
@@ -220,9 +253,11 @@ public class QueryEngine {
 		return null;
 	}
 
-	/*
-	 * Sub-Query 3c Method to fetch published papers based on author name
-	 * 
+	/**
+	 * Sub-Query 3c : Method to fetch published papers based on author name
+	 * @param author
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<Publication> getPublicationByAuthorName(Author author) {
 		try {
@@ -257,9 +292,11 @@ public class QueryEngine {
 		return null;
 	}
 
-	/*
-	 * Sub-Query 3d Method to fetch similar authors having co-authored paper
-	 * 
+	/**
+	 * Sub-Query 3d : Method to fetch similar authors having co-authored paper
+	 * @param author
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<Author> getSimilarAuthorBySamePublication(Author author) {
 		List<Publication> listofpublication = getPublicationByAuthorName(author);
@@ -288,9 +325,12 @@ public class QueryEngine {
 		return listofAuthorBySamePB;
 	}
 
-	// Query 4 Search authors details
-	// input: author name
-	// output: list of author's publication list
+	/**
+	 * Query 4 - Search authors details
+	 * @param author
+	 * @return list of author with individual publication object to it
+	 * @exception SQLException
+	 */
 	public List<Author> fetchAuthorDetails(Author author) {
 		List<Author> authorList = new ArrayList<>();
 		try {
@@ -329,9 +369,10 @@ public class QueryEngine {
 		return authorList;
 	}
 
-	/*
-	 * Query 5 Method to fetch distinct Journal names present in the Database
-	 * 
+	/**
+	 * Query 5 : Method to fetch distinct Journal names present in the Database
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<String> fetchJournalNames() {
 		List<String> journalList = new ArrayList<>();
@@ -354,9 +395,10 @@ public class QueryEngine {
 		return journalList;
 	}
 
-	/*
-	 * Query 6 Method to fetch distinct Journal names present in the Database
-	 * 
+	/**
+	 * Query 6 : Method to fetch distinct Journal names present in the Database
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<Integer> fetchYearsAvailable() {
 		List<Integer> yearList = new ArrayList<>();
@@ -384,6 +426,12 @@ public class QueryEngine {
 	 * candidates
 	 * 
 	 */
+	
+	/**
+	 * @param i
+	 * @return
+	 * @exception SQLException
+	 */
 	public Author fetchCandidates(int i) {
 		List<Author> listofCandidate = new ArrayList<Author>();
 		try {
@@ -405,6 +453,10 @@ public class QueryEngine {
 		return listofCandidate.get(i);
 	}
 
+	/**
+	 * @param author
+	 * @exception SQLException
+	 */
 	public void addAuthorIntoCandidate(Author author) {
 		System.out.println(".. .. .. " + author.getName());
 		try {
@@ -421,6 +473,10 @@ public class QueryEngine {
 		}
 	}
 
+	/**
+	 * @param author
+	 * @exception SQLException
+	 */
 	public void deleteFavCandidate(Author author) {
 		try {
 			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_candidate where authorname=?");
@@ -435,6 +491,10 @@ public class QueryEngine {
 		}
 	}
 
+	/**
+	 * @return
+	 * @exception SQLException
+	 */
 	public int countFavCandidates() {
 		int numberOfRows = 0;
 		try {
@@ -461,6 +521,12 @@ public class QueryEngine {
 	 * Queries
 	 * 
 	 */
+	
+	/**
+	 * Query 11 : to read saved queries
+	 * @return list of string of saved queries
+	 * @exception SQLException
+	 */
 	public List<String> fetchSavedQueries() {
 		List<String> queryList = new ArrayList<>();
 		try {
@@ -482,6 +548,11 @@ public class QueryEngine {
 		return queryList;
 	}
 
+	/**
+	 * @param saveQuery
+	 * @return
+	 * @exception SQLException
+	 */
 	public int addSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
@@ -499,6 +570,11 @@ public class QueryEngine {
 		return affectedRows;
 	}
 
+	/**
+	 * @param saveQuery
+	 * @return
+	 * @exception SQLException
+	 */
 	public int deleteSavedQuery(String saveQuery) {
 		int affectedRows = 0;
 		try {
@@ -515,6 +591,10 @@ public class QueryEngine {
 		return affectedRows;
 	}
 
+	/**
+	 * @return
+	 * @exception SQLException
+	 */
 	public int countSavedQueries() {
 		int numberOfRows = 0;
 		try {
@@ -536,10 +616,11 @@ public class QueryEngine {
 		return numberOfRows;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 15 : to find a particular author in Favorite Author List
-	 * 
+	 * @param author
+	 * @return
+	 * @exception SQLException
 	 */
 	public boolean isFavCandidate(Author author) {
 		Author resultAuthor = new Author();
@@ -569,18 +650,26 @@ public class QueryEngine {
 		return isPresent;
 	}
 
+	/**
+	 * static connection getter
+	 * @return
+	 */
 	public static Connection getConn() {
 		return conn;
 	}
 
+	/**
+	 * static connection setter
+	 * @param conn
+	 */
 	public static void setConn(Connection conn) {
 		QueryEngine.conn = conn;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 16 : to fetch distinct committee name list
-	 * 
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<String> fetchCommitteeNameList() {
 		List<String> committeeList = new ArrayList<>();
@@ -603,11 +692,13 @@ public class QueryEngine {
 		return committeeList;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 17 : to fetch author list based on the committee and no of years
 	 * served as a member
-	 * 
+	 * @param committeeName
+	 * @param noOfYears
+	 * @return
+	 * @exception SQLException
 	 */
 	public List<Author> fetchAuthorList(String committeeName, int noOfYears) {
 		List<Author> authorList = new ArrayList<>();
@@ -631,11 +722,11 @@ public class QueryEngine {
 		return authorList;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 18 : to fetch no of publication year list based on author name
-	 * Return type: HashMap<Year, No of publications>
-	 * 
+	 * @param author
+	 * @return HashMap<Year, No of publications>
+	 * @exception SQLException
 	 */
 	public Map<Integer, Integer> fetchNoOfPublicationPerYear(Author author) {
 		Map<Integer, Integer> listPerYear = new HashMap<>();
@@ -662,10 +753,11 @@ public class QueryEngine {
 		return listPerYear;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 19 : to fetch university based on author name
-	 * 
+	 * @param author
+	 * @return
+	 * @exception SQLException
 	 */
 	public String getAuthorUnivDetails(Author author) {
 		String committee = "";
@@ -690,11 +782,11 @@ public class QueryEngine {
 		return committee;
 	}
 
-	/*
-	 * 
+	/**
 	 * Query 20 : to fetch author list based on the committee and no of years
 	 * served as a member Return type: List<list, list>
 	 * 
+	 * @exception SQLException
 	 */
 	public void convertXYToList() {
 

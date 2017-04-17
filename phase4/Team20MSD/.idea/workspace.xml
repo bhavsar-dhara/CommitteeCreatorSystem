@@ -25,10 +25,11 @@
       <file leaf-file-name="Front.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state relative-caret-position="-2838">
+              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1918#1927#0" expanded="true" />
+                <element signature="e#2184#2193#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +92,54 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1492421831000" expanded="false" signature="1607:1612" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1633:1636" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1663:1668" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1681:1684" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1721:1726" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1745:1748" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1777:1782" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1797:1800" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1841:1846" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1869:1872" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1896:1901" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1911:1914" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1945:1950" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="1963:1966" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="1991:1996" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2007:2010" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2043:2048" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2063:2066" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2094:2099" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2113:2116" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2155:2160" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2181:2184" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2212:2217" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2231:2234" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2273:2278" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2299:2302" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2333:2338" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2355:2358" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2403:2408" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2435:2438" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2464:2469" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2481:2484" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2519:2524" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2541:2544" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2575:2580" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2597:2600" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2645:2650" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2677:2680" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2708:2713" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2727:2730" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2769:2774" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2795:2798" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2826:2831" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2845:2848" ph=" }" />
+                <marker date="1492421831000" expanded="false" signature="2887:2892" ph=" { " />
+                <marker date="1492421831000" expanded="false" signature="2913:2916" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,24 +154,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="746" column="18" lean-forward="true" selection-start-line="746" selection-start-column="18" selection-end-line="746" selection-end-column="18" />
+            <state relative-caret-position="3856">
+              <caret line="849" column="12" lean-forward="false" selection-start-line="849" selection-start-column="12" selection-end-line="849" selection-end-column="12" />
               <folding>
-                <marker date="1492420826000" expanded="true" signature="584:648" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492420826000" expanded="true" signature="692:756" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492420826000" expanded="true" signature="801:909" ph="select disti... tb_authorProfile" />
-                <marker date="1492420826000" expanded="true" signature="954:1016" ph="select disti... tb_authorProfile" />
-                <marker date="1492420826000" expanded="true" signature="14540:14566" ph="select * fro... tb_candidate" />
-                <marker date="1492420826000" expanded="true" signature="15034:15068" ph="insert into tb_candidate... " />
-                <marker date="1492420826000" expanded="true" signature="15412:15455" ph="DELETE from " />
-                <marker date="1492420826000" expanded="true" signature="15814:15847" ph="SELECT COUNT... tb_candidate" />
-                <marker date="1492420826000" expanded="true" signature="17577:17618" ph="DELETE from " />
-                <marker date="1492420826000" expanded="true" signature="18007:18043" ph="SELECT COUNT... tb_savedqueries" />
-                <marker date="1492420826000" expanded="true" signature="24699:24753" ph="select role tb_committeecheck" />
-                <marker date="1492420826000" expanded="true" signature="25804:25850" ph="Select * Fro... tb_candidate" />
+                <element signature="e#3024#3032#0" expanded="true" />
+                <element signature="e#6529#6537#0" expanded="true" />
+                <element signature="e#8144#8152#0" expanded="true" />
+                <element signature="e#15222#15230#0" expanded="true" />
+                <element signature="e#20661#20662#0" expanded="true" />
+                <element signature="e#20679#20680#0" expanded="true" />
+                <element signature="e#20782#20783#0" expanded="true" />
+                <element signature="e#20812#20813#0" expanded="true" />
+                <marker date="1492421831000" expanded="true" signature="780:844" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492421831000" expanded="true" signature="888:952" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492421831000" expanded="true" signature="997:1105" ph="select disti... tb_authorProfile" />
+                <marker date="1492421831000" expanded="true" signature="1150:1212" ph="select disti... tb_authorProfile" />
+                <marker date="1492421831000" expanded="true" signature="15259:15285" ph="select * fro... tb_candidate" />
+                <marker date="1492421831000" expanded="true" signature="15809:15843" ph="insert into tb_candidate... " />
+                <marker date="1492421831000" expanded="true" signature="16243:16286" ph="DELETE from " />
+                <marker date="1492421831000" expanded="true" signature="16695:16728" ph="SELECT COUNT... tb_candidate" />
+                <marker date="1492421831000" expanded="true" signature="18721:18762" ph="DELETE from " />
+                <marker date="1492421831000" expanded="true" signature="19201:19237" ph="SELECT COUNT... tb_savedqueries" />
+                <marker date="1492421831000" expanded="true" signature="26261:26315" ph="select role tb_committeecheck" />
+                <marker date="1492421831000" expanded="true" signature="27366:27412" ph="Select * Fro... tb_candidate" />
               </folding>
             </state>
           </provider>
@@ -139,14 +195,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="100">
+              <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -184,13 +240,13 @@
         <option value="$PROJECT_DIR$/src/main/search/MainPage.java" />
         <option value="$PROJECT_DIR$/src/main/search/Front.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/MainPage.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Front.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Front.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/CandidateListPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/model/Author.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Compare.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Compare.java" />
         <option value="$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/search/userinterface/Front.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Front.fxml" />
       </list>
     </option>
   </component>
@@ -911,12 +967,12 @@
       <workItem from="1492305054405" duration="11000" />
       <workItem from="1492305081517" duration="5427000" />
       <workItem from="1492374120847" duration="6606000" />
-      <workItem from="1492408758535" duration="12793000" />
+      <workItem from="1492408758535" duration="12991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28238000" />
+    <option name="totallyTimeSpent" value="28436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1410" height="877" extended-state="0" />
@@ -1295,10 +1351,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,28 +1386,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1492421831000" expanded="false" signature="1607:1612" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1633:1636" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1663:1668" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1681:1684" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1721:1726" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1745:1748" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1777:1782" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1797:1800" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1841:1846" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1869:1872" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1896:1901" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1911:1914" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1945:1950" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="1963:1966" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="1991:1996" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2007:2010" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2043:2048" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2063:2066" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2094:2099" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2113:2116" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2155:2160" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2181:2184" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2212:2217" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2231:2234" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2273:2278" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2299:2302" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2333:2338" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2355:2358" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2403:2408" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2435:2438" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2464:2469" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2481:2484" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2519:2524" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2541:2544" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2575:2580" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2597:2600" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2645:2650" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2677:2680" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2708:2713" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2727:2730" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2769:2774" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2795:2798" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2826:2831" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2845:2848" ph=" }" />
+            <marker date="1492421831000" expanded="false" signature="2887:2892" ph=" { " />
+            <marker date="1492421831000" expanded="false" signature="2913:2916" ph=" }" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,22 +1472,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/search/service/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="746" column="18" lean-forward="true" selection-start-line="746" selection-start-column="18" selection-end-line="746" selection-end-column="18" />
+        <state relative-caret-position="3856">
+          <caret line="849" column="12" lean-forward="false" selection-start-line="849" selection-start-column="12" selection-end-line="849" selection-end-column="12" />
           <folding>
-            <marker date="1492420826000" expanded="true" signature="584:648" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492420826000" expanded="true" signature="692:756" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492420826000" expanded="true" signature="801:909" ph="select disti... tb_authorProfile" />
-            <marker date="1492420826000" expanded="true" signature="954:1016" ph="select disti... tb_authorProfile" />
-            <marker date="1492420826000" expanded="true" signature="14540:14566" ph="select * fro... tb_candidate" />
-            <marker date="1492420826000" expanded="true" signature="15034:15068" ph="insert into tb_candidate... " />
-            <marker date="1492420826000" expanded="true" signature="15412:15455" ph="DELETE from " />
-            <marker date="1492420826000" expanded="true" signature="15814:15847" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492420826000" expanded="true" signature="17577:17618" ph="DELETE from " />
-            <marker date="1492420826000" expanded="true" signature="18007:18043" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492420826000" expanded="true" signature="24699:24753" ph="select role tb_committeecheck" />
-            <marker date="1492420826000" expanded="true" signature="25804:25850" ph="Select * Fro... tb_candidate" />
+            <element signature="e#3024#3032#0" expanded="true" />
+            <element signature="e#6529#6537#0" expanded="true" />
+            <element signature="e#8144#8152#0" expanded="true" />
+            <element signature="e#15222#15230#0" expanded="true" />
+            <element signature="e#20661#20662#0" expanded="true" />
+            <element signature="e#20679#20680#0" expanded="true" />
+            <element signature="e#20782#20783#0" expanded="true" />
+            <element signature="e#20812#20813#0" expanded="true" />
+            <marker date="1492421831000" expanded="true" signature="780:844" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492421831000" expanded="true" signature="888:952" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492421831000" expanded="true" signature="997:1105" ph="select disti... tb_authorProfile" />
+            <marker date="1492421831000" expanded="true" signature="1150:1212" ph="select disti... tb_authorProfile" />
+            <marker date="1492421831000" expanded="true" signature="15259:15285" ph="select * fro... tb_candidate" />
+            <marker date="1492421831000" expanded="true" signature="15809:15843" ph="insert into tb_candidate... " />
+            <marker date="1492421831000" expanded="true" signature="16243:16286" ph="DELETE from " />
+            <marker date="1492421831000" expanded="true" signature="16695:16728" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492421831000" expanded="true" signature="18721:18762" ph="DELETE from " />
+            <marker date="1492421831000" expanded="true" signature="19201:19237" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492421831000" expanded="true" signature="26261:26315" ph="select role tb_committeecheck" />
+            <marker date="1492421831000" expanded="true" signature="27366:27412" ph="Select * Fro... tb_candidate" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/search/userinterface/Front.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2838">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="e#1918#1927#0" expanded="true" />
+            <element signature="e#2184#2193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -4,7 +4,7 @@ public class Publication {
 	private Long id;
 	private String title;
 	private String type;
-	private int pbyear;
+	private Integer pbyear;
 	private String pages;
 	private String journal;
 	private String ee;
@@ -75,6 +75,10 @@ public class Publication {
 		return pbyear;
 	}
 
+	public String getStrPbyear() {
+		return pbyear.toString();
+	}
+	
 	public void setPbyear(int pbyear) {
 		this.pbyear = pbyear;
 	}
