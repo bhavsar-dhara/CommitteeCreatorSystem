@@ -12,7 +12,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import main.classes.Author;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
@@ -32,7 +31,7 @@ public class SearchResultPage {
 			intArray[0] = Integer.parseInt(date);
 		}
 
-		List<Author> authorList = qe.populateListOfAuthors(conf, key, intArray, Integer.parseInt(numofpub),false);
+		List<Author> authorList = qe.populateListOfAuthors(conf, key, intArray, Integer.parseInt(numofpub),false, "0");
 
 		for (Author a : authorList) {
 			products.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
