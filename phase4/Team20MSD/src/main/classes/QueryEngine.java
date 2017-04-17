@@ -915,9 +915,8 @@ public class QueryEngine {
 	}
 
 	/**
-	 * Query 24 This method aim at getting an author's publication years as a
-	 * list. This method works on an Pie chart for UI used.
-	 * 
+	 * Query 24 This method aim at getting an author's publication years as a list.
+	 * This method works on an Pie chart for UI used.
 	 * @param author
 	 * @return a publication years of this author
 	 */
@@ -926,8 +925,12 @@ public class QueryEngine {
 		List<Integer> listofYear = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
-			String sql = "Select pbyear " + "From tb_publication tp, tb_authorprofile ta "
-					+ "where tp.authorname = ta.authorname " + "and authorname =?";
+
+			String sql = "Select pbyear " +
+					"From tb_publication tp, tb_authorprofile ta " +
+					"where tp.title = ta.title " +
+					"and ta.authorname =?";
+
 			PreparedStatement ps = getConn().prepareStatement(sql);
 			ps.setString(1, authorname);
 			ResultSet rs = ps.executeQuery();
@@ -943,5 +946,4 @@ public class QueryEngine {
 		}
 		return listofYear;
 	}
-
 }

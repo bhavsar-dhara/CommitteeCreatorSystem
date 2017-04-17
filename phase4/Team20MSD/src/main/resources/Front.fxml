@@ -54,12 +54,12 @@
 						<Font size="14.0" />
 					</font>
 				</Text>
-				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Publication Date" wrappingWidth="259.123046875" GridPane.rowIndex="2">
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Publication Year" wrappingWidth="259.123046875" GridPane.rowIndex="2">
 					<font>
 						<Font size="14.0" />
 					</font>
 				</Text>
-				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Publications" wrappingWidth="233.62890625" GridPane.rowIndex="3">
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Publication Number &gt;=" wrappingWidth="233.62890625" GridPane.rowIndex="3">
 					<font>
 						<Font size="14.0" />
 					</font>
@@ -81,7 +81,7 @@
 			</rowConstraints>
 			<children>
 				<ChoiceBox fx:id="year" prefHeight="27.0" prefWidth="239.0" GridPane.columnIndex="1" />
-				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serve Year" wrappingWidth="139.96167373657227">
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serve Within" wrappingWidth="139.96167373657227">
 					<font>
 						<Font size="14.0" />
 					</font>

@@ -105,9 +105,12 @@ public class Front implements Initializable {
 		List<Integer> comittno = new ArrayList<Integer>();
 		comittno.add(1);
 		comittno.add(2);
-		comittno.add(3);
-		comittno.add(4);
 		comittno.add(5);
+		comittno.add(10);
+		comittno.add(20);
+		comittno.add(30);
+		comittno.add(40);
+
 
 		List<String> list = qe.fetchJournalNames();
 		List<Integer> plist = qe.fetchYearsAvailable();
@@ -288,7 +291,7 @@ public class Front implements Initializable {
 
 		Stage current = (Stage) compare.getScene().getWindow();
 		Stage stage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("/resources/Compare.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Compare.fxml"));
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -305,7 +308,7 @@ public class Front implements Initializable {
 	}
 
 	private boolean isYearInputOkey() {
-		if (keyword == null){
+		if (keyword == null && keyword.equals("")){
 			return true;
 		} else {
 			String key1 = keyword.getText().trim();
