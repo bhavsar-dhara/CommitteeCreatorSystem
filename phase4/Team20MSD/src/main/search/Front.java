@@ -112,24 +112,28 @@ public class Front implements Initializable {
 		year.getItems().clear();
 		year.setItems(comittno1);
 
-		data = FXCollections.observableArrayList();
-		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
-		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
-		// data.add(new Author("frank", "sdsdsdsd", "2"));
-		// data.add(new Author("dd", "frank", "2"));
-		// data.add(new Author("sdsdsd", "tome", "2"));
-		// data.add(new Author("sdsdsd", "zhi", "2"));
-		// data.add(new Author("sdsdsd", "zhu", "2"));
-		// data.add(new Author("sdsdsd", "he", "2"));
-		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
-		// data.add(new Author("sdsdsd", "li", "2"));
+//		empTable.getItems().clear();
 
-		name.setCellValueFactory(new PropertyValueFactory<>("name"));
-		university.setCellValueFactory(new PropertyValueFactory<>("title"));
-		noofpub.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
-		commit.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
-		empTable.setItems(null);
-		// empTable.setItems(data);
+
+//		data = FXCollections.observableArrayList();
+////		data.clear();
+//		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
+//		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
+//		// data.add(new Author("frank", "sdsdsdsd", "2"));
+//		// data.add(new Author("dd", "frank", "2"));
+//		// data.add(new Author("sdsdsd", "tome", "2"));
+//		// data.add(new Author("sdsdsd", "zhi", "2"));
+//		// data.add(new Author("sdsdsd", "zhu", "2"));
+//		// data.add(new Author("sdsdsd", "he", "2"));
+//		// data.add(new Author("sdsdsd", "sdsdsdsd", "2"));
+//		// data.add(new Author("sdsdsd", "li", "2"));
+//
+//		name.setCellValueFactory(new PropertyValueFactory<>("name"));
+//		university.setCellValueFactory(new PropertyValueFactory<>("title"));
+//		noofpub.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
+//		commit.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
+////		empTable.setItems(null);
+//		 empTable.setItems(data);
 
 		System.out.println("Dynamic Loading successful..");
 	}
@@ -142,7 +146,9 @@ public class Front implements Initializable {
 		// Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please Enter
 		// proper information " + " ?",
 		// ButtonType.YES);
-		// alert.show();
+		// alert.show();'
+		data = FXCollections.observableArrayList();
+
 
 		String conferencename1 = null;
 		if (!conferencename.getSelectionModel().isSelected(0) && !conferencename.getSelectionModel().isSelected(-1)) {
@@ -195,9 +201,16 @@ public class Front implements Initializable {
 				Integer.parseInt(numofpub1), false);
 
 		for (Author a : authorList) {
-			data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
+			data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication(), a.getPublication()));
 		}
 
+		name.setCellValueFactory(new PropertyValueFactory<>("name"));
+		university.setCellValueFactory(new PropertyValueFactory<>("title"));
+		noofpub.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
+		commit.setCellValueFactory(new PropertyValueFactory<>("noOfPublication"));
+
+//        empTable.refresh();'
+		empTable.setItems(null);
 		empTable.setItems(data);
 
 	}

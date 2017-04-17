@@ -12,7 +12,7 @@ public class MainPage {
 		root = FXMLLoader.load(getClass().getClassLoader().getResource("Front.fxml"));
 	}
     public Scene getScene() {
-    	return new Scene(root, 600, 650);
+    	return new Scene(root, 1200, 650);
     }
     
     private Parent root;

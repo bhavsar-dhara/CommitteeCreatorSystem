@@ -22,123 +22,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthorProfilePage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2205#2206#0" expanded="false" />
-                <element signature="e#2278#2279#0" expanded="false" />
-                <element signature="e#4690#4691#0" expanded="false" />
-                <element signature="e#4721#4722#0" expanded="false" />
-                <element signature="e#4744#4745#0" expanded="false" />
-                <element signature="e#4764#4765#0" expanded="false" />
-                <element signature="e#4787#4788#0" expanded="false" />
-                <element signature="e#4807#4808#0" expanded="false" />
-                <element signature="e#4832#4833#0" expanded="false" />
-                <element signature="e#4856#4857#0" expanded="false" />
-                <element signature="e#4883#4884#0" expanded="false" />
-                <element signature="e#4907#4908#0" expanded="false" />
-                <element signature="e#4927#4928#0" expanded="false" />
-                <element signature="e#4945#4946#0" expanded="false" />
-                <element signature="e#4969#4970#0" expanded="false" />
-                <element signature="e#4991#4992#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CandidateListPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="737" column="0" selection-start-line="737" selection-start-column="0" selection-end-line="774" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="115" column="51" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="51" />
               <folding>
-                <marker date="1492391369000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492391369000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492391369000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
-                <marker date="1492391369000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
-                <marker date="1492391369000" expanded="true" signature="13534:13560" ph="select * fro... tb_candidate" />
-                <marker date="1492391369000" expanded="true" signature="14028:14062" ph="insert into tb_candidate... " />
-                <marker date="1492391369000" expanded="true" signature="14412:14455" ph="DELETE from " />
-                <marker date="1492391369000" expanded="true" signature="14814:14847" ph="SELECT COUNT... tb_candidate" />
-                <marker date="1492391369000" expanded="true" signature="16577:16618" ph="DELETE from " />
-                <marker date="1492391369000" expanded="true" signature="17007:17043" ph="SELECT COUNT... tb_savedqueries" />
-                <marker date="1492391369000" expanded="true" signature="23717:23771" ph="select role tb_committeecheck" />
-                <marker date="1492391369000" expanded="true" signature="24832:24878" ph="Select * Fro... tb_candidate" />
+                <element signature="e#2572#2580#0" expanded="true" />
+                <element signature="e#6083#6091#0" expanded="true" />
+                <element signature="e#7513#7521#0" expanded="true" />
+                <element signature="e#14281#14289#0" expanded="true" />
+                <element signature="e#23240#23248#0" expanded="true" />
+                <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+                <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+                <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+                <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+                <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+                <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+                <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+                <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+                <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+                <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+                <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+                <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+                <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+                <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+                <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/search/Front.java">
+      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/search/Compare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="135">
+              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java">
+      <file leaf-file-name="Front.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/search/Front.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-              <folding>
-                <marker date="1492375166000" expanded="true" signature="1368:1440" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="1498:1752" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="1811:1888" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="1951:2058" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="2104:2160" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="2206:2260" ph="create table... if" />
-                <marker date="1492375166000" expanded="true" signature="9794:9865" ph="select exist... " />
-                <marker date="1492375166000" expanded="true" signature="9809:9863" ph="select true tb_committeeCheck" />
-                <marker date="1492375166000" expanded="true" signature="10559:10599" ph="insert into tb_authorProfile... " />
-                <marker date="1492375166000" expanded="true" signature="11209:11276" ph="select exist... " />
-                <marker date="1492375166000" expanded="true" signature="11224:11275" ph="select true tb_NumberOfPb" />
-                <marker date="1492375166000" expanded="true" signature="11747:11820" ph="update tb_Nu... " />
-                <marker date="1492375166000" expanded="true" signature="12166:12204" ph="insert into tb_NumberOfPb... " />
-                <marker date="1492375166000" expanded="true" signature="13078:13140" ph="insert into tb_publication... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommitteeEditor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            <state relative-caret-position="372">
+              <caret line="219" column="79" lean-forward="true" selection-start-line="219" selection-start-column="79" selection-end-line="219" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1492375361000" expanded="true" signature="752:893" ph="create table... if" />
-                <marker date="1492375361000" expanded="true" signature="3804:3849" ph="insert into tb_committeeCheck... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacultyAffiliationCSVEditor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java">
+      <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="6626">
+              <caret line="1783" column="38" lean-forward="false" selection-start-line="1782" selection-start-column="0" selection-end-line="1783" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Search.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-107">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Front.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding>
-                <marker date="1492375361000" expanded="true" signature="1145:1182" ph="INSERT INTO tb_university... " />
+                <marker date="1492411087000" expanded="true" signature="6203:6326" ph="..." />
+                <marker date="1492411087000" expanded="true" signature="6203:6339" ph="..." />
+                <marker date="1492411087000" expanded="true" signature="6269:6311" ph="..." />
               </folding>
             </state>
           </provider>
@@ -147,8 +119,8 @@
       <file leaf-file-name="Author.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="444">
+              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -157,11 +129,19 @@
       <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="-268">
+              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/search/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,13 +150,19 @@
         <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+              <caret line="54" column="48" lean-forward="false" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>uni</find>
+      <find>data</find>
+    </findStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -196,8 +182,10 @@
         <option value="$PROJECT_DIR$/src/main/fileEditors/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java" />
         <option value="$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java" />
-        <option value="$PROJECT_DIR$/src/main/search/Front.java" />
         <option value="$PROJECT_DIR$/src/main/classes/QueryEngine.java" />
+        <option value="$PROJECT_DIR$/src/main/search/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Front.fxml" />
+        <option value="$PROJECT_DIR$/src/main/search/Front.java" />
       </list>
     </option>
   </component>
@@ -207,28 +195,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
-    <option name="y" value="23" />
-    <option name="width" value="1231" />
-    <option name="height" value="807" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="x" value="15" />
+    <option name="y" value="60" />
+    <option name="width" value="1410" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -245,15 +216,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team20MSD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Team20MSD" />
@@ -335,6 +299,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -351,10 +319,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fileEditors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,8 +346,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -403,14 +368,27 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Application.master">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -420,7 +398,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -428,14 +406,15 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
@@ -456,7 +435,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method>
         <option name="Make" enabled="true" />
@@ -637,6 +620,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
@@ -653,27 +637,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -701,6 +664,19 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -774,34 +750,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -812,7 +760,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -842,6 +790,33 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.master" />
     </list>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -857,35 +832,40 @@
       <workItem from="1492305054405" duration="11000" />
       <workItem from="1492305081517" duration="5427000" />
       <workItem from="1492374120847" duration="6606000" />
+      <workItem from="1492408758535" duration="3744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15445000" />
+    <option name="totallyTimeSpent" value="19189000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="23" width="1231" height="807" extended-state="0" />
+    <frame x="15" y="60" width="1410" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28242075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21480407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32946298" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21401274" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23380992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23684211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29317853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29317853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -893,6 +873,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -924,358 +907,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2205#2206#0" expanded="false" />
-            <element signature="e#2278#2279#0" expanded="false" />
-            <element signature="e#4690#4691#0" expanded="false" />
-            <element signature="e#4721#4722#0" expanded="false" />
-            <element signature="e#4744#4745#0" expanded="false" />
-            <element signature="e#4764#4765#0" expanded="false" />
-            <element signature="e#4787#4788#0" expanded="false" />
-            <element signature="e#4807#4808#0" expanded="false" />
-            <element signature="e#4832#4833#0" expanded="false" />
-            <element signature="e#4856#4857#0" expanded="false" />
-            <element signature="e#4883#4884#0" expanded="false" />
-            <element signature="e#4907#4908#0" expanded="false" />
-            <element signature="e#4927#4928#0" expanded="false" />
-            <element signature="e#4945#4946#0" expanded="false" />
-            <element signature="e#4969#4970#0" expanded="false" />
-            <element signature="e#4991#4992#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9990">
-          <caret line="676" column="0" selection-start-line="676" selection-start-column="0" selection-end-line="676" selection-end-column="0" />
-          <folding>
-            <marker date="1492391369000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="13534:13560" ph="select * fro... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="14028:14062" ph="insert into tb_candidate... " />
-            <marker date="1492391369000" expanded="true" signature="14412:14455" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="14814:14847" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="16577:16618" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="17007:17043" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492391369000" expanded="true" signature="23717:23771" ph="select role tb_committeecheck" />
-            <marker date="1492391369000" expanded="true" signature="24832:24878" ph="Select * Fro... tb_candidate" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#3650#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1492391369000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="13534:13560" ph="select * fro... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="14028:14062" ph="insert into tb_candidate... " />
-            <marker date="1492391369000" expanded="true" signature="14412:14455" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="14814:14847" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="16577:16618" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="17007:17043" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492391369000" expanded="true" signature="23717:23771" ph="select role tb_committeecheck" />
-            <marker date="1492391369000" expanded="true" signature="24832:24878" ph="Select * Fro... tb_candidate" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1492391369000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="13534:13560" ph="select * fro... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="14028:14062" ph="insert into tb_candidate... " />
-            <marker date="1492391369000" expanded="true" signature="14412:14455" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="14814:14847" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="16577:16618" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="17007:17043" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492391369000" expanded="true" signature="23717:23771" ph="select role tb_committeecheck" />
-            <marker date="1492391369000" expanded="true" signature="24832:24878" ph="Select * Fro... tb_candidate" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#3650#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2205#2206#0" expanded="false" />
-            <element signature="e#2278#2279#0" expanded="false" />
-            <element signature="e#4690#4691#0" expanded="false" />
-            <element signature="e#4721#4722#0" expanded="false" />
-            <element signature="e#4744#4745#0" expanded="false" />
-            <element signature="e#4764#4765#0" expanded="false" />
-            <element signature="e#4787#4788#0" expanded="false" />
-            <element signature="e#4807#4808#0" expanded="false" />
-            <element signature="e#4832#4833#0" expanded="false" />
-            <element signature="e#4856#4857#0" expanded="false" />
-            <element signature="e#4883#4884#0" expanded="false" />
-            <element signature="e#4907#4908#0" expanded="false" />
-            <element signature="e#4927#4928#0" expanded="false" />
-            <element signature="e#4945#4946#0" expanded="false" />
-            <element signature="e#4969#4970#0" expanded="false" />
-            <element signature="e#4991#4992#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding>
-            <marker date="1492375361000" expanded="true" signature="1145:1182" ph="INSERT INTO tb_university... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding>
-            <marker date="1492375166000" expanded="true" signature="1368:1440" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="1498:1752" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="1811:1888" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="1951:2058" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="2104:2160" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="2206:2260" ph="create table... if" />
-            <marker date="1492375166000" expanded="true" signature="9794:9865" ph="select exist... " />
-            <marker date="1492375166000" expanded="true" signature="9809:9863" ph="select true tb_committeeCheck" />
-            <marker date="1492375166000" expanded="true" signature="10559:10599" ph="insert into tb_authorProfile... " />
-            <marker date="1492375166000" expanded="true" signature="11209:11276" ph="select exist... " />
-            <marker date="1492375166000" expanded="true" signature="11224:11275" ph="select true tb_NumberOfPb" />
-            <marker date="1492375166000" expanded="true" signature="11747:11820" ph="update tb_Nu... " />
-            <marker date="1492375166000" expanded="true" signature="12166:12204" ph="insert into tb_NumberOfPb... " />
-            <marker date="1492375166000" expanded="true" signature="13078:13140" ph="insert into tb_publication... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1283,48 +918,521 @@
     <entry file="file://$PROJECT_DIR$/src/main/search/Front.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="570">
+          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="165">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1492375361000" expanded="true" signature="752:893" ph="create table... if" />
-            <marker date="1492375361000" expanded="true" signature="3804:3849" ph="insert into tb_committeeCheck... " />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="54" column="48" lean-forward="false" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="737" column="0" selection-start-line="737" selection-start-column="0" selection-end-line="774" selection-end-column="0" />
+        <state relative-caret-position="10905">
+          <caret line="737" column="0" lean-forward="false" selection-start-line="737" selection-start-column="0" selection-end-line="774" selection-end-column="0" />
           <folding>
-            <marker date="1492391369000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492391369000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
-            <marker date="1492391369000" expanded="true" signature="13534:13560" ph="select * fro... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="14028:14062" ph="insert into tb_candidate... " />
-            <marker date="1492391369000" expanded="true" signature="14412:14455" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="14814:14847" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492391369000" expanded="true" signature="16577:16618" ph="DELETE from " />
-            <marker date="1492391369000" expanded="true" signature="17007:17043" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492391369000" expanded="true" signature="23717:23771" ph="select role tb_committeecheck" />
-            <marker date="1492391369000" expanded="true" signature="24832:24878" ph="Select * Fro... tb_candidate" />
+            <element signature="e#2572#2580#0" expanded="true" />
+            <element signature="e#6083#6091#0" expanded="true" />
+            <element signature="e#7513#7521#0" expanded="true" />
+            <element signature="e#14281#14289#0" expanded="true" />
+            <element signature="e#23240#23248#0" expanded="true" />
+            <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+            <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+            <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+            <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+            <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#8411#8412#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9990">
+          <caret line="676" column="0" lean-forward="false" selection-start-line="676" selection-start-column="0" selection-end-line="676" selection-end-column="0" />
+          <folding>
+            <element signature="e#2572#2580#0" expanded="true" />
+            <element signature="e#6083#6091#0" expanded="true" />
+            <element signature="e#7513#7521#0" expanded="true" />
+            <element signature="e#14281#14289#0" expanded="true" />
+            <element signature="e#23240#23248#0" expanded="true" />
+            <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+            <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+            <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+            <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+            <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#3650#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2572#2580#0" expanded="true" />
+            <element signature="e#6083#6091#0" expanded="true" />
+            <element signature="e#7513#7521#0" expanded="true" />
+            <element signature="e#14281#14289#0" expanded="true" />
+            <element signature="e#23240#23248#0" expanded="true" />
+            <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+            <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+            <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+            <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+            <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2572#2580#0" expanded="true" />
+            <element signature="e#6083#6091#0" expanded="true" />
+            <element signature="e#7513#7521#0" expanded="true" />
+            <element signature="e#14281#14289#0" expanded="true" />
+            <element signature="e#23240#23248#0" expanded="true" />
+            <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+            <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+            <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+            <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+            <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/SearchHistoryPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#3650#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Candidate.java" />
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/AuthorProfilePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#8411#8412#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/FacultyAffiliationCSVEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scndPartOfUI/CandidateListPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fileEditors/CommitteeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Warning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/searchcontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="54" column="48" lean-forward="false" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Progress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Search.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Front.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <marker date="1492411087000" expanded="true" signature="6203:6326" ph="..." />
+            <marker date="1492411087000" expanded="true" signature="6203:6339" ph="..." />
+            <marker date="1492411087000" expanded="true" signature="6269:6311" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="115" column="51" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="51" />
+          <folding>
+            <element signature="e#2572#2580#0" expanded="true" />
+            <element signature="e#6083#6091#0" expanded="true" />
+            <element signature="e#7513#7521#0" expanded="true" />
+            <element signature="e#14281#14289#0" expanded="true" />
+            <element signature="e#23240#23248#0" expanded="true" />
+            <marker date="1492409377000" expanded="true" signature="491:555" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="599:663" ph="select disti... tb_NumberOfPb" />
+            <marker date="1492409377000" expanded="true" signature="708:816" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="861:923" ph="select disti... tb_authorProfile" />
+            <marker date="1492409377000" expanded="true" signature="14318:14344" ph="select * fro... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="14812:14846" ph="insert into tb_candidate... " />
+            <marker date="1492409377000" expanded="true" signature="15190:15233" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="15592:15625" ph="SELECT COUNT... tb_candidate" />
+            <marker date="1492409377000" expanded="true" signature="17355:17396" ph="DELETE from " />
+            <marker date="1492409377000" expanded="true" signature="17785:17821" ph="SELECT COUNT... tb_savedqueries" />
+            <marker date="1492409377000" expanded="false" signature="19144:19149" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19161:19164" ph=" }" />
+            <marker date="1492409377000" expanded="false" signature="19210:19215" ph=" { " />
+            <marker date="1492409377000" expanded="false" signature="19239:19242" ph=" }" />
+            <marker date="1492409377000" expanded="true" signature="24518:24572" ph="select role tb_committeecheck" />
+            <marker date="1492409377000" expanded="true" signature="25624:25670" ph="Select * Fro... tb_candidate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6626">
+          <caret line="1783" column="38" lean-forward="false" selection-start-line="1782" selection-start-column="0" selection-end-line="1783" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/search/Front.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="219" column="79" lean-forward="true" selection-start-line="219" selection-start-column="79" selection-end-line="219" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
