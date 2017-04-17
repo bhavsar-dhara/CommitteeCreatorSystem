@@ -94,12 +94,14 @@ public class QueryEngine {
 				query.append("and tc.authorname = ta.authorname" + " ");
 			}
 
-			// System.out.println("............" + query.toString());
+			System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
-			// System.out.println(rs.getFetchSize() + "......");
+			System.out.println(rs.getFetchSize() + "......");
 
+			int count = 0;
 			while (rs.next()) {
+				count++;
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
@@ -126,6 +128,8 @@ public class QueryEngine {
 				// System.out.println(author.toString());
 				listOfAuthors.add(author);
 			}
+			System.out.println(count + "......");
+			
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
@@ -214,7 +218,8 @@ public class QueryEngine {
 				Publication publicationRS = new Publication();
 				publicationRS.setTitle(rs.getString("title"));
 				publicationRS.setPublisher(rs.getString("publisher") != null ? rs.getString("publisher") : "N/A");
-				publicationRS.setPbyear(rs.getInt("pbyear") > 0 && rs.getInt("pbyear") < 2018 ? rs.getInt("pbyear") : 0);
+				publicationRS
+						.setPbyear(rs.getInt("pbyear") > 0 && rs.getInt("pbyear") < 2018 ? rs.getInt("pbyear") : 0);
 				publicationRS.setType(rs.getString("type"));
 				publicationRS.setPages(rs.getString("pages") != null ? rs.getString("pages") : "N/A");
 				publicationRS.setJournal(rs.getString("journal") != null ? rs.getString("journal") : "N/A");
@@ -386,9 +391,9 @@ public class QueryEngine {
 			String sql = "insert into tb_candidate values(?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, author.getName());
-			
+
 			ps.executeUpdate();
-			
+
 			ps.close();
 		} catch (SQLException e) {
 			System.out.println("Failed!");
@@ -674,13 +679,15 @@ public class QueryEngine {
 
 	}
 
-
-	/**  Query 21
-	 * Candidate Details include candidate names, their role in committee(maybe more than one roles)
-	 * and their number of publication. Candidate Review page mainly aim at comparing different between
-	 * authors basic contribute and performance.
+	/**
+	 * Query 21 Candidate Details include candidate names, their role in
+	 * committee(maybe more than one roles) and their number of publication.
+	 * Candidate Review page mainly aim at comparing different between authors
+	 * basic contribute and performance.
+	 * 
 	 * @param i
-	 * @return List of Authors with name, committee role list, and numberofPb setted.
+	 * @return List of Authors with name, committee role list, and numberofPb
+	 *         setted.
 	 */
 	public List<Author> fetchCandidateDetails(int i) {
 		List<Author> candidatesListWithDetails = new ArrayList<>();
@@ -709,9 +716,10 @@ public class QueryEngine {
 		return candidatesListWithDetails;
 	}
 
-	/**  Query 22
-	 * This is a help method for fetchCandidateDetails method.
-	 * Get their role of every committee they ever attened by their name.
+	/**
+	 * Query 22 This is a help method for fetchCandidateDetails method. Get
+	 * their role of every committee they ever attened by their name.
+	 * 
 	 * @param authorname
 	 * @return a string, the role of an author. The role may more than one.
 	 */
@@ -734,6 +742,4 @@ public class QueryEngine {
 		return roleString;
 	}
 
-
 }
-
