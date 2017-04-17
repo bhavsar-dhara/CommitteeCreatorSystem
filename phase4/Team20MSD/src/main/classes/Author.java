@@ -110,6 +110,10 @@ public class Author implements Serializable {
 	public void setCommittee(String isCommittee) {
 		this.committee = isCommittee;
 	}
+	
+	public String getCommittee(){
+		return committee;
+	}
 
 	public Publication getPublication() {
 		return publication;
