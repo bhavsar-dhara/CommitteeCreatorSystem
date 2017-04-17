@@ -167,26 +167,26 @@ public class QueryEngine {
 		progressBox.selfDestruct();
 		return listOfAuthors;
 	}
-
-	/**
-	 * Query 2 : Search for similar authors
-	 * @param author
-	 * @return list of Authors with similar profile as the given author 
-	 * @exception SQLException
-	 */
-	public List<Author> getSimilarAuthorList(Author author) {
-		List<Author> similarAuthors = new ArrayList<Author>();
-		List<Author> similarAuthorofSameNopb;
-		List<Author> similarAuthorofSamePublication;
-
-		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
-		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
-
-		similarAuthors.addAll(similarAuthorofSameNopb);
-		similarAuthors.addAll(similarAuthorofSamePublication);
-
-		return similarAuthors;
-	}
+//
+//	/**
+//	 * Query 2 : Search for similar authors
+//	 * @param author
+//	 * @return list of Authors with similar profile as the given author 
+//	 * @exception SQLException
+//	 */
+//	public List<Author> getSimilarAuthorList(Author author) {
+//		List<Author> similarAuthors = new ArrayList<Author>();
+//		List<Author> similarAuthorofSameNopb;
+//		List<Author> similarAuthorofSamePublication;
+//
+//		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
+//		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
+//
+//		similarAuthors.addAll(similarAuthorofSameNopb);
+//		similarAuthors.addAll(similarAuthorofSamePublication);
+//
+//		return similarAuthors;
+//	}
 
 	/**
 	 * Sub-Query 3a : Method to fetch number of publication based on author name
@@ -211,32 +211,32 @@ public class QueryEngine {
 		return -1;
 	}
 
-	/**
-	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
-	 * @param author
-	 * @return list of authors with the same number of publications
-	 * @exception SQLException
-	 */
-	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
-		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
-		try {
-			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
-			ps.setInt(1, inputAuthorNumberofPB);
-			ResultSet rs = ps.executeQuery();
-			List<Author> authorsBySameNOPB = new ArrayList<Author>();
-			while (rs.next()) {
-				Author authorRS = new Author();
-				authorRS.setName(rs.getString("authorname"));
-				// authorsBySameNOPB.add(rs.getString(1));
-				authorsBySameNOPB.add(authorRS);
-			}
-			return authorsBySameNOPB;
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
-			System.err.println(se.getMessage());
-		}
-		return null;
-	}
+//	/**
+//	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
+//	 * @param author
+//	 * @return list of authors with the same number of publications
+//	 * @exception SQLException
+//	 */
+//	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+//		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
+//		try {
+//			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
+//			ps.setInt(1, inputAuthorNumberofPB);
+//			ResultSet rs = ps.executeQuery();
+//			List<Author> authorsBySameNOPB = new ArrayList<Author>();
+//			while (rs.next()) {
+//				Author authorRS = new Author();
+//				authorRS.setName(rs.getString("authorname"));
+//				// authorsBySameNOPB.add(rs.getString(1));
+//				authorsBySameNOPB.add(authorRS);
+//			}
+//			return authorsBySameNOPB;
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
+//			System.err.println(se.getMessage());
+//		}
+//		return null;
+//	}
 
 	/**
 	 * Sub-Query 3c : Method to fetch published papers based on author name
@@ -501,105 +501,105 @@ public class QueryEngine {
 		return numberOfRows;
 	}
 
-	/*
-	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
-	 * Queries
-	 * 
-	 */
-	
-	/**
-	 * Query 11 : to read saved queries
-	 * @return list of string of saved queries
-	 * @exception SQLException
-	 */
-	public List<String> fetchSavedQueries() {
-		List<String> queryList = new ArrayList<>();
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("Select distinct query from tb_savedqueries ");
-
-			ResultSet rs = st.executeQuery(query.toString());
-			while (rs.next()) {
-				queryList.add(rs.getString("query"));
-			}
-
-			rs.close();
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying saved queries list.");
-			System.err.println(se.getMessage());
-		}
-		return queryList;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int addSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
-
-			affectedRows = st.executeUpdate(query.toString());
-
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " adding saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int deleteSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
-			pstmt.setString(1, saveQuery);
-
-			affectedRows = pstmt.executeUpdate();
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " deleting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @return
-	 * @exception SQLException
-	 */
-	public int countSavedQueries() {
-		int numberOfRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
-
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
-			} else {
-				System.err.println("error: could not get the record counts");
-			}
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " counting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return numberOfRows;
-	}
+//	/*
+//	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
+//	 * Queries
+//	 * 
+//	 */
+//	
+//	/**
+//	 * Query 11 : to read saved queries
+//	 * @return list of string of saved queries
+//	 * @exception SQLException
+//	 */
+//	public List<String> fetchSavedQueries() {
+//		List<String> queryList = new ArrayList<>();
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("Select distinct query from tb_savedqueries ");
+//
+//			ResultSet rs = st.executeQuery(query.toString());
+//			while (rs.next()) {
+//				queryList.add(rs.getString("query"));
+//			}
+//
+//			rs.close();
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " querying saved queries list.");
+//			System.err.println(se.getMessage());
+//		}
+//		return queryList;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int addSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
+//
+//			affectedRows = st.executeUpdate(query.toString());
+//
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " adding saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int deleteSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
+//			pstmt.setString(1, saveQuery);
+//
+//			affectedRows = pstmt.executeUpdate();
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " deleting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int countSavedQueries() {
+//		int numberOfRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
+//
+//			ResultSet rs = pstmt.executeQuery();
+//			if (rs.next()) {
+//				numberOfRows = rs.getInt(1);
+//				System.out.println("numberOfRows= " + numberOfRows);
+//			} else {
+//				System.err.println("error: could not get the record counts");
+//			}
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " counting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return numberOfRows;
+//	}
 
 	/**
 	 * Query 15 : to find a particular author in Favorite Author List
