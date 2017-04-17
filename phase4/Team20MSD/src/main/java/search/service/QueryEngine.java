@@ -70,12 +70,8 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*
-																					 * +
-																					 * "tc.role, tc.checkyear,  "
-																					 * +
-																					 * "tc.committee, "
-																					 */
+			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, "
+					/* + "tc.role, tc.checkyear, tc.committee, " */
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
 					+ "FROM tb_publication tp, " + "tb_authorprofile ta, "
@@ -97,7 +93,7 @@ public class QueryEngine {
 			}
 
 			if (noOfPublication > 0) {
-				query.append("and tn.numberofpb = " + noOfPublication + " ");
+				query.append("and tn.numberofpb >= " + noOfPublication + " ");
 			}
 
 			// if (isServedAsCommittee) {
