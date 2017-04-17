@@ -78,21 +78,20 @@ public class QueryEngine {
 	 * @return list of Author with all his publications
 	 * @exception SQLException
 	 */
-
 	public List<Author> populateListOfAuthors(String confJournal, String keywords, int[] years, int noOfPublication,
-			boolean isServedAsCommittee) {
+			boolean isServedAsCommittee, String noOfYearsServedPreviously) {
 
 		List<Author> listOfAuthors = new ArrayList<Author>();
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, "
-					/* + "tc.role, tc.checkyear, tc.committee, " */
-					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
-					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
-					+ "FROM tb_publication tp, " + "tb_authorprofile ta, "
-					+ "tb_numberofpb tn " /* + ", tb_committeecheck tc " */);
-			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
+			query.append(
+					"SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*+ "tc.role, tc.checkyear, tc.committee, "*/
+							+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
+							+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
+							+ "FROM tb_publication tp, " + "tb_authorprofile ta, " + "tb_numberofpb tn "
+							/*+ ", tb_committeecheck tc "*/);
+			query.append("where tp.title = ta.title and ta.authorname = tn.authorname " /*+ "and tc.authorname = ta.authorname "*/);
 
 			if (confJournal != null && !confJournal.equals("")) {
 				query.append("and lower(tp.journal) = lower('" + confJournal + "') ");
@@ -112,12 +111,13 @@ public class QueryEngine {
 				query.append("and tn.numberofpb >= " + noOfPublication + " ");
 			}
 
-			// if (isServedAsCommittee) {
-			// query.append("and tc.authorname = ta.authorname" + " ");
-			// }
+			if (isServedAsCommittee) {
+				Integer year = 2016 - Integer.parseInt(noOfYearsServedPreviously);
+				query.append("and ta.authorname IN (SELECT authorname FROM tb_committeecheck where checkyear >= " + year.toString() +") ");
+			}
 
-			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, "
-					/* + "tc.role, tc.checkyear, tc.committee, " */
+			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, " 
+					/*+ "tc.role, tc.checkyear, tc.committee, "*/
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number ");
 			query.append("ORDER BY ta.authorname, ta.title");
@@ -134,9 +134,9 @@ public class QueryEngine {
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
 				author.setNoOfPublication(rs.getString("numberofpb"));
-				// author.setRole(rs.getString("role"));
-				// author.setCheckYear(rs.getInt("checkyear"));
-				// author.setCommittee(rs.getString("committee"));
+//				author.setRole(rs.getString("role"));
+//				author.setCheckYear(rs.getInt("checkyear"));
+//				author.setCommittee(rs.getString("committee"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setType(rs.getString("type"));

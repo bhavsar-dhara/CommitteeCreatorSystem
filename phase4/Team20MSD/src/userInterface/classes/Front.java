@@ -1,5 +1,11 @@
 package userInterface.classes;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,21 +17,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import main.classes.*;
-import main.interfaces.*;
+import main.classes.Author;
+import main.classes.ConcreteUserInterface;
+import main.classes.QueryEngine;
+import main.interfaces.UserInterface;
 import userInterface.messageBoxes.Progress;
 import userInterface.messageBoxes.Warning;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class Front implements Initializable {
 
@@ -216,7 +224,7 @@ public class Front implements Initializable {
 			p.display();
 			
 			List<Author> authorList = qe.populateListOfAuthors(conferencename1, keyword1, intArray,
-					Integer.parseInt(numofpub1), check.selectedProperty().getValue());
+					Integer.parseInt(numofpub1), check.selectedProperty().getValue(), numofcom1);
 
 			for (Author a : authorList) {
 				data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication(), a.getPublication()));
