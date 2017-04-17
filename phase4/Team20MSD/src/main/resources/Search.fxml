@@ -16,7 +16,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
 	minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0"
 	prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="main.search.searchcontroller">
+	fx:controller="main.java.search.userinterface.Search">
 
 	<children>
 		<Separator layoutX="13.0" layoutY="45.0" prefHeight="4.0"
