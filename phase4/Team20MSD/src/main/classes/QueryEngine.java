@@ -245,6 +245,7 @@ public class QueryEngine {
 		List<Author> listofAuthorBySamePB = new ArrayList<Author>();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
 			String titleName = listofpublication.get(i).getTitle();
+			System.out.print(titleName);
 			try {
 				PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_TITLE);
 				ps.setString(1, titleName);
@@ -254,6 +255,7 @@ public class QueryEngine {
 					authorRS.setName(rs.getString("authorname"));
 					// String authornameBySamePB = rs.getString(1);
 					listofAuthorBySamePB.add(authorRS);
+					System.out.print(listofAuthorBySamePB);
 				}
 			} catch (SQLException se) {
 				System.err.println(SQLEXCEPTION + " querying similar author who have co-authored a paper.");
@@ -733,6 +735,44 @@ public class QueryEngine {
 		}
 		return roleString;
 	}
+
+
+	/**  Query 23
+	 *   This method is get an author's all committee information such as his name, in which year was checked,
+	 *   and what committee name, and what is his role.
+	 *   One author may not just only checked one time.
+	 *   Some author was checked more than one time in different years.
+	 *   So the input is an author name, but return type is a list.
+	 *  @param author
+	  * @return a list of authors with their committee information.
+	 */
+	public List<Author> getAuthorCommitteeDetailsByAuthorName(Author author) {
+		List<Author> authorsCommittee = new ArrayList<>();
+		String authorname = author.getName();
+		try {
+			Statement st = getConn().createStatement();
+			String sql = "Select * From tb_candidate where authorname =?";
+			PreparedStatement ps = getConn().prepareStatement(sql);
+			ps.setString(1, authorname);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Author CommitteeAuthor = new Author();
+				CommitteeAuthor.setName(authorname);
+				CommitteeAuthor.setCheckYear(rs.getInt("checkyear"));
+				CommitteeAuthor.setRole(rs.getString("role"));
+				CommitteeAuthor.setCommittee(rs.getString("committee"));
+				authorsCommittee.add(CommitteeAuthor);
+			}
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + " querying fav candidate list.");
+			System.err.println(se.getMessage());
+		}
+		return authorsCommittee;
+	}
+
+
 
 
 }
