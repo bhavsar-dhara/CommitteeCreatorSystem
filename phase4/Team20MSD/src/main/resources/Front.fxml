@@ -124,7 +124,7 @@
 			prefWidth="438.0" />
 
 		<Button fx:id="myfavouriteauthor" layoutX="24.0" layoutY="465.0"
-			mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" 
+			mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" onAction="#candidateson"
 			style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="My Favourite Author" />
 		<Button fx:id="btnClear1" layoutX="322.0" layoutY="464.0"
 			mnemonicParsing="false" onAction="#clearInputs" prefHeight="27.0"

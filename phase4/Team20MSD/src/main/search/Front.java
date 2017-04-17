@@ -19,6 +19,7 @@ import main.classes.ConcreteUserInterface;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
 import scndPartOfUI.AuthorProfilePage;
+import scndPartOfUI.CandidateListPage;
 
 public class Front implements Initializable {
 
@@ -222,6 +223,12 @@ public class Front implements Initializable {
 		year.getSelectionModel().clearSelection();
 		conferencename.getSelectionModel().selectFirst();
 
+	}
+
+	@FXML
+	private void candidateson(Event event) throws Exception {
+		CandidateListPage page = new CandidateListPage(ui);
+		ui.displayNewWindow(page.getScene());
 	}
 
 	private boolean isYearInputOkey() {

@@ -68,8 +68,11 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct * " + "FROM tb_publication tp, " + "tb_authorprofile ta, "
-					+ "tb_numberofpb tn, " + "tb_committeecheck tc ");
+			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*+ "tc.role, tc.checkyear,  "
+					+ "tc.committee, "*/
+					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
+					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number " + "FROM tb_publication tp, "
+					+ "tb_authorprofile ta, " + "tb_numberofpb tn " /*+ ", tb_committeecheck tc "*/);
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 
 			if (confJournal != null && !confJournal.equals("")) {
@@ -90,9 +93,15 @@ public class QueryEngine {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
-			if (isServedAsCommittee) {
-				query.append("and tc.authorname = ta.authorname" + " ");
-			}
+//			if (isServedAsCommittee) {
+//				query.append("and tc.authorname = ta.authorname" + " ");
+//			}
+
+			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, "
+					/*+ "tc.role, tc.checkyear, tc.committee, "*/
+					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
+					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number ");
+			query.append("ORDER BY ta.authorname, ta.title");
 
 			System.out.println("............" + query.toString());
 
@@ -106,9 +115,9 @@ public class QueryEngine {
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
 				author.setNoOfPublication(rs.getString("numberofpb"));
-				author.setRole(rs.getString("role"));
-				author.setCheckYear(rs.getInt("checkyear"));
-				author.setCommittee(rs.getString("committee"));
+//				author.setRole(rs.getString("role"));
+//				author.setCheckYear(rs.getInt("checkyear"));
+//				author.setCommittee(rs.getString("committee"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setType(rs.getString("type"));
@@ -129,7 +138,7 @@ public class QueryEngine {
 				listOfAuthors.add(author);
 			}
 			System.out.println(count + "......");
-			
+
 			rs.close();
 			st.close();
 		} catch (SQLException se) {
@@ -744,14 +753,15 @@ public class QueryEngine {
 		return roleString;
 	}
 
-	/**  Query 23
-	 *   This method is get an author's all committee information such as his name, in which year was checked,
-	 *   and what committee name, and what is his role.
-	 *   One author may not just only checked one time.
-	 *   Some author was checked more than one time in different years.
-	 *   So the input is an author name, but return type is a list.
-	 *  @param author
-	  * @return a list of authors with their committee information.
+	/**
+	 * Query 23 This method is get an author's all committee information such as
+	 * his name, in which year was checked, and what committee name, and what is
+	 * his role. One author may not just only checked one time. Some author was
+	 * checked more than one time in different years. So the input is an author
+	 * name, but return type is a list.
+	 * 
+	 * @param author
+	 * @return a list of authors with their committee information.
 	 */
 	public List<Author> getAuthorCommitteeDetailsByAuthorName(Author author) {
 		List<Author> authorsCommittee = new ArrayList<>();
