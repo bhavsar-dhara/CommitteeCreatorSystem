@@ -97,9 +97,12 @@ public class Front implements Initializable {
 		List<Integer> comittno = new ArrayList<Integer>();
 		comittno.add(1);
 		comittno.add(2);
-		comittno.add(3);
-		comittno.add(4);
 		comittno.add(5);
+		comittno.add(10);
+		comittno.add(20);
+		comittno.add(30);
+		comittno.add(40);
+
 
 		List<String> list = qe.fetchJournalNames();
 		List<Integer> plist = qe.fetchYearsAvailable();

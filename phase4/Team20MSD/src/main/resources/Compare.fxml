@@ -35,7 +35,7 @@
             <Image url="@LOGO.png" />
          </image>
       </ImageView>
-      <Button fx:id="linechartclick" layoutX="23.0" layoutY="429.0" mnemonicParsing="false" onAction="#lineclick" prefHeight="27.0" prefWidth="320.0" style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="View Author Line Chart" />
+      <Button fx:id="linechartclick" layoutX="23.0" layoutY="429.0" mnemonicParsing="false" onAction="#lineclick" prefHeight="27.0" prefWidth="320.0" style="-fx-background-color: #408E2F; -fx-text-fill: white;" text="View Author Pie Chart" />
       <PieChart fx:id="pie1" layoutX="23.0" layoutY="461.0" prefHeight="227.0" prefWidth="320.0" />
 	</children>
 </AnchorPane>

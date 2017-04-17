@@ -874,4 +874,37 @@ public class QueryEngine {
 		}
 		return authorsCommittee;
 	}
+
+
+
+	/**
+	 * Query 24 This method aim at getting an author's publication years as a list.
+	 * This method works on an Pie chart for UI used.
+	 * @param author
+	 * @return a publication years of this author
+	 */
+	public List<Integer> getPBYearListByAuthorname(Author author) {
+		String authorname = author.getName();
+		List<Integer> listofYear = new ArrayList<>();
+		try {
+			Statement st = getConn().createStatement();
+			String sql = "Select pbyear " +
+					"From tb_publication tp, tb_authorprofile ta " +
+					"where tp.title = ta.title " +
+					"and ta.authorname =?";
+			PreparedStatement ps = getConn().prepareStatement(sql);
+			ps.setString(1, authorname);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int year = rs.getInt(1);
+				listofYear.add(year);
+			}
+			rs.close();
+			st.close();
+		} catch (SQLException se) {
+			System.err.println(SQLEXCEPTION + "error works on getPBYearListByAuthorname");
+			System.err.println(se.getMessage());
+		}
+		return listofYear;
+	}
 }
