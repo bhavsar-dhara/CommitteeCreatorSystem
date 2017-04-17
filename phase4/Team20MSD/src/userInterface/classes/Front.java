@@ -280,7 +280,7 @@ public class Front implements Initializable {
 
 		Stage current = (Stage) compare.getScene().getWindow();
 		Stage stage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("/resources/Compare.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Compare.fxml"));
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

@@ -11,6 +11,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		MainPageSingleton mainPage = MainPageSingleton.instance();
+
 		stage.setScene(mainPage.getScene());
 		stage.show();
 		stage.setOnCloseRequest((WindowEvent e) -> {

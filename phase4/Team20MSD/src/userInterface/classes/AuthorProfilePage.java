@@ -15,7 +15,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.HBox;
@@ -84,7 +83,7 @@ public class AuthorProfilePage implements CandidateListListener {
 //		UIElementFixer.fixElementWidth(dropArea, 75);
 //		UIElementFixer.fixElementHeight(dropArea,50);
 		VBox.setMargin(dropArea,new Insets(0,0,-20,0));
-		downArrow = new Image("/resources/Down Arrow.gif",10,10,true,true);
+		downArrow = new Image("/Down Arrow.gif",10,10,true,true);
 	}
 	
 	private void setNameArea(){
