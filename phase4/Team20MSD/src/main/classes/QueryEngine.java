@@ -111,7 +111,7 @@ public class QueryEngine {
 					+ "FROM tb_publication tp, " + "tb_authorprofile ta, " + "tb_numberofpb tn "
 			/* + ", tb_committeecheck tc " */);
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname "
-					/* + "and tc.authorname = ta.authorname "  */);
+			/* + "and tc.authorname = ta.authorname " */);
 
 			if (confJournal != null && !confJournal.equals("")) {
 				query.append("and lower(tp.journal) = lower('" + confJournal + "') ");
@@ -143,14 +143,14 @@ public class QueryEngine {
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number ");
 			query.append("ORDER BY ta.authorname, ta.title");
 
-			System.out.println("............" + query.toString());
+			// System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			System.out.println(rs.getFetchSize() + "......");
 
-			int count = 0;
+			// int count = 0;
 			while (rs.next()) {
-				count++;
+				// count++;
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
@@ -177,7 +177,7 @@ public class QueryEngine {
 				// System.out.println(author.toString());
 				listOfAuthors.add(author);
 			}
-			System.out.println(count + "......");
+			// System.out.println(count + "......");
 
 			rs.close();
 			st.close();
@@ -915,8 +915,9 @@ public class QueryEngine {
 	}
 
 	/**
-	 * Query 24 This method aim at getting an author's publication years as a list.
-	 * This method works on an Pie chart for UI used.
+	 * Query 24 This method aim at getting an author's publication years as a
+	 * list. This method works on an Pie chart for UI used.
+	 * 
 	 * @param author
 	 * @return a publication years of this author
 	 */
@@ -926,10 +927,8 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 
-			String sql = "Select pbyear " +
-					"From tb_publication tp, tb_authorprofile ta " +
-					"where tp.title = ta.title " +
-					"and ta.authorname =?";
+			String sql = "Select pbyear " + "From tb_publication tp, tb_authorprofile ta "
+					+ "where tp.title = ta.title " + "and ta.authorname =?";
 
 			PreparedStatement ps = getConn().prepareStatement(sql);
 			ps.setString(1, authorname);
