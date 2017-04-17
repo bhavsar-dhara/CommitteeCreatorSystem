@@ -192,8 +192,8 @@ public class Front implements Initializable {
 
 		String keyword1 = "";
 		if (!numofpub.getSelectionModel().isEmpty()) {
-			keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
-			System.out.println("keyword... " + keyword.getText());
+			keyword1 = keyword.getText().equals("") ? "" : keyword.getText().trim();
+			System.out.println("keyword... " + keyword1);
 		}
 
 		// String numofpub1 = numofpub.getText().equals("") ? "0" :
