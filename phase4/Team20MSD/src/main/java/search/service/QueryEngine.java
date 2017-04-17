@@ -70,11 +70,16 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*+ "tc.role, tc.checkyear,  "
-					+ "tc.committee, "*/
+			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*
+																					 * +
+																					 * "tc.role, tc.checkyear,  "
+																					 * +
+																					 * "tc.committee, "
+																					 */
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
-					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number " + "FROM tb_publication tp, "
-					+ "tb_authorprofile ta, " + "tb_numberofpb tn " /*+ ", tb_committeecheck tc "*/);
+					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
+					+ "FROM tb_publication tp, " + "tb_authorprofile ta, "
+					+ "tb_numberofpb tn " /* + ", tb_committeecheck tc " */);
 			query.append("where tp.title = ta.title and ta.authorname = tn.authorname ");
 
 			if (confJournal != null && !confJournal.equals("")) {
@@ -95,12 +100,12 @@ public class QueryEngine {
 				query.append("and tn.numberofpb = " + noOfPublication + " ");
 			}
 
-//			if (isServedAsCommittee) {
-//				query.append("and tc.authorname = ta.authorname" + " ");
-//			}
+			// if (isServedAsCommittee) {
+			// query.append("and tc.authorname = ta.authorname" + " ");
+			// }
 
 			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, "
-					/*+ "tc.role, tc.checkyear, tc.committee, "*/
+					/* + "tc.role, tc.checkyear, tc.committee, " */
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number ");
 			query.append("ORDER BY ta.authorname, ta.title");
@@ -117,9 +122,9 @@ public class QueryEngine {
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
 				author.setNoOfPublication(rs.getString("numberofpb"));
-//				author.setRole(rs.getString("role"));
-//				author.setCheckYear(rs.getInt("checkyear"));
-//				author.setCommittee(rs.getString("committee"));
+				// author.setRole(rs.getString("role"));
+				// author.setCheckYear(rs.getInt("checkyear"));
+				// author.setCommittee(rs.getString("committee"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setType(rs.getString("type"));
@@ -663,16 +668,17 @@ public class QueryEngine {
 	 * 
 	 */
 	public String getAuthorUnivDetails(Author author) {
-		String committeeList = "";
+		String committee = "";
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
 			query.append("Select university from tb_university " + "where lower(authorname) = lower('"
 					+ author.getName() + "') ");
 
+			System.out.println(query + " .....  ....");
 			ResultSet rs = st.executeQuery(query.toString());
 			while (rs.next()) {
-				committeeList = rs.getString("committee");
+				committee = rs.getString("committee");
 			}
 
 			rs.close();
@@ -681,7 +687,7 @@ public class QueryEngine {
 			System.err.println(SQLEXCEPTION + " querying author university detail.");
 			System.err.println(se.getMessage());
 		}
-		return committeeList;
+		return committee;
 	}
 
 	/*
@@ -706,7 +712,6 @@ public class QueryEngine {
 	 */
 	public List<Author> fetchCandidateDetails(int i) {
 		List<Author> candidatesListWithDetails = new ArrayList<>();
-		List<String> candidates = new ArrayList<String>();
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();

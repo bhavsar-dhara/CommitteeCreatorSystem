@@ -10,8 +10,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.search.model.Author;
 import main.java.search.model.Publication;
-import main.java.search.userinterface.CandidateListPage;
-import main.java.search.userinterface.Result;
 import main.java.serach.interfaces.CandidateListListener;
 import main.java.serach.interfaces.SearchHistoryListener;
 
@@ -122,23 +120,23 @@ public class UIForTest implements UITesting {
 		}
 	}
 
-	@Override
-	public void getSearchResult(Result sq) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addSearchToHistory(Result sq) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Result getSearchHistoryItem(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public void getSearchResult(Result sq) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	@Override
+//	public void addSearchToHistory(Result sq) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	@Override
+//	public Result getSearchHistoryItem(int i) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public ObservableList<Author> getSearchResult(Author a) {

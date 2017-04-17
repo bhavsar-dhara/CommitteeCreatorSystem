@@ -166,17 +166,18 @@ public class Front implements Initializable {
 			}
 		}
 
-		String numofpub1 = null;
+		String numofpub1 = "0";
 		if (!numofpub.getSelectionModel().isEmpty()) {
 			System.out.println("numofpub... " + numofpub.getSelectionModel().getSelectedItem().toString());
 			numofpub1 = numofpub.getSelectionModel().getSelectedItem().toString().equals("") ? "0"
 					: numofpub.getSelectionModel().getSelectedItem().toString();
-		} else {
-			numofpub1 = "0";
 		}
 
-		String keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
-		System.out.println("keyword... " + keyword.getText());
+		String keyword1 = "";
+		if (!numofpub.getSelectionModel().isEmpty()) {
+			keyword1 = keyword.getText().equals("") ? "" : keyword.getText();
+			System.out.println("keyword... " + keyword.getText());
+		}
 
 		// String numofpub1 = numofpub.getText().equals("") ? "0" :
 		// numofpub.getText();
@@ -195,6 +196,7 @@ public class Front implements Initializable {
 			data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication()));
 		}
 
+		empTable.setItems(null);
 		empTable.setItems(data);
 
 	}
