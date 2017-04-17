@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +33,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import main.java.search.model.Author;
+import main.java.search.service.QueryEngine;
 //import pkgcommon.Functions;
 //import pkgmodels.ExportHistory;
 
@@ -55,6 +58,8 @@ public class Compare implements Initializable {
     @FXML
     private Button btnRecordEx;
 
+    private ObservableList<Author> data1;
+
     //Pie chart Data
     private ObservableList<PieChart.Data> data;
     //Tableview data
@@ -63,6 +68,13 @@ public class Compare implements Initializable {
     private PieChart myPieChart;
     @FXML
     private Button btnViewChart;
+    @FXML
+    private TableColumn<Author, String> colrole;
+    @FXML
+    private TableColumn<Author, String> aname;
+    @FXML
+    private TableView<Author> colAmnt;
+
 
 //    @FXML
 //    private TableView<ExportHistory> tableHistory;
@@ -81,186 +93,42 @@ public class Compare implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        buildPieChartData();
+        qe = new QueryEngine();
+        data = FXCollections.observableArrayList();
+        data1 = FXCollections.observableArrayList();
+        List<Author> authorslist  =qe.fetchCandidateDetails();
+
+        System.out.println("...... .. " + authorslist.size());
+        for (Author a : authorslist) {
+            data1.add(new Author(a.getName(),1,a.getRole()));
+            data.add(new PieChart.Data(a.getName(), Double.parseDouble(a.getNoOfPublication())));
+        }
+
+        aname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colrole.setCellValueFactory(new PropertyValueFactory<>("role"));
+        colAmnt.setItems(data1);
+        buildPieChartData(data);
     }
 
 
 
-    private void buildPieChartData() {
+    private void buildPieChartData( ObservableList<PieChart.Data> data) {
 
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Grapefruit", 13),
-                        new PieChart.Data("Oranges", 25),
-                        new PieChart.Data("Plums", 10),
-                        new PieChart.Data("Pears", 22),
-                        new PieChart.Data("Apples", 30));
+
+//        ObservableList<PieChart.Data> pieChartData =
+//                FXCollections.observableArrayList(
+//                        new PieChart.Data("Grapefruit", 13),
+//                        new PieChart.Data("Oranges", 25),
+//                        new PieChart.Data("Plums", 10),
+//                        new PieChart.Data("Pears", 22),
+//                        new PieChart.Data("Apples", 30));
 
 //        final PieChart chart = new PieChart(pieChartData);
-        myPieChart.setTitle("Exportation Year and Amount(Kgs) Exported");
-        myPieChart.setData(pieChartData);
+        myPieChart.setTitle("The publication number Percentage of different authors ");
+        myPieChart.setData(data);
 
 
     }
-
-//    @FXML
-//    private void viewChart(ActionEvent event) {
-//        buildPieChartData();
-//    }
-//
-//    //Set Up line chart details
-//    private void MakeLineGraph() {
-////        xAxis.setLowerBound(1990);
-////        xAxis.setUpperBound(2030);
-////        xAxis.setTickUnit(1);
-//        xAxis.setLabel("Export Year(Year)");
-//        yAxis.setLabel("Amount Exported(Kgs)");
-//        lineChart.setTitle("Chart Visualization");
-//
-//        ObservableList<XYChart.Series< Integer, Integer>> chartData = FXCollections.observableArrayList();
-//
-//        Series<Integer, Integer> series = new Series<>();
-//        try {
-//
-//            conn = functions.connectDB();
-//
-//            String getData = "SELECT export_year,export_amount FROM mg_exports";
-//            ResultSet rs = conn.createStatement().executeQuery(getData);
-//            while (rs.next()) {
-//                int eYear = rs.getInt(1);
-//                int Amount = (int) rs.getDouble(2);
-//
-//                series.getData().add(new XYChart.Data<>(eYear, Amount));
-//            }
-//            chartData.add(series);
-//            lineChart.getData().addAll(chartData);
-//
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//    }
-//
-//    //Make History TableView
-//    private void HistoryTableView() {
-//        try {
-//            conn = functions.connectDB();
-//            histData = FXCollections.observableArrayList();
-//            Statement stmt = conn.createStatement();
-//            ResultSet set = stmt.executeQuery("SELECT * FROM mg_exports ORDER BY export_year asc");
-//            while (set.next()) {
-//                int year = set.getInt(4);
-//                double amount = set.getDouble(2);
-//                double price = set.getDouble(3);
-//                String country = set.getString(5).toUpperCase();
-//                String manager = set.getString(6).toUpperCase();
-//
-//                histData.add(new ExportHistory(year, amount, price, country, manager));
-//
-//            }
-//
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        colYear.setCellValueFactory(new PropertyValueFactory<>("year"));
-//        colAmnt.setCellValueFactory(new PropertyValueFactory<>("amount"));
-//        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-//        colCtry.setCellValueFactory(new PropertyValueFactory<>("country"));
-//        colManager.setCellValueFactory(new PropertyValueFactory<>("manager"));
-//
-//        tableHistory.setItems(histData);
-//    }
-//
-//    @FXML
-//    private void clerkView(ActionEvent event) {
-//    }
-//
-//    @FXML
-//    private void quitOption(ActionEvent event) {
-//        Platform.exit();
-//    }
-//
-//    @FXML
-//    private void ActionNewClerk(ActionEvent event) {
-//    }
-//
-//    @FXML
-//    private void ActionChangePass(ActionEvent event) {
-//    }
-//
-//    @FXML
-//    private void FarmersView(ActionEvent event) {
-//        try {
-//            Stage currentStage = (Stage) btnRecordEx.getScene().getWindow();
-//            functions.NewStage(Functions.FARMERS, "FARMERS MANAGEMENT", true);
-//            currentStage.hide();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXemployeesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    @FXML
-//    private void EmployeeView(ActionEvent event) {
-//        try {
-//            Stage currentStage = (Stage) btnRecordEx.getScene().getWindow();
-//            functions.NewStage(Functions.EMPLOYEES, "EXPLOYEES MANAGEMENT", true);
-//            currentStage.hide();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXemployeesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    @FXML
-//    private void AttendanceView(ActionEvent event) {
-//        try {
-//            Stage currentStage = (Stage) btnRecordEx.getScene().getWindow();
-//            functions.NewStage(Functions.ATTENDANCE, "ATTENDANCE MANAGEMENT", true);
-//            currentStage.hide();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXemployeesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    @FXML
-//    private void ExportationView(ActionEvent event) {
-//        try {
-//            Stage currentStage = (Stage) btnRecordEx.getScene().getWindow();
-//            functions.NewStage(Functions.EXPORT, "EXPORTATION MANAGEMENT", true);
-//            currentStage.hide();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXemployeesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    @FXML
-//    private void ChemicalsView(ActionEvent event) {
-//        try {
-//            Stage currentStage = (Stage) btnRecordEx.getScene().getWindow();
-//            functions.NewStage(Functions.CHEMICALS, "CHEMICALS MANAGEMENT", true);
-//            currentStage.hide();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXemployeesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    @FXML
-//    private void logOut(ActionEvent event) throws IOException {
-//        Stage current = (Stage) btnRecordEx.getScene().getWindow();
-//        Stage stage = new Stage();
-//        Parent root = FXMLLoader.load(getClass().getResource(Functions.LOGIN));
-//        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        current.hide();
-//        stage.show();
-//    }
-//
-//    @FXML
-//    private void EmployeePaymentsView(ActionEvent event) {
-//    }
-//
-//    @FXML
-//    private void FarmerPaymentsView(ActionEvent event) {
+    private QueryEngine qe;
 //    }
 }

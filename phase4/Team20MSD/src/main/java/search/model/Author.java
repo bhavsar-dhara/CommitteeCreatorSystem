@@ -16,8 +16,15 @@ public class Author implements Serializable {
 		this.id =(long) id;
 		this.name = name;
 	}
-	
-//	Constructor for QueryEngine Tests
+
+	public Author(String name,int id,String role) {
+		this.id =(long) id;
+		this.name = name;
+		this.role = role;
+	}
+
+
+	//	Constructor for QueryEngine Tests
 	public Author(String name) {
 		this.name = name;
 	}

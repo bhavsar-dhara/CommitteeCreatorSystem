@@ -1,7 +1,6 @@
 package main.java.search.userinterface;
 
 import java.util.ArrayList;
-
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;

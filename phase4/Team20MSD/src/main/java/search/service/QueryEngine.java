@@ -705,12 +705,10 @@ public class QueryEngine {
 	 * committee(maybe more than one roles) and their number of publication.
 	 * Candidate Review page mainly aim at comparing different between authors
 	 * basic contribute and performance.
-	 * 
-	 * @param i
 	 * @return List of Authors with name, committee role list, and numberofPb
 	 *         setted.
 	 */
-	public List<Author> fetchCandidateDetails(int i) {
+	public List<Author> fetchCandidateDetails() {
 		List<Author> candidatesListWithDetails = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
@@ -751,7 +749,7 @@ public class QueryEngine {
 			ps.setString(1, authorname);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				roleString = roleString.concat("," + rs.getString(1));
+				roleString = roleString.concat(rs.getString(1)+", ");
 			}
 			ps.close();
 			rs.close();

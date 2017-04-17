@@ -11,9 +11,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import main.java.search.model.Author;
 import main.java.search.service.QueryEngine;
 import main.java.serach.interfaces.UserInterface;
@@ -49,6 +53,8 @@ public class Front implements Initializable {
 	@FXML
 	private TableView<Author> empTable;
 
+	@FXML
+	private Button compare;
 	@FXML
 	private Button btnClear1;
 	@FXML
@@ -235,6 +241,22 @@ public class Front implements Initializable {
 		conferencename.getSelectionModel().selectFirst();
 
 	}
+
+	@FXML
+	private void compare(ActionEvent event)throws IOException {
+
+		Stage current = (Stage) compare.getScene().getWindow();
+		Stage stage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Compare.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+
+//		window.hide();
+	}
+
+
+
 
 	@FXML
 	private void candidateson(Event event) throws Exception {
