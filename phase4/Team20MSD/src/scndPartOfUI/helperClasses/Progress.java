@@ -1,4 +1,4 @@
-package main.search;
+package scndPartOfUI.helperClasses;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

@@ -1,27 +1,32 @@
 package scndPartOfUI;
 
-import main.classes.Author;
-import main.classes.Publication;
-import main.interfaces.*;
-import main.search.Result;
-
-import java.util.ArrayList;
-
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Font;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import main.classes.Author;
+import main.classes.Experience;
+import main.classes.Publication;
+import main.interfaces.CandidateListListener;
+import main.interfaces.UserInterface;
+import scndPartOfUI.helperClasses.TableColumnAdder;
+import scndPartOfUI.helperClasses.UIElementFixer;
 
 public class AuthorProfilePage implements CandidateListListener {
 
@@ -30,33 +35,60 @@ public class AuthorProfilePage implements CandidateListListener {
 		this.ui = ui;
 		ui.addListenerToCandList(this);
 		setDropArea();
-		setName();
+		setNameArea();
 		setButtonArea();
-		setBlgrphyTable();
+		setAuthorInformationPane();
+		setDragAndDropFeature();
 		setCanvas();
 	}
 
 	private Author atr;
 	private UserInterface ui;
+
+	private Label dropLabel;
+	private HBox dropArea;
+	private Image downArrow;
+
 	private Label name;
+	private Label associatedSchool;
+	private VBox nameArea;
+
 	private Button addBut;
 	private Button remBut;
 	private Button simAuthBut;
-	private TableView<Publication> blgrphyTable;
+
 	private HBox buttonArea;
+
+	private Label experience;
+	private TableView<Experience> expTable;
+	private VBox expArea;
+
+	private Label blgrphy;
+	private TableView<Publication> blgrphyTable;
+	private VBox blgrphyArea;
+
+	private VBox authorInformation;
+	private ScrollPane authorInformationPane;
+
 	private VBox canvas;
-	private Label dropHere;
-	private HBox dropArea;
 
 	private void setDropArea() {
-		dropHere = new Label("drop here");
-		dropArea = new HBox(dropHere);
-		dropArea.setAlignment(Pos.CENTER_RIGHT);
+		dropLabel = new Label("Drag the Author's name & Drop here to add him to candidate list");
+		dropLabel.setWrapText(true);
+		dropArea = new HBox(dropLabel);
+		UIElementFixer.fixElementWidth(dropArea, 100);
+		UIElementFixer.fixElementHeight(dropArea, 100);
+		VBox.setMargin(dropArea, new Insets(0, 0, -20, 0));
 	}
 
-	private void setName() {
+	private void setNameArea() {
 		name = new Label(atr.getName());
 		name.setFont(new Font("Arial", 30));
+		associatedSchool = new Label("Associated School:");
+		associatedSchool.setFont(new Font("Black", 15));
+		nameArea = new VBox(name, associatedSchool);
+		nameArea.setAlignment(Pos.CENTER);
+		downArrow = new Image("Down Arrow.gif", 100, 100, true, true);
 	}
 
 	private void setButtonArea() {
@@ -75,7 +107,7 @@ public class AuthorProfilePage implements CandidateListListener {
 
 	private void setAddBut() {
 		addBut = new Button(addButText);
-		fixElementWidth(addBut, sizeOfAddRemBut);
+		UIElementFixer.fixElementWidth(addBut, sizeOfAddRemBut);
 		addBut.setFont(butTextFont);
 		addBut.setOnAction((ActionEvent ae) -> {
 			ui.addCand(atr);
@@ -86,15 +118,9 @@ public class AuthorProfilePage implements CandidateListListener {
 		buttonArea.getChildren().set(0, ui.hasCand(atr) ? remBut : addBut);
 	}
 
-	private void fixElementWidth(Region r, double width) {
-		r.setMinWidth(width);
-		r.setPrefWidth(width);
-		r.setMaxWidth(width);
-	}
-
 	private void setRemBut() {
 		remBut = new Button(remButText);
-		fixElementWidth(remBut, sizeOfAddRemBut);
+		UIElementFixer.fixElementWidth(remBut, sizeOfAddRemBut);
 		remBut.setFont(butTextFont);
 		remBut.setOnAction((ActionEvent ae) -> {
 			ui.remCand(atr);
@@ -105,9 +131,54 @@ public class AuthorProfilePage implements CandidateListListener {
 		simAuthBut = new Button("Find similar authors");
 		simAuthBut.setFont(butTextFont);
 		simAuthBut.setOnAction((ActionEvent ae) -> {
-			Result page = new Result();
-			ui.displayNewWindow(page.getScene());
+			SimilarAuthorsPage page = new SimilarAuthorsPage(atr, ui);
+			ui.displayNewWindow(page.getScene(), "Authors with similar Profile to" + atr.getName());
 		});
+	}
+
+	private void setAuthorInformationPane() {
+		setExpArea();
+		setBlgrphyArea();
+		authorInformation = new VBox(20, expArea, blgrphyArea);
+		authorInformationPane = new ScrollPane(authorInformation);
+		authorInformationPane.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
+	}
+
+	private void setExpArea() {
+		setExpLabel();
+		setExpTable();
+		expArea = new VBox(10, experience, expTable);
+	}
+
+	private void setExpTable() {
+		expTable = new TableView<Experience>();
+		expTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		setExpTableColumns();
+		UIElementFixer.fixElementWidth(expTable, 400);
+		UIElementFixer.fixElementHeight(expTable, 300);
+	}
+
+	private void setExpTableColumns() {
+		TableColumnAdder<Experience> tca = new TableColumnAdder<>(expTable);
+		tca.addStringColumnToTable("Committee", "committee");
+		tca.addStringColumnToTable("Role", "role");
+		tca.addIntegerColumnToTable("Year", "year");
+	}
+
+	private void setExpLabel() {
+		experience = new Label("Experience");
+		experience.setFont(new Font("Black", 20));
+	}
+
+	private void setBlgrphyArea() {
+		setBlgrphyLabel();
+		setBlgrphyTable();
+		blgrphyArea = new VBox(10, blgrphy, blgrphyTable);
+	}
+
+	private void setBlgrphyLabel() {
+		blgrphy = new Label("Bibliography");
+		blgrphy.setFont(new Font("Black", 20));
 	}
 
 	private void setBlgrphyTable() {
@@ -115,42 +186,28 @@ public class AuthorProfilePage implements CandidateListListener {
 		blgrphyTable = new TableView<Publication>(origList);
 		origList.comparatorProperty().bind(blgrphyTable.comparatorProperty());
 		blgrphyTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-		setTableColumns();
+		setBlgrphyTableColumns();
 	}
 
-	private void setTableColumns() {
-		addStringColumnToTable("Type", "type");
-		addStringColumnToTable("Title", "title");
-		addIntegerColumnToTable("Year", "pbyear");
-		addStringColumnToTable("Publisher", "publisher");
-		addStringColumnToTable("Book Title", "booktitle");
-		addStringColumnToTable("Journal", "journal");
-		addStringColumnToTable("Volume", "volume");
-		addStringColumnToTable("Number", "number");
-		addStringColumnToTable("School", "school");
-		addStringColumnToTable("Pages", "pages");
-	}
-
-	private void addStringColumnToTable(String header, String propertyName) {
-		TableColumn<Publication, String> newColumn = new TableColumn<>(header);
-		newColumn.setCellValueFactory(new PropertyValueFactory<Publication, String>(propertyName));
-		blgrphyTable.getColumns().add(newColumn);
-	}
-
-	private void addIntegerColumnToTable(String header, String propertyName) {
-		TableColumn<Publication, Integer> newColumn = new TableColumn<>(header);
-		newColumn.setCellValueFactory(new PropertyValueFactory<Publication, Integer>(propertyName));
-		blgrphyTable.getColumns().add(newColumn);
+	private void setBlgrphyTableColumns() {
+		TableColumnAdder<Publication> tca = new TableColumnAdder<>(blgrphyTable);
+		tca.addStringColumnToTable("Type", "type");
+		tca.addStringColumnToTable("Title", "title");
+		tca.addIntegerColumnToTable("Year", "pbyear");
+		tca.addStringColumnToTable("Publisher", "publisher");
+		tca.addStringColumnToTable("Book Title", "booktitle");
+		tca.addStringColumnToTable("Journal", "journal");
+		tca.addStringColumnToTable("Volume", "volume");
+		tca.addStringColumnToTable("Number", "number");
+		tca.addStringColumnToTable("School", "school");
+		tca.addStringColumnToTable("Pages", "pages");
 	}
 
 	private void setCanvas() {
-		canvas = new VBox();
-		VBox.setMargin(dropArea, new Insets(0, 0, -20, 0));
-		canvas.getChildren().addAll(dropArea, name, buttonArea, blgrphyTable);
-		canvas.setSpacing(20);
-		canvas.setAlignment(Pos.CENTER);
+		canvas = new VBox(20, dropArea, nameArea, buttonArea, authorInformationPane);
 		canvas.setPadding(new Insets(20, 40, 20, 40));
-		canvas.setPrefSize(600, VBox.USE_COMPUTED_SIZE);
+		canvas.setAlignment(Pos.CENTER_RIGHT);
+		canvas.setPrefSize(VBox.USE_COMPUTED_SIZE, VBox.USE_COMPUTED_SIZE);
 	}
 
 	// getters for tests
@@ -166,6 +223,68 @@ public class AuthorProfilePage implements CandidateListListener {
 		return remBut;
 	}
 
+	// EFFECT: allows the user to drag the name and drop it over "drop here"
+	// label
+	// to add this author to candidate list
+	private void setDragAndDropFeature() {
+		setDragDetectedEvent();
+		setDragOverEvent();
+		setDragEnteredEvent();
+		setDragExitedEvent();
+		setDragDroppedEvent();
+	}
+
+	private void setDragDetectedEvent() {
+		name.setOnDragDetected((MouseEvent e) -> {
+			Dragboard db = name.startDragAndDrop(TransferMode.ANY);
+			ClipboardContent content = new ClipboardContent();
+			content.putString(name.getText());
+			db.setContent(content);
+
+			e.consume();
+		});
+	}
+
+	private void setDragOverEvent() {
+		dropLabel.setOnDragOver((DragEvent e) -> {
+			if (e.getDragboard().hasString()) {
+				e.acceptTransferModes(TransferMode.MOVE);
+			}
+			e.consume();
+		});
+	}
+
+	private void setDragEnteredEvent() {
+		dropLabel.setOnDragEntered((DragEvent e) -> {
+			if (e.getDragboard().hasString()) {
+				dropLabel.setText("");
+				dropLabel.setGraphic(new ImageView(downArrow));
+			}
+			e.consume();
+		});
+	}
+
+	private void setDragExitedEvent() {
+		dropLabel.setOnDragExited((DragEvent e) -> {
+			dropLabel.setText("Drag the Author's name & Drop here to add him to candidate list");
+			dropLabel.setGraphic(null);
+			e.consume();
+		});
+	}
+
+	private void setDragDroppedEvent() {
+		dropLabel.setOnDragDropped((DragEvent e) -> {
+			Dragboard db = e.getDragboard();
+			boolean success = false;
+			if (db.hasString()) {
+				ui.addCand(new Author(db.getString()));
+				success = true;
+			}
+			e.setDropCompleted(success);
+			e.consume();
+		});
+	}
+
 	HBox getButtonArea() {
 		return buttonArea;
 	}
@@ -178,8 +297,8 @@ public class AuthorProfilePage implements CandidateListListener {
 		return name;
 	}
 
-	Label getDropHere() {
-		return dropHere;
+	Label getdropLabel() {
+		return dropLabel;
 	}
 
 }

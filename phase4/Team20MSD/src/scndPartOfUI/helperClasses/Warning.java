@@ -1,4 +1,4 @@
-package main.search;
+package scndPartOfUI.helperClasses;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

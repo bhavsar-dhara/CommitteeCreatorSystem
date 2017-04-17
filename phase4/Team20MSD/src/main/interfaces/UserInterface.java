@@ -31,7 +31,8 @@ public interface UserInterface {
 	// operations on search result
 	// public int getSearchResultSize();
 	// public Author getSearchResult(int i);
-
+	public ObservableList<Author> getSearchResult(Author a);
+	
 	// operations on search history
 	// public void addSearchToHistory(SearchQuery sq);
 	// public int getSearchHistorySize();

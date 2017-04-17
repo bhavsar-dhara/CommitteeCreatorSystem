@@ -138,4 +138,10 @@ public class UIForTest implements UITesting {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public ObservableList<Author> getSearchResult(Author a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

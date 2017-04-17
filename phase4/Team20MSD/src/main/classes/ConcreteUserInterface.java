@@ -1,10 +1,8 @@
 package main.classes;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -32,10 +30,12 @@ public class ConcreteUserInterface implements UserInterface {
 
 	// operations on candidate list
 	public void addCand(Author a) {
-		qe.addAuthorIntoCandidate(a);
-		CandListListeners.forEach((CandidateListListener l) -> {
-			l.refresh();
-		});
+		if (!hasCand(a)) {
+			qe.addAuthorIntoCandidate(a);
+			CandListListeners.forEach((CandidateListListener l) -> {
+				l.refresh();
+			});
+		}
 	}
 
 	public boolean hasCand(Author a) {
@@ -43,10 +43,12 @@ public class ConcreteUserInterface implements UserInterface {
 	}
 
 	public void remCand(Author a) {
-		qe.deleteFavCandidate(a);
-		CandListListeners.forEach((CandidateListListener l) -> {
-			l.refresh();
-		});
+		if (hasCand(a)) {
+			qe.deleteFavCandidate(a);
+			CandListListeners.forEach((CandidateListListener l) -> {
+				l.refresh();
+			});
+		}
 	}
 
 	public void remCand(List<Author> cands) {
@@ -68,6 +70,10 @@ public class ConcreteUserInterface implements UserInterface {
 
 	public void addListenerToCandList(CandidateListListener p) {
 		CandListListeners.add(p);
+	}
+
+	public ObservableList<Author> getSearchResult(Author a) {
+		return (ObservableList<Author>) qe.getSimilarAuthorBySamePublication(a);
 	}
 
 	public ObservableList<Publication> getAuthorPubs(Author atr) {

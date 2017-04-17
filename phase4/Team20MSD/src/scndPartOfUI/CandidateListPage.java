@@ -1,6 +1,7 @@
 package scndPartOfUI;
 
 import main.interfaces.*;
+import scndPartOfUI.helperClasses.UIElementFixer;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -87,21 +88,9 @@ public class CandidateListPage implements CandidateListListener {
 			hbox.setAlignment(Pos.CENTER_LEFT);
 			pageContent.getChildren().add(hbox);
 		}
-		fixElementHeight(pageContent, 500);
-		fixElementWidth(pageContent, 500);
+		UIElementFixer.fixElementHeight(pageContent, 500);
+		UIElementFixer.fixElementWidth(pageContent, 500);
 		return pageContent;
-	}
-
-	private void fixElementHeight(Region r, double height) {
-		r.setMinHeight(height);
-		r.setPrefHeight(height);
-		r.setMaxHeight(height);
-	}
-
-	private void fixElementWidth(Region r, double height) {
-		r.setMinWidth(height);
-		r.setPrefWidth(height);
-		r.setMaxWidth(height);
 	}
 
 	public void refresh() {
