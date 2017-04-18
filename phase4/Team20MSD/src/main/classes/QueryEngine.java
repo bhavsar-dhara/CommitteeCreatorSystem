@@ -21,7 +21,12 @@ public class QueryEngine {
 	}
 
 	private static QueryEngine queryEngine;
-
+	
+	/**
+	 * Singleton Design Pattern Implemented
+	 * 
+	 * @return Query Engine instance
+	 */
 	public synchronized static QueryEngine instance() {
 		if (queryEngine == null) {
 			return new QueryEngine();
@@ -46,7 +51,7 @@ public class QueryEngine {
 	}
 
 	/**
-	 * a static jdbc connection class
+	 * a jdbc connection class
 	 * 
 	 * @return java.sql.Connection
 	 */
@@ -531,106 +536,106 @@ public class QueryEngine {
 		return numberOfRows;
 	}
 
-	/*
-	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
-	 * Queries
-	 * 
-	 */
-
-	/**
-	 * Query 11 : to read saved queries
-	 * 
-	 * @return list of string of saved queries
-	 * @exception SQLException
-	 */
-	public List<String> fetchSavedQueries() {
-		List<String> queryList = new ArrayList<>();
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("Select distinct query from tb_savedqueries ");
-
-			ResultSet rs = st.executeQuery(query.toString());
-			while (rs.next()) {
-				queryList.add(rs.getString("query"));
-			}
-
-			rs.close();
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying saved queries list.");
-			System.err.println(se.getMessage());
-		}
-		return queryList;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int addSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
-
-			affectedRows = st.executeUpdate(query.toString());
-
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " adding saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int deleteSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
-			pstmt.setString(1, saveQuery);
-
-			affectedRows = pstmt.executeUpdate();
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " deleting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @return
-	 * @exception SQLException
-	 */
-	public int countSavedQueries() {
-		int numberOfRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
-
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
-			} else {
-				System.err.println("error: could not get the record counts");
-			}
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " counting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return numberOfRows;
-	}
+//	/*
+//	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
+//	 * Queries
+//	 * 
+//	 */
+//
+//	/**
+//	 * Query 11 : to read saved queries
+//	 * 
+//	 * @return list of string of saved queries
+//	 * @exception SQLException
+//	 */
+//	public List<String> fetchSavedQueries() {
+//		List<String> queryList = new ArrayList<>();
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("Select distinct query from tb_savedqueries ");
+//
+//			ResultSet rs = st.executeQuery(query.toString());
+//			while (rs.next()) {
+//				queryList.add(rs.getString("query"));
+//			}
+//
+//			rs.close();
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " querying saved queries list.");
+//			System.err.println(se.getMessage());
+//		}
+//		return queryList;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int addSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
+//
+//			affectedRows = st.executeUpdate(query.toString());
+//
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " adding saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int deleteSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
+//			pstmt.setString(1, saveQuery);
+//
+//			affectedRows = pstmt.executeUpdate();
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " deleting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int countSavedQueries() {
+//		int numberOfRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
+//
+//			ResultSet rs = pstmt.executeQuery();
+//			if (rs.next()) {
+//				numberOfRows = rs.getInt(1);
+//				System.out.println("numberOfRows= " + numberOfRows);
+//			} else {
+//				System.err.println("error: could not get the record counts");
+//			}
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " counting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return numberOfRows;
+//	}
 
 	/**
 	 * Query 15 : to find a particular author in Favorite Author List
