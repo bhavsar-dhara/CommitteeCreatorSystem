@@ -130,8 +130,9 @@ public class Compare implements Initializable {
 //                        new PieChart.Data("Pears", 22),
 //                        new PieChart.Data("Apples", 30));
 
-        if (newList1.isEmpty())
-        {        pie1.setTitle("No data for this Author");}
+        if (newList.size()==1 )
+        {        pie1.setTitle(name.getName() + newList1.get(0));
+                 pie1.setData(data3);}
         else{
             pie1.setTitle(name.getName() +"'s Yearly Publication");
         pie1.setData(data3);}
