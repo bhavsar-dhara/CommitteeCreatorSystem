@@ -223,12 +223,11 @@ public class Front implements Initializable {
 		} else {
 			
 			Progress p = new Progress("Searching:");
-			qe.setProgressBox(p);
 			p.display();
 			
 			List<Author> authorList = qe.populateListOfAuthors(conferencename1, keyword1, intArray,
 					Integer.parseInt(numofpub1), check.selectedProperty().getValue(), numofcom1);
-
+			p.selfDestruct();
 			for (Author a : authorList) {
 				data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication(), a.getPublication()));
 			}
@@ -312,7 +311,7 @@ public class Front implements Initializable {
 			return true;
 		} else {
 			String key1 = keyword.getText().trim();
-			return key1.matches("^[a-zA-Z0-9]*$");
+			return key1.matches("[\\w ]*");
 		}
 	}
 
@@ -320,7 +319,7 @@ public class Front implements Initializable {
 	private QueryEngine qe;
 	
 	/* ----------------------------------------------------------------------------------------------------*/
-	
+	//comment
 	Button getClearBut(){
 		return btnClear1;
 	}
