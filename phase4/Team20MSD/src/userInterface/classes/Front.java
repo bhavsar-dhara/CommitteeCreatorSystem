@@ -312,7 +312,7 @@ public class Front implements Initializable {
 			return true;
 		} else {
 			String key1 = keyword.getText().trim();
-			return key1.matches("^[a-zA-Z0-9]*$");
+			return key1.matches("[\\w ]*");
 		}
 	}
 
@@ -320,7 +320,7 @@ public class Front implements Initializable {
 	private QueryEngine qe;
 	
 	/* ----------------------------------------------------------------------------------------------------*/
-	
+	//comment
 	Button getClearBut(){
 		return btnClear1;
 	}
