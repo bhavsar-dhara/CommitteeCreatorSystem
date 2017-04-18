@@ -27,22 +27,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="643">
-              <caret line="908" column="0" lean-forward="true" selection-start-line="908" selection-start-column="0" selection-end-line="908" selection-end-column="0" />
+              <caret line="953" column="0" lean-forward="true" selection-start-line="953" selection-start-column="0" selection-end-line="953" selection-end-column="0" />
               <folding>
-                <marker date="1492472186000" expanded="true" signature="695:759" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492472186000" expanded="true" signature="803:867" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492472186000" expanded="true" signature="912:1020" ph="select disti... tb_authorProfile" />
-                <marker date="1492472186000" expanded="true" signature="1065:1168" ph="select ta.au... tb_authorProfile" />
-                <marker date="1492472186000" expanded="true" signature="15552:15578" ph="select * fro... tb_candidate" />
-                <marker date="1492472186000" expanded="true" signature="16102:16136" ph="insert into tb_candidate... " />
-                <marker date="1492472186000" expanded="true" signature="16536:16579" ph="DELETE from " />
-                <marker date="1492472186000" expanded="true" signature="16988:17021" ph="SELECT COUNT... tb_candidate" />
-                <marker date="1492472186000" expanded="true" signature="19014:19055" ph="DELETE from " />
-                <marker date="1492472186000" expanded="true" signature="19494:19530" ph="SELECT COUNT... tb_savedqueries" />
-                <marker date="1492472186000" expanded="true" signature="24117:24173" ph="Select unive... tb_university" />
-                <marker date="1492472186000" expanded="true" signature="26582:26636" ph="select role tb_committeecheck" />
-                <marker date="1492472186000" expanded="true" signature="27687:27738" ph="Select * Fro... tb_committeeCheck" />
-                <marker date="1492472186000" expanded="true" signature="28832:28966" ph="Select pbyea... tb_publication" />
+                <marker date="1492474050000" expanded="true" signature="29622:30043" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,7 +40,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
               <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#2252#2261#0" expanded="true" />
+                <element signature="e#2518#2527#0" expanded="true" />
+                <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -630,12 +638,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492471991460</updated>
-      <workItem from="1492471992789" duration="1998000" />
+      <workItem from="1492471992789" duration="2137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1998000" />
+    <option name="totallyTimeSpent" value="2137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1400" height="877" extended-state="0" />
@@ -690,22 +698,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
-          <caret line="908" column="0" lean-forward="true" selection-start-line="908" selection-start-column="0" selection-end-line="908" selection-end-column="0" />
+          <caret line="953" column="0" lean-forward="true" selection-start-line="953" selection-start-column="0" selection-end-line="953" selection-end-column="0" />
           <folding>
-            <marker date="1492472186000" expanded="true" signature="695:759" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492472186000" expanded="true" signature="803:867" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492472186000" expanded="true" signature="912:1020" ph="select disti... tb_authorProfile" />
-            <marker date="1492472186000" expanded="true" signature="1065:1168" ph="select ta.au... tb_authorProfile" />
-            <marker date="1492472186000" expanded="true" signature="15552:15578" ph="select * fro... tb_candidate" />
-            <marker date="1492472186000" expanded="true" signature="16102:16136" ph="insert into tb_candidate... " />
-            <marker date="1492472186000" expanded="true" signature="16536:16579" ph="DELETE from " />
-            <marker date="1492472186000" expanded="true" signature="16988:17021" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492472186000" expanded="true" signature="19014:19055" ph="DELETE from " />
-            <marker date="1492472186000" expanded="true" signature="19494:19530" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492472186000" expanded="true" signature="24117:24173" ph="Select unive... tb_university" />
-            <marker date="1492472186000" expanded="true" signature="26582:26636" ph="select role tb_committeecheck" />
-            <marker date="1492472186000" expanded="true" signature="27687:27738" ph="Select * Fro... tb_committeeCheck" />
-            <marker date="1492472186000" expanded="true" signature="28832:28966" ph="Select pbyea... tb_publication" />
+            <marker date="1492474050000" expanded="true" signature="29622:30043" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -722,7 +717,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2252#2261#0" expanded="true" />
+            <element signature="e#2518#2527#0" expanded="true" />
+            <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>

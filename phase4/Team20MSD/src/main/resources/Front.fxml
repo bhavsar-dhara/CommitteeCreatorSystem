@@ -115,10 +115,5 @@
             <Image url="@nu.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="151.0" fitWidth="365.0" layoutX="25.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@bg.png" />
-         </image>
-      </ImageView>
 	</children>
 </AnchorPane>
