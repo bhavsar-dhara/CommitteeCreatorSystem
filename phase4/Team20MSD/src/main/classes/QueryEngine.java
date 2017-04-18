@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 import javafx.collections.FXCollections;
-import userInterface.messageBoxes.Progress;
 
 public class QueryEngine {
 
@@ -21,7 +20,7 @@ public class QueryEngine {
 	}
 
 	private static QueryEngine queryEngine;
-	
+
 	/**
 	 * Singleton Design Pattern Implemented
 	 * 
@@ -44,12 +43,6 @@ public class QueryEngine {
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.* from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select ta.authorname from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.title=?";
 
-	private Progress progressBox;
-
-	public void setProgressBox(Progress p) {
-		progressBox = p;
-	}
-
 	/**
 	 * a jdbc connection class
 	 * 
@@ -63,7 +56,7 @@ public class QueryEngine {
 				setConn(DriverManager.getConnection(
 						"jdbc:postgresql://mypostgresqlaws.cxeexamnifqk.us-west-2.rds.amazonaws.com:5432/msddblp",
 						"luliuAWS", "1991715ll"));
-				System.out.println("\nSuccessful connect with database! ");
+				// System.out.println("\nSuccessful connect with database! ");
 
 				// Class.forName("org.postgresql.Driver");
 				//// Connection to local database
@@ -71,7 +64,7 @@ public class QueryEngine {
 				// conn = DriverManager.getConnection(url, "postgres",
 				// "1991715");
 
-				System.out.println("Connection made successfully...");
+				// System.out.println("Connection made successfully...");
 			} catch (ClassNotFoundException e) {
 				System.err.println(CLASSNOTFOUNDEXECPTION + " class not found exception");
 				System.err.println(e.getMessage());
@@ -151,7 +144,7 @@ public class QueryEngine {
 			// System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
-			System.out.println(rs.getFetchSize() + "......");
+			// System.out.println(rs.getFetchSize() + "......");
 
 			// int count = 0;
 			while (rs.next()) {
@@ -190,30 +183,30 @@ public class QueryEngine {
 			System.err.println(SQLEXCEPTION + " querying author list.");
 			System.err.println(se.getMessage());
 		}
-		progressBox.selfDestruct();
 		return listOfAuthors;
 	}
 
-//
-//	/**
-//	 * Query 2 : Search for similar authors
-//	 * @param author
-//	 * @return list of Authors with similar profile as the given author 
-//	 * @exception SQLException
-//	 */
-//	public List<Author> getSimilarAuthorList(Author author) {
-//		List<Author> similarAuthors = new ArrayList<Author>();
-//		List<Author> similarAuthorofSameNopb;
-//		List<Author> similarAuthorofSamePublication;
-//
-//		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
-//		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
-//
-//		similarAuthors.addAll(similarAuthorofSameNopb);
-//		similarAuthors.addAll(similarAuthorofSamePublication);
-//
-//		return similarAuthors;
-//	}
+	//
+	// /**
+	// * Query 2 : Search for similar authors
+	// * @param author
+	// * @return list of Authors with similar profile as the given author
+	// * @exception SQLException
+	// */
+	// public List<Author> getSimilarAuthorList(Author author) {
+	// List<Author> similarAuthors = new ArrayList<Author>();
+	// List<Author> similarAuthorofSameNopb;
+	// List<Author> similarAuthorofSamePublication;
+	//
+	// similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
+	// similarAuthorofSamePublication =
+	// getSimilarAuthorBySamePublication(author);
+	//
+	// similarAuthors.addAll(similarAuthorofSameNopb);
+	// similarAuthors.addAll(similarAuthorofSamePublication);
+	//
+	// return similarAuthors;
+	// }
 
 	/**
 	 * Sub-Query 3a : Method to fetch number of publication based on author name
@@ -239,33 +232,35 @@ public class QueryEngine {
 		return -1;
 	}
 
-
-//	/**
-//	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
-//	 * @param author
-//	 * @return list of authors with the same number of publications
-//	 * @exception SQLException
-//	 */
-//	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
-//		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
-//		try {
-//			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
-//			ps.setInt(1, inputAuthorNumberofPB);
-//			ResultSet rs = ps.executeQuery();
-//			List<Author> authorsBySameNOPB = new ArrayList<Author>();
-//			while (rs.next()) {
-//				Author authorRS = new Author();
-//				authorRS.setName(rs.getString("authorname"));
-//				// authorsBySameNOPB.add(rs.getString(1));
-//				authorsBySameNOPB.add(authorRS);
-//			}
-//			return authorsBySameNOPB;
-//		} catch (SQLException se) {
-//			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
-//			System.err.println(se.getMessage());
-//		}
-//		return null;
-//	}
+	// /**
+	// * Sub-Query 3b : Method to fetch similar authors having same number on
+	// published data
+	// * @param author
+	// * @return list of authors with the same number of publications
+	// * @exception SQLException
+	// */
+	// public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+	// int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
+	// try {
+	// PreparedStatement ps =
+	// getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
+	// ps.setInt(1, inputAuthorNumberofPB);
+	// ResultSet rs = ps.executeQuery();
+	// List<Author> authorsBySameNOPB = new ArrayList<Author>();
+	// while (rs.next()) {
+	// Author authorRS = new Author();
+	// authorRS.setName(rs.getString("authorname"));
+	// // authorsBySameNOPB.add(rs.getString(1));
+	// authorsBySameNOPB.add(authorRS);
+	// }
+	// return authorsBySameNOPB;
+	// } catch (SQLException se) {
+	// System.err.println(SQLEXCEPTION + " querying similar author by same
+	// number of publications.");
+	// System.err.println(se.getMessage());
+	// }
+	// return null;
+	// }
 
 	/**
 	 * Sub-Query 3c : Method to fetch published papers based on author name
@@ -319,7 +314,7 @@ public class QueryEngine {
 		List<Author> listofAuthorBySamePB = FXCollections.observableArrayList();
 		for (int i = 0; i < listofpublication.size() - 1; i++) {
 			String titleName = listofpublication.get(i).getTitle();
-			System.out.print(titleName);
+			// System.out.print(titleName);
 			try {
 				PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_TITLE);
 				ps.setString(1, titleName);
@@ -331,7 +326,7 @@ public class QueryEngine {
 					authorRS.setNoOfPublication(rs.getString("numberofpb"));
 					// String authornameBySamePB = rs.getString(1);
 					listofAuthorBySamePB.add(authorRS);
-					System.out.print(listofAuthorBySamePB);
+					// System.out.print(listofAuthorBySamePB);
 				}
 			} catch (SQLException se) {
 				System.err.println(SQLEXCEPTION + " querying similar author who have co-authored a paper.");
@@ -466,7 +461,7 @@ public class QueryEngine {
 			ps.close();
 			rs.close();
 		} catch (SQLException e) {
-			System.out.println("Failed");
+			System.err.println("Failed");
 			e.printStackTrace();
 		}
 		return listofCandidate.get(i);
@@ -477,7 +472,7 @@ public class QueryEngine {
 	 * @exception SQLException
 	 */
 	public void addAuthorIntoCandidate(Author author) {
-		System.out.println(".. .. .. " + author.getName());
+		// System.out.println(".. .. .. " + author.getName());
 		try {
 			String sql = "insert into tb_candidate values(?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -487,7 +482,7 @@ public class QueryEngine {
 
 			ps.close();
 		} catch (SQLException e) {
-			System.out.println("Failed!");
+			System.err.println("Failed!");
 			e.printStackTrace();
 		}
 	}
@@ -522,7 +517,7 @@ public class QueryEngine {
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
+				// System.out.println("numberOfRows= " + numberOfRows);
 			} else {
 				System.err.println("error: could not get the record counts");
 			}
@@ -535,105 +530,108 @@ public class QueryEngine {
 		return numberOfRows;
 	}
 
-//	/*
-//	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
-//	 * Queries
-//	 * 
-//	 */
-//	
-//	/**
-//	 * Query 11 : to read saved queries
-//	 * @return list of string of saved queries
-//	 * @exception SQLException
-//	 */
-//	public List<String> fetchSavedQueries() {
-//		List<String> queryList = new ArrayList<>();
-//		try {
-//			Statement st = getConn().createStatement();
-//			StringBuilder query = new StringBuilder();
-//			query.append("Select distinct query from tb_savedqueries ");
-//
-//			ResultSet rs = st.executeQuery(query.toString());
-//			while (rs.next()) {
-//				queryList.add(rs.getString("query"));
-//			}
-//
-//			rs.close();
-//			st.close();
-//		} catch (SQLException se) {
-//			System.err.println(SQLEXCEPTION + " querying saved queries list.");
-//			System.err.println(se.getMessage());
-//		}
-//		return queryList;
-//	}
-//
-//	/**
-//	 * @param saveQuery
-//	 * @return
-//	 * @exception SQLException
-//	 */
-//	public int addSavedQuery(String saveQuery) {
-//		int affectedRows = 0;
-//		try {
-//			Statement st = getConn().createStatement();
-//			StringBuilder query = new StringBuilder();
-//			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
-//
-//			affectedRows = st.executeUpdate(query.toString());
-//
-//			st.close();
-//		} catch (SQLException se) {
-//			System.err.println(SQLEXCEPTION + " adding saved queries.");
-//			System.err.println(se.getMessage());
-//		}
-//		return affectedRows;
-//	}
-//
-//	/**
-//	 * @param saveQuery
-//	 * @return
-//	 * @exception SQLException
-//	 */
-//	public int deleteSavedQuery(String saveQuery) {
-//		int affectedRows = 0;
-//		try {
-//			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
-//			pstmt.setString(1, saveQuery);
-//
-//			affectedRows = pstmt.executeUpdate();
-//
-//			pstmt.close();
-//		} catch (SQLException se) {
-//			System.err.println(SQLEXCEPTION + " deleting saved queries.");
-//			System.err.println(se.getMessage());
-//		}
-//		return affectedRows;
-//	}
-//
-//	/**
-//	 * @return
-//	 * @exception SQLException
-//	 */
-//	public int countSavedQueries() {
-//		int numberOfRows = 0;
-//		try {
-//			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
-//
-//			ResultSet rs = pstmt.executeQuery();
-//			if (rs.next()) {
-//				numberOfRows = rs.getInt(1);
-//				System.out.println("numberOfRows= " + numberOfRows);
-//			} else {
-//				System.err.println("error: could not get the record counts");
-//			}
-//
-//			pstmt.close();
-//		} catch (SQLException se) {
-//			System.err.println(SQLEXCEPTION + " counting saved queries.");
-//			System.err.println(se.getMessage());
-//		}
-//		return numberOfRows;
-//	}
+	// /*
+	// * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
+	// * Queries
+	// *
+	// */
+	//
+	// /**
+	// * Query 11 : to read saved queries
+	// * @return list of string of saved queries
+	// * @exception SQLException
+	// */
+	// public List<String> fetchSavedQueries() {
+	// List<String> queryList = new ArrayList<>();
+	// try {
+	// Statement st = getConn().createStatement();
+	// StringBuilder query = new StringBuilder();
+	// query.append("Select distinct query from tb_savedqueries ");
+	//
+	// ResultSet rs = st.executeQuery(query.toString());
+	// while (rs.next()) {
+	// queryList.add(rs.getString("query"));
+	// }
+	//
+	// rs.close();
+	// st.close();
+	// } catch (SQLException se) {
+	// System.err.println(SQLEXCEPTION + " querying saved queries list.");
+	// System.err.println(se.getMessage());
+	// }
+	// return queryList;
+	// }
+	//
+	// /**
+	// * @param saveQuery
+	// * @return
+	// * @exception SQLException
+	// */
+	// public int addSavedQuery(String saveQuery) {
+	// int affectedRows = 0;
+	// try {
+	// Statement st = getConn().createStatement();
+	// StringBuilder query = new StringBuilder();
+	// query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery +
+	// ")");
+	//
+	// affectedRows = st.executeUpdate(query.toString());
+	//
+	// st.close();
+	// } catch (SQLException se) {
+	// System.err.println(SQLEXCEPTION + " adding saved queries.");
+	// System.err.println(se.getMessage());
+	// }
+	// return affectedRows;
+	// }
+	//
+	// /**
+	// * @param saveQuery
+	// * @return
+	// * @exception SQLException
+	// */
+	// public int deleteSavedQuery(String saveQuery) {
+	// int affectedRows = 0;
+	// try {
+	// PreparedStatement pstmt = getConn().prepareStatement("DELETE from
+	// tb_savedqueries where query=?");
+	// pstmt.setString(1, saveQuery);
+	//
+	// affectedRows = pstmt.executeUpdate();
+	//
+	// pstmt.close();
+	// } catch (SQLException se) {
+	// System.err.println(SQLEXCEPTION + " deleting saved queries.");
+	// System.err.println(se.getMessage());
+	// }
+	// return affectedRows;
+	// }
+	//
+	// /**
+	// * @return
+	// * @exception SQLException
+	// */
+	// public int countSavedQueries() {
+	// int numberOfRows = 0;
+	// try {
+	// PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*)
+	// from tb_savedqueries");
+	//
+	// ResultSet rs = pstmt.executeQuery();
+	// if (rs.next()) {
+	// numberOfRows = rs.getInt(1);
+	// System.out.println("numberOfRows= " + numberOfRows);
+	// } else {
+	// System.err.println("error: could not get the record counts");
+	// }
+	//
+	// pstmt.close();
+	// } catch (SQLException se) {
+	// System.err.println(SQLEXCEPTION + " counting saved queries.");
+	// System.err.println(se.getMessage());
+	// }
+	// return numberOfRows;
+	// }
 
 	/**
 	 * Query 15 : to find a particular author in Favorite Author List
@@ -763,10 +761,11 @@ public class QueryEngine {
 					+ "') and a.title = p.title group by p.pbyear");
 
 			ResultSet rs = st.executeQuery(query.toString());
-			System.out.println("### " + rs.getFetchSize());
+			// System.out.println("### " + rs.getFetchSize());
 			while (rs.next()) {
 				listPerYear.put(rs.getInt(0), rs.getInt(1));
-				System.out.println(".... " + rs.getInt(0) + " .... " + rs.getInt(1));
+				// System.out.println(".... " + rs.getInt(0) + " .... " +
+				// rs.getInt(1));
 			}
 
 			rs.close();
@@ -875,7 +874,7 @@ public class QueryEngine {
 			ps.close();
 			rs.close();
 		} catch (SQLException e) {
-			System.out.println(SQLEXCEPTION);
+			System.err.println(SQLEXCEPTION);
 			e.printStackTrace();
 		}
 		return roleString;
