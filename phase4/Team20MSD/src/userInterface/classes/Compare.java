@@ -1,8 +1,13 @@
 
 package userInterface.classes;
-import java.util.*;
+
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.TreeMap;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,12 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 //import main.java.search.model.Author;
 //import main.java.search.service.QueryEngine;
 //import main.java.serach.interfaces.UserInterface;
-
-import main.classes.*;
+import main.classes.Author;
+import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
 
 //import pkgcommon.Functions;
@@ -61,7 +65,7 @@ public class Compare implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        qe = new QueryEngine();
+        qe = QueryEngine.instance();
         data = FXCollections.observableArrayList();
         data1 = FXCollections.observableArrayList();
         List<Author> authorslist  =qe.fetchCandidateDetails();

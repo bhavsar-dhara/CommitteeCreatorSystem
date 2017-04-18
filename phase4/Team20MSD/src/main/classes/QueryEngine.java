@@ -16,8 +16,25 @@ import userInterface.messageBoxes.Progress;
 
 public class QueryEngine {
 
+	private QueryEngine() {
+		connectToDatabaseOrDisconnect();
+	}
 
-	private static Connection conn = connectToDatabaseOrDisconnect();
+	private static QueryEngine queryEngine;
+	
+	/**
+	 * Singleton Design Pattern Implemented
+	 * 
+	 * @return Query Engine instance
+	 */
+	public synchronized static QueryEngine instance() {
+		if (queryEngine == null) {
+			return new QueryEngine();
+		}
+		return queryEngine;
+	}
+
+	private Connection conn;
 
 	static String SQLEXCEPTION = "Threw a SQLException while ";
 	static String CLASSNOTFOUNDEXECPTION = "Threw a ClassNotFoundException while connecting to the database.";
@@ -26,19 +43,19 @@ public class QueryEngine {
 	static String GET_AUTHORNAME_BY_NOPB = "select distinct authorname from tb_NumberOfPb where numberOfPb=?";
 	static String GET_TITLE_BY_AUTHORNAME = "select distinct tp.* from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.authorname=?";
 	static String GET_AUTHORNAME_BY_TITLE = "select ta.authorname from tb_authorProfile ta, tb_publication tp where ta.title=tp.title and ta.title=?";
-	
 
 	private Progress progressBox;
-	
-	public void setProgressBox(Progress p){
+
+	public void setProgressBox(Progress p) {
 		progressBox = p;
 	}
-	
+
 	/**
-	 * a static jdbc connection class
+	 * a jdbc connection class
+	 * 
 	 * @return java.sql.Connection
 	 */
-	private static Connection connectToDatabaseOrDisconnect() {
+	private Connection connectToDatabaseOrDisconnect() {
 		if (getConn() == null) {
 			try {
 
@@ -70,11 +87,18 @@ public class QueryEngine {
 
 	/**
 	 * Query 1 : Search for author and his every publication list
-	 * @param confJournal: based on a particular conference/journal selected
-	 * @param keywords: based on keywords present in the title of the publication entered
-	 * @param years: selecting publication year(s)
-	 * @param noOfPublication: minimum # of publications made
-	 * @param isServedAsCommittee: has been a previous committee member or not
+	 * 
+	 * @param confJournal:
+	 *            based on a particular conference/journal selected
+	 * @param keywords:
+	 *            based on keywords present in the title of the publication
+	 *            entered
+	 * @param years:
+	 *            selecting publication year(s)
+	 * @param noOfPublication:
+	 *            minimum # of publications made
+	 * @param isServedAsCommittee:
+	 *            has been a previous committee member or not
 	 * @return list of Author with all his publications
 	 * @exception SQLException
 	 */
@@ -85,13 +109,14 @@ public class QueryEngine {
 		try {
 			Statement st = getConn().createStatement();
 			StringBuilder query = new StringBuilder();
-			query.append(
-					"SELECT distinct ta.authorname, ta.title, tn.numberofpb, " /*+ "tc.role, tc.checkyear, tc.committee, "*/
-							+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
-							+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
-							+ "FROM tb_publication tp, " + "tb_authorprofile ta, " + "tb_numberofpb tn "
-							/*+ ", tb_committeecheck tc "*/);
-			query.append("where tp.title = ta.title and ta.authorname = tn.authorname " /*+ "and tc.authorname = ta.authorname "*/);
+			query.append("SELECT distinct ta.authorname, ta.title, tn.numberofpb, "
+					/* + "tc.role, tc.checkyear, tc.committee, " */
+					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
+					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number "
+					+ "FROM tb_publication tp, " + "tb_authorprofile ta, " + "tb_numberofpb tn "
+			/* + ", tb_committeecheck tc " */);
+			query.append("where tp.title = ta.title and ta.authorname = tn.authorname "
+			/* + "and tc.authorname = ta.authorname " */);
 
 			if (confJournal != null && !confJournal.equals("")) {
 				query.append("and lower(tp.journal) = lower('" + confJournal + "') ");
@@ -113,30 +138,31 @@ public class QueryEngine {
 
 			if (isServedAsCommittee) {
 				Integer year = 2016 - Integer.parseInt(noOfYearsServedPreviously);
-				query.append("and ta.authorname IN (SELECT authorname FROM tb_committeecheck where checkyear >= " + year.toString() +") ");
+				query.append("and ta.authorname IN (SELECT authorname FROM tb_committeecheck where checkyear >= "
+						+ year.toString() + ") ");
 			}
 
-			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, " 
-					/*+ "tc.role, tc.checkyear, tc.committee, "*/
+			query.append("GROUP BY ta.authorname, ta.title, tn.numberofpb, "
+					/* + "tc.role, tc.checkyear, tc.committee, " */
 					+ "tp.type, tp.pbyear, tp.pages, tp.journal, tp.ee, tp.url, tp.volume, "
 					+ "tp.booktitle, tp.isbn, tp.publisher, tp.editor, tp.school, tp.number ");
 			query.append("ORDER BY ta.authorname, ta.title");
 
-			System.out.println("............" + query.toString());
+			// System.out.println("............" + query.toString());
 
 			ResultSet rs = st.executeQuery(query.toString());
 			System.out.println(rs.getFetchSize() + "......");
 
-			int count = 0;
+			// int count = 0;
 			while (rs.next()) {
-				count++;
+				// count++;
 				Author author = new Author();
 				author.setName(rs.getString("authorname"));
 				author.setTitle(rs.getString("title"));
 				author.setNoOfPublication(rs.getString("numberofpb"));
-//				author.setRole(rs.getString("role"));
-//				author.setCheckYear(rs.getInt("checkyear"));
-//				author.setCommittee(rs.getString("committee"));
+				// author.setRole(rs.getString("role"));
+				// author.setCheckYear(rs.getInt("checkyear"));
+				// author.setCommittee(rs.getString("committee"));
 				Publication publication = new Publication();
 				publication.setTitle(rs.getString("title"));
 				publication.setType(rs.getString("type"));
@@ -156,7 +182,7 @@ public class QueryEngine {
 				// System.out.println(author.toString());
 				listOfAuthors.add(author);
 			}
-			System.out.println(count + "......");
+			// System.out.println(count + "......");
 
 			rs.close();
 			st.close();
@@ -170,8 +196,9 @@ public class QueryEngine {
 
 	/**
 	 * Query 2 : Search for similar authors
+	 * 
 	 * @param author
-	 * @return list of Authors with similar profile as the given author 
+	 * @return list of Authors with similar profile as the given author
 	 * @exception SQLException
 	 */
 	public List<Author> getSimilarAuthorList(Author author) {
@@ -190,8 +217,9 @@ public class QueryEngine {
 
 	/**
 	 * Sub-Query 3a : Method to fetch number of publication based on author name
+	 * 
 	 * @param author
-	 * @return number of publications 
+	 * @return number of publications
 	 * @exception SQLException
 	 */
 	public int getNumberofPBByAuthorName(Author author) {
@@ -212,7 +240,9 @@ public class QueryEngine {
 	}
 
 	/**
-	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
+	 * Sub-Query 3b : Method to fetch similar authors having same number on
+	 * published data
+	 * 
 	 * @param author
 	 * @return list of authors with the same number of publications
 	 * @exception SQLException
@@ -240,6 +270,7 @@ public class QueryEngine {
 
 	/**
 	 * Sub-Query 3c : Method to fetch published papers based on author name
+	 * 
 	 * @param author
 	 * @return
 	 * @exception SQLException
@@ -279,6 +310,7 @@ public class QueryEngine {
 
 	/**
 	 * Sub-Query 3d : Method to fetch similar authors having co-authored paper
+	 * 
 	 * @param author
 	 * @return
 	 * @exception SQLException
@@ -312,6 +344,7 @@ public class QueryEngine {
 
 	/**
 	 * Query 4 - Search authors details
+	 * 
 	 * @param author
 	 * @return list of author with individual publication object to it
 	 * @exception SQLException
@@ -356,6 +389,7 @@ public class QueryEngine {
 
 	/**
 	 * Query 5 : Method to fetch distinct Journal names present in the Database
+	 * 
 	 * @return
 	 * @exception SQLException
 	 */
@@ -382,6 +416,7 @@ public class QueryEngine {
 
 	/**
 	 * Query 6 : Method to fetch distinct Journal names present in the Database
+	 * 
 	 * @return
 	 * @exception SQLException
 	 */
@@ -411,7 +446,7 @@ public class QueryEngine {
 	 * candidates
 	 * 
 	 */
-	
+
 	/**
 	 * @param i
 	 * @return
@@ -501,108 +536,110 @@ public class QueryEngine {
 		return numberOfRows;
 	}
 
-	/*
-	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
-	 * Queries
-	 * 
-	 */
-	
-	/**
-	 * Query 11 : to read saved queries
-	 * @return list of string of saved queries
-	 * @exception SQLException
-	 */
-	public List<String> fetchSavedQueries() {
-		List<String> queryList = new ArrayList<>();
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("Select distinct query from tb_savedqueries ");
-
-			ResultSet rs = st.executeQuery(query.toString());
-			while (rs.next()) {
-				queryList.add(rs.getString("query"));
-			}
-
-			rs.close();
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying saved queries list.");
-			System.err.println(se.getMessage());
-		}
-		return queryList;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int addSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			Statement st = getConn().createStatement();
-			StringBuilder query = new StringBuilder();
-			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
-
-			affectedRows = st.executeUpdate(query.toString());
-
-			st.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " adding saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @param saveQuery
-	 * @return
-	 * @exception SQLException
-	 */
-	public int deleteSavedQuery(String saveQuery) {
-		int affectedRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
-			pstmt.setString(1, saveQuery);
-
-			affectedRows = pstmt.executeUpdate();
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " deleting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return affectedRows;
-	}
-
-	/**
-	 * @return
-	 * @exception SQLException
-	 */
-	public int countSavedQueries() {
-		int numberOfRows = 0;
-		try {
-			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
-
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				numberOfRows = rs.getInt(1);
-				System.out.println("numberOfRows= " + numberOfRows);
-			} else {
-				System.err.println("error: could not get the record counts");
-			}
-
-			pstmt.close();
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " counting saved queries.");
-			System.err.println(se.getMessage());
-		}
-		return numberOfRows;
-	}
+//	/*
+//	 * Queries 11 - 14 Four Methods to carry out CRUD operations on the Saved
+//	 * Queries
+//	 * 
+//	 */
+//
+//	/**
+//	 * Query 11 : to read saved queries
+//	 * 
+//	 * @return list of string of saved queries
+//	 * @exception SQLException
+//	 */
+//	public List<String> fetchSavedQueries() {
+//		List<String> queryList = new ArrayList<>();
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("Select distinct query from tb_savedqueries ");
+//
+//			ResultSet rs = st.executeQuery(query.toString());
+//			while (rs.next()) {
+//				queryList.add(rs.getString("query"));
+//			}
+//
+//			rs.close();
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " querying saved queries list.");
+//			System.err.println(se.getMessage());
+//		}
+//		return queryList;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int addSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			Statement st = getConn().createStatement();
+//			StringBuilder query = new StringBuilder();
+//			query.append("INSERT INTO tb_savedqueries(query) VALUES (" + saveQuery + ")");
+//
+//			affectedRows = st.executeUpdate(query.toString());
+//
+//			st.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " adding saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @param saveQuery
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int deleteSavedQuery(String saveQuery) {
+//		int affectedRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("DELETE from tb_savedqueries where query=?");
+//			pstmt.setString(1, saveQuery);
+//
+//			affectedRows = pstmt.executeUpdate();
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " deleting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return affectedRows;
+//	}
+//
+//	/**
+//	 * @return
+//	 * @exception SQLException
+//	 */
+//	public int countSavedQueries() {
+//		int numberOfRows = 0;
+//		try {
+//			PreparedStatement pstmt = getConn().prepareStatement("SELECT COUNT(*) from tb_savedqueries");
+//
+//			ResultSet rs = pstmt.executeQuery();
+//			if (rs.next()) {
+//				numberOfRows = rs.getInt(1);
+//				System.out.println("numberOfRows= " + numberOfRows);
+//			} else {
+//				System.err.println("error: could not get the record counts");
+//			}
+//
+//			pstmt.close();
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " counting saved queries.");
+//			System.err.println(se.getMessage());
+//		}
+//		return numberOfRows;
+//	}
 
 	/**
 	 * Query 15 : to find a particular author in Favorite Author List
+	 * 
 	 * @param author
 	 * @return
 	 * @exception SQLException
@@ -637,22 +674,25 @@ public class QueryEngine {
 
 	/**
 	 * static connection getter
+	 * 
 	 * @return
 	 */
-	public static Connection getConn() {
+	public Connection getConn() {
 		return conn;
 	}
 
 	/**
 	 * static connection setter
+	 * 
 	 * @param conn
 	 */
-	public static void setConn(Connection conn) {
-		QueryEngine.conn = conn;
+	public void setConn(Connection conn) {
+		this.conn = conn;
 	}
 
 	/**
 	 * Query 16 : to fetch distinct committee name list
+	 * 
 	 * @return
 	 * @exception SQLException
 	 */
@@ -680,6 +720,7 @@ public class QueryEngine {
 	/**
 	 * Query 17 : to fetch author list based on the committee and no of years
 	 * served as a member
+	 * 
 	 * @param committeeName
 	 * @param noOfYears
 	 * @return
@@ -709,6 +750,7 @@ public class QueryEngine {
 
 	/**
 	 * Query 18 : to fetch no of publication year list based on author name
+	 * 
 	 * @param author
 	 * @return HashMap<Year, No of publications>
 	 * @exception SQLException
@@ -740,6 +782,7 @@ public class QueryEngine {
 
 	/**
 	 * Query 19 : to fetch university based on author name
+	 * 
 	 * @param author
 	 * @return
 	 * @exception SQLException
@@ -748,7 +791,7 @@ public class QueryEngine {
 		String university = "";
 		String authorname = author.getName();
 		try {
-			
+
 			Statement st = getConn().createStatement();
 			String sql = "Select university from tb_university where authorname =?";
 			PreparedStatement ps = getConn().prepareStatement(sql);
@@ -763,7 +806,7 @@ public class QueryEngine {
 			System.err.println(SQLEXCEPTION + " querying author university detail.");
 			System.err.println(se.getMessage());
 		}
-		if (university == ""){
+		if (university == "") {
 			university = "N/A";
 		}
 		return university;
@@ -784,6 +827,7 @@ public class QueryEngine {
 	 * committee(maybe more than one roles) and their number of publication.
 	 * Candidate Review page mainly aim at comparing different between authors
 	 * basic contribute and performance.
+	 * 
 	 * @return List of Authors with name, committee role list, and numberofPb
 	 *         setted.
 	 */
@@ -820,7 +864,7 @@ public class QueryEngine {
 	 * @param authorname
 	 * @return a string, the role of an author. The role may more than one.
 	 */
-	private static String getCommitteeRoleByAuthorName(String authorname) {
+	private String getCommitteeRoleByAuthorName(String authorname) {
 		String roleString = "";
 		try {
 			String sql = "select role from tb_committeecheck where authorname =?";
@@ -828,7 +872,7 @@ public class QueryEngine {
 			ps.setString(1, authorname);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				roleString = roleString.concat(rs.getString(1)+", ");
+				roleString = roleString.concat(rs.getString(1) + ", ");
 			}
 			ps.close();
 			rs.close();
@@ -876,8 +920,9 @@ public class QueryEngine {
 	}
 
 	/**
-	 * Query 24 This method aim at getting an author's publication years as a list.
-	 * This method works on an Pie chart for UI used.
+	 * Query 24 This method aim at getting an author's publication years as a
+	 * list. This method works on an Pie chart for UI used.
+	 * 
 	 * @param author
 	 * @return a publication years of this author
 	 */
@@ -886,10 +931,10 @@ public class QueryEngine {
 		List<Integer> listofYear = new ArrayList<>();
 		try {
 			Statement st = getConn().createStatement();
-			String sql = "Select pbyear " +
-					"From tb_publication tp, tb_authorprofile ta " +
-					"where tp.title = ta.title " +
-					"and ta.authorname =?";
+
+			String sql = "Select pbyear " + "From tb_publication tp, tb_authorprofile ta "
+					+ "where tp.title = ta.title " + "and ta.authorname =?";
+
 			PreparedStatement ps = getConn().prepareStatement(sql);
 			ps.setString(1, authorname);
 			ResultSet rs = ps.executeQuery();

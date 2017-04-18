@@ -85,7 +85,7 @@ public class Front implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		qe = new QueryEngine();
+		qe = QueryEngine.instance();
 		ui = new ConcreteUserInterface(qe);
 		List<Integer> pubno = new ArrayList<Integer>();
 		pubno.add(1);
@@ -161,7 +161,7 @@ public class Front implements Initializable {
 	@FXML
 	private void setSearch(Event event) throws Exception {
 
-		System.out.println("onButtonCLick.........");
+//		System.out.println("onButtonCLick.........");
 
 		// Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please Enter
 		// proper information " + " ?",
@@ -202,7 +202,7 @@ public class Front implements Initializable {
 		}
 
 		String keyword1 = "";
-		if (!numofpub.getSelectionModel().isEmpty()) {
+		if (!keyword.getText().isEmpty()) {
 			keyword1 = keyword.getText().equals("") ? "" : keyword.getText().trim();
 			System.out.println("keyword... " + keyword1);
 		}
@@ -278,7 +278,7 @@ public class Front implements Initializable {
 
 	@FXML
 	private void clearInputs(ActionEvent event) {
-		keyword.setText(null);
+		keyword.setText("");
 		pubdate.getSelectionModel().clearSelection();
 		numofpub.getSelectionModel().clearSelection();
 		year.getSelectionModel().clearSelection();
@@ -308,7 +308,7 @@ public class Front implements Initializable {
 	}
 
 	private boolean isYearInputOkey() {
-		if (keyword == null && keyword.equals("")){
+		if (keyword.getText() == null && keyword.getText().equals("")){
 			return true;
 		} else {
 			String key1 = keyword.getText().trim();
