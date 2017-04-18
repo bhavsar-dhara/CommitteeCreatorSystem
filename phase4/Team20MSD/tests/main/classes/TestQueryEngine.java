@@ -1,15 +1,13 @@
 package main.classes;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-
-import main.classes.Author;
-import main.classes.Publication;
-import main.classes.QueryEngine;
 
 public class TestQueryEngine {
 
