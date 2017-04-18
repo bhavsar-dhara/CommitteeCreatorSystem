@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<CommitteeCheck authorname="Nobuko Yoshida" checkyear="2015" role="Member" committee="ecoop" />
+	<CommitteeCheck authorname="Reinhard Wilhelm" checkyear="1986" role="Program Chair" committee="esop" />
+	<CommitteeCheck authorname="Donald Sannella" checkyear="1994" role="Program Chair" committee="esop" />
+	<CommitteeCheck authorname="Frank Tip" checkyear="2007" role="Member" committee="issta" />
+	<CommitteeCheck authorname="Reinhard Wilhelm" checkyear="2003" role="Member" committee="pldi" />
+	<CommitteeCheck authorname="Reinhard Wilhelm" checkyear="2000" role="Member" committee="popl" />
+	<CommitteeCheck authorname="Mary Lou Soffa" checkyear="2004" role="Member" committee="popl" />
+</dataset>
