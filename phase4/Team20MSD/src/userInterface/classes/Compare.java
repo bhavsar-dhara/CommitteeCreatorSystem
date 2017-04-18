@@ -19,15 +19,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-//import main.java.search.model.Author;
-//import main.java.search.service.QueryEngine;
-//import main.java.serach.interfaces.UserInterface;
 import main.classes.Author;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
-
-//import pkgcommon.Functions;
-//import pkgmodels.ExportHistory;
 
 
 
@@ -130,8 +124,9 @@ public class Compare implements Initializable {
 //                        new PieChart.Data("Pears", 22),
 //                        new PieChart.Data("Apples", 30));
 
-        if (newList1.isEmpty())
-        {        pie1.setTitle("No data for this Author");}
+        if (newList.size()==1 )
+        {        pie1.setTitle(name.getName() + newList1.get(0));
+                 pie1.setData(data3);}
         else{
             pie1.setTitle(name.getName() +"'s Yearly Publication");
         pie1.setData(data3);}

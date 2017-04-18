@@ -16,8 +16,38 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConcreteUserInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/classes/ConcreteUserInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Compare.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-83">
+              <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -27,32 +57,73 @@
         <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="643">
-              <caret line="908" column="0" lean-forward="true" selection-start-line="908" selection-start-column="0" selection-end-line="908" selection-end-column="0" />
+              <caret line="953" column="0" lean-forward="true" selection-start-line="953" selection-start-column="0" selection-end-line="953" selection-end-column="0" />
               <folding>
-                <marker date="1492472186000" expanded="true" signature="695:759" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492472186000" expanded="true" signature="803:867" ph="select disti... tb_NumberOfPb" />
-                <marker date="1492472186000" expanded="true" signature="912:1020" ph="select disti... tb_authorProfile" />
-                <marker date="1492472186000" expanded="true" signature="1065:1168" ph="select ta.au... tb_authorProfile" />
-                <marker date="1492472186000" expanded="true" signature="15552:15578" ph="select * fro... tb_candidate" />
-                <marker date="1492472186000" expanded="true" signature="16102:16136" ph="insert into tb_candidate... " />
-                <marker date="1492472186000" expanded="true" signature="16536:16579" ph="DELETE from " />
-                <marker date="1492472186000" expanded="true" signature="16988:17021" ph="SELECT COUNT... tb_candidate" />
-                <marker date="1492472186000" expanded="true" signature="19014:19055" ph="DELETE from " />
-                <marker date="1492472186000" expanded="true" signature="19494:19530" ph="SELECT COUNT... tb_savedqueries" />
-                <marker date="1492472186000" expanded="true" signature="24117:24173" ph="Select unive... tb_university" />
-                <marker date="1492472186000" expanded="true" signature="26582:26636" ph="select role tb_committeecheck" />
-                <marker date="1492472186000" expanded="true" signature="27687:27738" ph="Select * Fro... tb_committeeCheck" />
-                <marker date="1492472186000" expanded="true" signature="28832:28966" ph="Select pbyea... tb_publication" />
+                <marker date="1492474050000" expanded="true" signature="29622:30043" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Front.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Front.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="310" column="47" lean-forward="false" selection-start-line="310" selection-start-column="47" selection-end-line="310" selection-end-column="47" />
+            <state relative-caret-position="-186">
+              <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2252#2261#0" expanded="true" />
+                <element signature="e#2518#2527#0" expanded="true" />
+                <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
+                <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
+                <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Publication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/classes/Publication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1326">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestQueryEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/main/classes/TestQueryEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-234">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CandidateListPageTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/userInterface/classes/CandidateListPageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,6 +141,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/classes/QueryEngine.java" />
         <option value="$PROJECT_DIR$/src/userInterface/classes/Front.java" />
+        <option value="$PROJECT_DIR$/src/userInterface/classes/Compare.java" />
       </list>
     </option>
   </component>
@@ -121,7 +193,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userInterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -135,47 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team20MSD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team20MSD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team20MSD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team20MSD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -630,15 +670,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492471991460</updated>
-      <workItem from="1492471992789" duration="488000" />
+      <workItem from="1492471992789" duration="3785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="488000" />
+    <option name="totallyTimeSpent" value="3785000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1400" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1400" height="877" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -649,13 +689,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -689,38 +729,97 @@
     <entry file="file://$PROJECT_DIR$/src/main/classes/QueryEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
-          <caret line="908" column="0" lean-forward="true" selection-start-line="908" selection-start-column="0" selection-end-line="908" selection-end-column="0" />
+          <caret line="953" column="0" lean-forward="true" selection-start-line="953" selection-start-column="0" selection-end-line="953" selection-end-column="0" />
           <folding>
-            <marker date="1492472186000" expanded="true" signature="695:759" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492472186000" expanded="true" signature="803:867" ph="select disti... tb_NumberOfPb" />
-            <marker date="1492472186000" expanded="true" signature="912:1020" ph="select disti... tb_authorProfile" />
-            <marker date="1492472186000" expanded="true" signature="1065:1168" ph="select ta.au... tb_authorProfile" />
-            <marker date="1492472186000" expanded="true" signature="15552:15578" ph="select * fro... tb_candidate" />
-            <marker date="1492472186000" expanded="true" signature="16102:16136" ph="insert into tb_candidate... " />
-            <marker date="1492472186000" expanded="true" signature="16536:16579" ph="DELETE from " />
-            <marker date="1492472186000" expanded="true" signature="16988:17021" ph="SELECT COUNT... tb_candidate" />
-            <marker date="1492472186000" expanded="true" signature="19014:19055" ph="DELETE from " />
-            <marker date="1492472186000" expanded="true" signature="19494:19530" ph="SELECT COUNT... tb_savedqueries" />
-            <marker date="1492472186000" expanded="true" signature="24117:24173" ph="Select unive... tb_university" />
-            <marker date="1492472186000" expanded="true" signature="26582:26636" ph="select role tb_committeecheck" />
-            <marker date="1492472186000" expanded="true" signature="27687:27738" ph="Select * Fro... tb_committeeCheck" />
-            <marker date="1492472186000" expanded="true" signature="28832:28966" ph="Select pbyea... tb_publication" />
+            <marker date="1492474050000" expanded="true" signature="29622:30043" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/classes/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/ConcreteUserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/Publication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Front.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="310" column="47" lean-forward="false" selection-start-line="310" selection-start-column="47" selection-end-line="310" selection-end-column="47" />
+        <state relative-caret-position="-186">
+          <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2252#2261#0" expanded="true" />
+            <element signature="e#2518#2527#0" expanded="true" />
+            <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/main/classes/TestQueryEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/userInterface/classes/CandidateListPageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
