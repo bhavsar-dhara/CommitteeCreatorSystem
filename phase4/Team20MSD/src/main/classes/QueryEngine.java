@@ -194,26 +194,26 @@ public class QueryEngine {
 		return listOfAuthors;
 	}
 
-	/**
-	 * Query 2 : Search for similar authors
-	 * 
-	 * @param author
-	 * @return list of Authors with similar profile as the given author
-	 * @exception SQLException
-	 */
-	public List<Author> getSimilarAuthorList(Author author) {
-		List<Author> similarAuthors = new ArrayList<Author>();
-		List<Author> similarAuthorofSameNopb;
-		List<Author> similarAuthorofSamePublication;
-
-		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
-		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
-
-		similarAuthors.addAll(similarAuthorofSameNopb);
-		similarAuthors.addAll(similarAuthorofSamePublication);
-
-		return similarAuthors;
-	}
+//
+//	/**
+//	 * Query 2 : Search for similar authors
+//	 * @param author
+//	 * @return list of Authors with similar profile as the given author 
+//	 * @exception SQLException
+//	 */
+//	public List<Author> getSimilarAuthorList(Author author) {
+//		List<Author> similarAuthors = new ArrayList<Author>();
+//		List<Author> similarAuthorofSameNopb;
+//		List<Author> similarAuthorofSamePublication;
+//
+//		similarAuthorofSameNopb = getSimilarAuthorBySameNumberofPB(author);
+//		similarAuthorofSamePublication = getSimilarAuthorBySamePublication(author);
+//
+//		similarAuthors.addAll(similarAuthorofSameNopb);
+//		similarAuthors.addAll(similarAuthorofSamePublication);
+//
+//		return similarAuthors;
+//	}
 
 	/**
 	 * Sub-Query 3a : Method to fetch number of publication based on author name
@@ -239,34 +239,33 @@ public class QueryEngine {
 		return -1;
 	}
 
-	/**
-	 * Sub-Query 3b : Method to fetch similar authors having same number on
-	 * published data
-	 * 
-	 * @param author
-	 * @return list of authors with the same number of publications
-	 * @exception SQLException
-	 */
-	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
-		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
-		try {
-			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
-			ps.setInt(1, inputAuthorNumberofPB);
-			ResultSet rs = ps.executeQuery();
-			List<Author> authorsBySameNOPB = new ArrayList<Author>();
-			while (rs.next()) {
-				Author authorRS = new Author();
-				authorRS.setName(rs.getString("authorname"));
-				// authorsBySameNOPB.add(rs.getString(1));
-				authorsBySameNOPB.add(authorRS);
-			}
-			return authorsBySameNOPB;
-		} catch (SQLException se) {
-			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
-			System.err.println(se.getMessage());
-		}
-		return null;
-	}
+
+//	/**
+//	 * Sub-Query 3b : Method to fetch similar authors having same number on published data
+//	 * @param author
+//	 * @return list of authors with the same number of publications
+//	 * @exception SQLException
+//	 */
+//	public List<Author> getSimilarAuthorBySameNumberofPB(Author author) {
+//		int inputAuthorNumberofPB = getNumberofPBByAuthorName(author);
+//		try {
+//			PreparedStatement ps = getConn().prepareStatement(GET_AUTHORNAME_BY_NOPB);
+//			ps.setInt(1, inputAuthorNumberofPB);
+//			ResultSet rs = ps.executeQuery();
+//			List<Author> authorsBySameNOPB = new ArrayList<Author>();
+//			while (rs.next()) {
+//				Author authorRS = new Author();
+//				authorRS.setName(rs.getString("authorname"));
+//				// authorsBySameNOPB.add(rs.getString(1));
+//				authorsBySameNOPB.add(authorRS);
+//			}
+//			return authorsBySameNOPB;
+//		} catch (SQLException se) {
+//			System.err.println(SQLEXCEPTION + " querying similar author by same number of publications.");
+//			System.err.println(se.getMessage());
+//		}
+//		return null;
+//	}
 
 	/**
 	 * Sub-Query 3c : Method to fetch published papers based on author name
@@ -541,10 +540,9 @@ public class QueryEngine {
 //	 * Queries
 //	 * 
 //	 */
-//
+//	
 //	/**
 //	 * Query 11 : to read saved queries
-//	 * 
 //	 * @return list of string of saved queries
 //	 * @exception SQLException
 //	 */
