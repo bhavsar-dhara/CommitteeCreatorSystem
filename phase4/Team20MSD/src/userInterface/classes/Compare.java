@@ -19,15 +19,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-//import main.java.search.model.Author;
-//import main.java.search.service.QueryEngine;
-//import main.java.serach.interfaces.UserInterface;
 import main.classes.Author;
 import main.classes.QueryEngine;
 import main.interfaces.UserInterface;
-
-//import pkgcommon.Functions;
-//import pkgmodels.ExportHistory;
 
 
 

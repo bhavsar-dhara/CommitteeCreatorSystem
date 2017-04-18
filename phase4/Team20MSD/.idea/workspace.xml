@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Compare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+            <state relative-caret-position="173">
+              <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -65,12 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Front.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Front.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
+            <state relative-caret-position="-186">
               <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2252#2261#0" expanded="true" />
                 <element signature="e#2518#2527#0" expanded="true" />
                 <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
@@ -741,12 +742,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492471991460</updated>
-      <workItem from="1492471992789" duration="3420000" />
+      <workItem from="1492471992789" duration="3642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3420000" />
+    <option name="totallyTimeSpent" value="3642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1400" height="877" extended-state="0" />
@@ -808,35 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Front.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-          <folding>
-            <element signature="e#2252#2261#0" expanded="true" />
-            <element signature="e#2518#2527#0" expanded="true" />
-            <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
-            <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
-            <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/interfaces/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-83">
@@ -871,9 +843,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Compare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+        <state relative-caret-position="173">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userInterface/classes/Front.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="303" column="0" lean-forward="true" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2252#2261#0" expanded="true" />
+            <element signature="e#2518#2527#0" expanded="true" />
+            <marker date="1492474050000" expanded="false" signature="9829:9833" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9850:9853" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9878:9882" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9899:9902" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9928:9932" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="9947:9950" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="9982:9986" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10008:10011" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10037:10041" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10056:10059" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10085:10089" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10105:10108" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10131:10135" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10147:10150" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10173:10177" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10190:10193" ph=" }" />
+            <marker date="1492474050000" expanded="false" signature="10227:10231" ph=" { " />
+            <marker date="1492474050000" expanded="false" signature="10247:10250" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
