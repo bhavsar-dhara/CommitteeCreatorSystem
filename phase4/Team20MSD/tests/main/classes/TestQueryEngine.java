@@ -35,17 +35,34 @@ public class TestQueryEngine extends TestCase {
 
 	List<Author> authorListQuery4 = new ArrayList<Author>();
 
+	Publication publication4 = new Publication("Class Hierarchy Specialization.", "inproceedings", 2002, "927-982",
+			"Acta Inf.", "http://link.springer.de/link/service/journals/00236/bibs/0036012/00360927.htm",
+			"db/journals/acta/acta36.html#TipS00", "36", "", "", "", "", "", "12");
+	Author author4 = new Author("Class Hierarchy Specialization.", "Frank Tip", "14", 2007, "Member", "ecoop",
+			publication4);
+
+	Publication publication5 = new Publication("The Implementation of Retention in a Coroutine Environment.",
+			"articles", 2000, "221-233", "Acta Inf.", "http://dx.doi.org/10.1007/BF00265556",
+			"db/journals/acta/acta19.html#KearnsS83", "19", "", "", "", "", "", "3");
+	Author author5 = new Author("The Implementation of Retention in a Coroutine Environment.", "Mary Lou Soffa", "49",
+			publication5);
+
+	Publication publication6 = new Publication("safeDpi: a language for controlling mobile code.", "inproceedings",
+			2012, "227-290", "Acta Inf.", "http://dx.doi.org/10.1007/s00236-005-0178-y",
+			"db/journals/acta/acta42.html#HennessyRY05", "42", "", "", "", "", "", "4-5");
+	Author author6 = new Author("safeDpi: a language for controlling mobile code.", "Nobuko Yoshida", "63",
+			publication6);
 
 	@Test
 	public void testPopulateListOfAuthorsQuery() {
 
 		int[] intArray = new int[1];
-		intArray[0] = 1996;
+		intArray[0] = 2002;
 
-		authorListQuery1.add(author1);
+		authorListQuery4.add(author4);
 
-		assertNotSame("Populate Author List", authorListQuery1,
-				searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4, false, "0"));
+		assertNotSame("Populate Author List", authorListQuery4,
+				searchQuery.populateListOfAuthors("acta inf.", "class", intArray, 14, true, "10"));
 	}
 
 	@Test
@@ -58,11 +75,11 @@ public class TestQueryEngine extends TestCase {
 		authorListQuery2.add(author3);
 
 		Author testAuthor = new Author("sanjeev");
-		assertNotSame("Populate Author List", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
+		assertNotSame("Get Author Details", authorListQuery2, searchQuery.fetchAuthorDetails(testAuthor));
 	}
 
 	@Test
-	public void testGetSimilarAuthorBySameNumberofPB() {
+	public void testPopulateListOfAuthorsQuery_2() {
 
 		int[] intArray = new int[1];
 		intArray[0] = 1996;
@@ -74,88 +91,55 @@ public class TestQueryEngine extends TestCase {
 	}
 
 	@Test
-	public void testGetSimilarAuthorBySamePublication() {
+	public void testtGetSimilarAuthorBySamePublication() {
 
 		int[] intArray = new int[1];
 		intArray[0] = 1996;
 
 		authorListQuery4.add(author1);
 
-		assertNotSame("Populate Author List", authorListQuery4,
+		assertNotSame("Same No of Publication -> Author List", authorListQuery4,
 				searchQuery.populateListOfAuthors("acta inf.", "parallel", intArray, 4, false, "0"));
 	}
 
-	// keyword specified
 	@Test
 	public void testPopulateListOfAuthor_1() {
-
-	}
-
-	// year specified
-	@Test
-	public void testPopulateListOfAuthor_2() {
 		List<Author> authorListQuery1 = null;
 		int[] intArray = null;
-		// TODO : resolve Assertion Error as publication objects are
-		// different!!!
+
 		assertNotSame("Populate Author List", authorListQuery1,
-				searchQuery.populateListOfAuthors("acta inf.", "class", intArray, 4, false, "0"));
+				searchQuery.populateListOfAuthors("acta inf.", "class", intArray, 4, true, "2"));
 
 	}
-
-	// conference specified
-	@Test
-	public void testPopulateListOfAuthor_3() {
-
-	}
-
-	// number of publication specified
-	@Test
-	public void testPopulateListOfAuthor_4() {
-
-	}
-
-	// TODO: test with more kinds of queries
-
-	/*------------------------------------------------------------------------------------------------------------*/
 
 	@Test
 	public void testGetNumberofPBByAuthorName() {
-		QueryEngine qe = QueryEngine.instance();
-		Author test = new Author(/* needs data */);
-		int num = qe.getNumberofPBByAuthorName(test);
-		assertEquals(num, 1/* needs data */);
+
+		int num = searchQuery.getNumberofPBByAuthorName(author5);
+		assertEquals(num, 49);
 	}
 
 	@Test
 	public void testGetPublicationByAuthorName() {
-		QueryEngine qe = QueryEngine.instance();
-		Author test = new Author(/* needs data */);
 
+		int num = searchQuery.getPublicationByAuthorName(author5).size();
+		assertEquals(num, 49);
 	}
 
 	// Test for query 4 test needs to be added
 
 	@Test
 	public void testFetchJournalNames() {
-		QueryEngine qe = QueryEngine.instance();
-		ArrayList<String> journalsFound = new ArrayList<>(qe.fetchJournalNames());
-		ArrayList<String> actualJournals = new ArrayList<>(/* needs data */);
-		assertEquals(journalsFound.size(), actualJournals.size());
-		for (int i = 0; i < journalsFound.size(); i++) {
-			assertEquals(journalsFound.get(i), actualJournals.get(i));
-		}
+
+		ArrayList<String> journalsFound = new ArrayList<>(searchQuery.fetchJournalNames());
+		assertEquals(journalsFound.size(), 60);
 	}
 
 	@Test
 	public void testFetchYearsAvailable() {
-		QueryEngine qe = QueryEngine.instance();
-		ArrayList<Integer> yearsFound = new ArrayList<>(qe.fetchYearsAvailable());
-		ArrayList<Integer> actualYears = new ArrayList<>(/* needs data */);
-		assertEquals(yearsFound.size(), actualYears.size());
-		for (int i = 0; i < yearsFound.size(); i++) {
-			assertEquals(yearsFound.get(i), actualYears.get(i));
-		}
+
+		ArrayList<Integer> yearsFound = new ArrayList<>(searchQuery.fetchYearsAvailable());
+		assertEquals(yearsFound.size(), 41);
 	}
 
 	/*------------------------------------------------------------------------------------------------------------*/
@@ -163,49 +147,44 @@ public class TestQueryEngine extends TestCase {
 
 	@Test
 	public void testFetchCandidates() {
-		QueryEngine qe = QueryEngine.instance();
-		Author cand = qe.fetchCandidates(0);
-		assertEquals(cand.getName(), ""/* needs data */);
+
+		Author cand = searchQuery.fetchCandidates(0);
+		assertEquals(cand.getName(), null);
 	}
 
 	@Test
 	public void testAddAuthorIntoCandidate() {
-		QueryEngine qe = QueryEngine.instance();
+
 		Author authorToAdd = new Author(/* needs data */);
-		qe.addAuthorIntoCandidate(authorToAdd);
+		searchQuery.addAuthorIntoCandidate(authorToAdd);
 		// Use SQL to test whether the author has been added
 	}
 
 	@Test
 	public void testDeleteFavCandidate() {
-		QueryEngine qe = QueryEngine.instance();
+
 		Author candToDelete = new Author(/* needs data */);
-		qe.addAuthorIntoCandidate(candToDelete);
+		searchQuery.addAuthorIntoCandidate(candToDelete);
 		// Use SQL to test whether the author has been added
 	}
 
 	@Test
 	public void testCountFavCandidates() {
-		QueryEngine qe = QueryEngine.instance();
-		assertEquals(1/* needs data */, qe.countFavCandidates());
+
+		assertNotSame(11, searchQuery.countFavCandidates());
 	}
 
 	@Test
 	public void testIsFavCandidate() {
-		QueryEngine qe = QueryEngine.instance();
-		Author cand = new Author(/* needs data */);
-		assertTrue(qe.isFavCandidate(cand));
+
+		assertFalse(searchQuery.isFavCandidate(author6));
 	}
 
 	@Test
 	public void testFetchCommitteeNameList() {
-		QueryEngine qe = QueryEngine.instance();
-		ArrayList<String> committeesFound = new ArrayList<>(qe.fetchCommitteeNameList());
-		ArrayList<String> actualCommittees = new ArrayList<>(/* needs data */);
-		assertEquals(committeesFound.size(), actualCommittees.size());
-		for (int i = 0; i < committeesFound.size(); i++) {
-			assertEquals(committeesFound.get(i), actualCommittees.get(i));
-		}
+
+		ArrayList<String> committeesFound = new ArrayList<>(searchQuery.fetchCommitteeNameList());
+		assertEquals(committeesFound.size(), 12);
 	}
 
 	// Test for query 17 test needs to be added
@@ -214,9 +193,9 @@ public class TestQueryEngine extends TestCase {
 
 	@Test
 	public void testGetAuthorUnivDetails() {
-		QueryEngine qe = QueryEngine.instance();
+
 		Author authorToTest = new Author(/* needs data */);
-		assertEquals("NEU"/* needs data */, qe.getAuthorUnivDetails(authorToTest));
+		assertEquals("N/A", searchQuery.getAuthorUnivDetails(authorToTest));
 	}
 
 	// Query 21 not sure how to do it
@@ -225,10 +204,11 @@ public class TestQueryEngine extends TestCase {
 
 	@Test
 	public void testGetAuthorCommitteeDetailsByAuthorName() {
-		QueryEngine qe = QueryEngine.instance();
+
+		searchQuery = QueryEngine.instance();
 		Author authorToTest = new Author(/* needs data */);
 		ArrayList<Author> committeeDetailsFound = new ArrayList<>(
-				qe.getAuthorCommitteeDetailsByAuthorName(authorToTest));
+				searchQuery.getAuthorCommitteeDetailsByAuthorName(authorToTest));
 		ArrayList<Author> actualCommitteeDetails = new ArrayList<>(/*
 																	 * needs
 																	 * data
@@ -240,4 +220,6 @@ public class TestQueryEngine extends TestCase {
 			assertEquals(committeeDetailsFound.get(i).getRole(), actualCommitteeDetails.get(i).getRole());
 		}
 	}
+	
+	
 }

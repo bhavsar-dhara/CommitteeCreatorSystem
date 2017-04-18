@@ -44,6 +44,18 @@ public class Author implements Serializable {
 		this.publication = publication;
 	}
 
+	public Author(String title, String name, String noOfPublication, int checkYear, String role, String committee,
+		Publication publication) {
+	super();
+	this.title = title;
+	this.name = name;
+	this.noOfPublication = noOfPublication;
+	this.checkYear = checkYear;
+	this.role = role;
+	this.committee = committee;
+	this.publication = publication;
+}
+
 	private Long id;
 	private String title;
 	private String name;

@@ -223,12 +223,11 @@ public class Front implements Initializable {
 		} else {
 			
 			Progress p = new Progress("Searching:");
-			qe.setProgressBox(p);
 			p.display();
 			
 			List<Author> authorList = qe.populateListOfAuthors(conferencename1, keyword1, intArray,
 					Integer.parseInt(numofpub1), check.selectedProperty().getValue(), numofcom1);
-
+			p.selfDestruct();
 			for (Author a : authorList) {
 				data.add(new Author(a.getTitle(), a.getName(), a.getNoOfPublication(), a.getPublication()));
 			}
