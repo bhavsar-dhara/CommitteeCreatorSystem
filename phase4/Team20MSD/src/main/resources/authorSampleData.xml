@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Author authorname="Reinhard Wilhelm" title="Attribute (Re)evaluation in OPTRAN."/>
+	<Author authorname="Donald Sannella" title="Toward Formal Development of Programs from Algebraic Specifications: Implementations Revisited."/>
+	<Author authorname="Mary Lou Soffa" title="The Implementation of Retention in a Coroutine Environment."/>
+	<Author authorname="Reinhard Wilhelm" title="A Logic-Based Approach to Program Flow Analysis."/>
+	<Author authorname="Nobuko Yoshida" title="Genericity and the pi-calculus."/>
+	<Author authorname="Frank Tip" title="Class Hierarchy Specialization."/>
+	<Author authorname="Nobuko Yoshida" title="safeDpi: a language for controlling mobile code."/>
+	<Author authorname="Donald Sannella" title="A Set-Theoretic Semantics for Clear."/>
+	<Author authorname="Donald Sannella" title="Toward Formal Development of Programs from Algebraic Specifications: Parameterisation Revisited."/>
+	<Author authorname="Reinhard Wilhelm" title="Tree Automata for Code Selection."/>
+</dataset>
