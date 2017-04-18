@@ -38,7 +38,7 @@ public class TestQueryEngine extends TestCase {
 	Publication publication4 = new Publication("Class Hierarchy Specialization.", "inproceedings", 2002, "927-982",
 			"Acta Inf.", "http://link.springer.de/link/service/journals/00236/bibs/0036012/00360927.htm",
 			"db/journals/acta/acta36.html#TipS00", "36", "", "", "", "", "", "12");
-	Author author4 = new Author("Class Hierarchy Specialization.", "Frank Tip", "14", 2007, "Member", "ecoop",
+	Author author4 = new Author("Class Hierarchy Specialization.", "Frank Tip", "14", 2007, "Member", "issta",
 			publication4);
 
 	Publication publication5 = new Publication("The Implementation of Retention in a Coroutine Environment.",
@@ -149,23 +149,19 @@ public class TestQueryEngine extends TestCase {
 	public void testFetchCandidates() {
 
 		Author cand = searchQuery.fetchCandidates(0);
-		assertEquals(cand.getName(), null);
+		assertEquals(cand.getName(), author5.getName());
 	}
 
 	@Test
 	public void testAddAuthorIntoCandidate() {
 
-		Author authorToAdd = new Author(/* needs data */);
-		searchQuery.addAuthorIntoCandidate(authorToAdd);
-		// Use SQL to test whether the author has been added
+		searchQuery.addAuthorIntoCandidate(author4);
 	}
 
 	@Test
 	public void testDeleteFavCandidate() {
 
-		Author candToDelete = new Author(/* needs data */);
-		searchQuery.addAuthorIntoCandidate(candToDelete);
-		// Use SQL to test whether the author has been added
+		searchQuery.addAuthorIntoCandidate(author5);
 	}
 
 	@Test
@@ -194,8 +190,7 @@ public class TestQueryEngine extends TestCase {
 	@Test
 	public void testGetAuthorUnivDetails() {
 
-		Author authorToTest = new Author(/* needs data */);
-		assertEquals("N/A", searchQuery.getAuthorUnivDetails(authorToTest));
+		assertEquals("Northeastern University", searchQuery.getAuthorUnivDetails(author4));
 	}
 
 	// Query 21 not sure how to do it
@@ -205,14 +200,10 @@ public class TestQueryEngine extends TestCase {
 	@Test
 	public void testGetAuthorCommitteeDetailsByAuthorName() {
 
-		searchQuery = QueryEngine.instance();
-		Author authorToTest = new Author(/* needs data */);
+		authorListQuery4.add(author4);
 		ArrayList<Author> committeeDetailsFound = new ArrayList<>(
-				searchQuery.getAuthorCommitteeDetailsByAuthorName(authorToTest));
-		ArrayList<Author> actualCommitteeDetails = new ArrayList<>(/*
-																	 * needs
-																	 * data
-																	 */);
+				searchQuery.getAuthorCommitteeDetailsByAuthorName(author4));
+		ArrayList<Author> actualCommitteeDetails = new ArrayList<>(authorListQuery4);
 		assertEquals(committeeDetailsFound.size(), actualCommitteeDetails.size());
 		for (int i = 0; i < actualCommitteeDetails.size(); i++) {
 			assertEquals(committeeDetailsFound.get(i).getCommittee(), actualCommitteeDetails.get(i).getCommittee());
