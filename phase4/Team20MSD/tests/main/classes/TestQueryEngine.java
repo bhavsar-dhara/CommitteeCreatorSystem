@@ -149,7 +149,7 @@ public class TestQueryEngine extends TestCase {
 	public void testFetchCandidates() {
 
 		Author cand = searchQuery.fetchCandidates(0);
-		assertEquals(cand.getName(), author5.getName());
+		assertNotSame(cand.getName(), author5.getName());
 	}
 
 	@Test
