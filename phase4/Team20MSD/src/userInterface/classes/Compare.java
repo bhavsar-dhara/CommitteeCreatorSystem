@@ -111,7 +111,7 @@ public class Compare implements Initializable {
 
         data3 = FXCollections.observableArrayList();
 
-        for(int x = 0; x < newList.size()-1; x = x + 1) {
+        for(int x = 0; x < newList.size(); x = x + 1) {
             data3.add(new PieChart.Data(newList1.get(x).toString() , newList.get(x)));
         }
 
@@ -124,12 +124,12 @@ public class Compare implements Initializable {
 //                        new PieChart.Data("Pears", 22),
 //                        new PieChart.Data("Apples", 30));
 
-        if (newList.size()==1 )
-        {        pie1.setTitle(name.getName() + newList1.get(0));
-                 pie1.setData(data3);}
-        else{
+//        if (newList.size()==1 )
+//        {        pie1.setTitle(name.getName() + newList1.get(0));
+//                 pie1.setData(data3);}
+//        else{
             pie1.setTitle(name.getName() +"'s Yearly Publication");
-        pie1.setData(data3);}
+        pie1.setData(data3);
 
 
     }

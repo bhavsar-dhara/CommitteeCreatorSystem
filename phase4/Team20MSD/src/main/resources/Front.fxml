@@ -110,9 +110,9 @@
             <Image url="@20-BW.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="152.0" fitWidth="421.0" layoutX="25.0" layoutY="653.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="207.0" fitWidth="387.0" layoutX="50.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@nu.png" />
+            <Image url="@log1.png" />
          </image>
       </ImageView>
 	</children>
